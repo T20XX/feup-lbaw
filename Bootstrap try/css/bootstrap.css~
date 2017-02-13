@@ -320,6 +320,8 @@ th {
 }
 .glyphicon-user:before {
   content: "\e008";
+height: 50px;
+width: 50px;
 }
 .glyphicon-film:before {
   content: "\e009";
@@ -3895,7 +3897,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   white-space: nowrap;
   vertical-align: middle;
 }
-.input-group-addon {
+.input-group-addon { /* HERE */
   padding: 6px 12px;
   font-size: 14px;
   font-weight: normal;
