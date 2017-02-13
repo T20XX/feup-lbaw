@@ -5,6 +5,7 @@
 <title="Social Network v1">
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/circuloss.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -65,7 +66,7 @@
       width: 400px;
   }
 
-  #login{width: 30em;}
+  #search{width: 30em; display: inline-block; margin: 0;transform: translateY(3em);margin-left: 2em;}
   #img{display: inline-block;}
   #letters{display: inline-block;}
   #login{display: inline-block;margin-bottom: 0;transform: translateY(-2em);}
@@ -74,6 +75,10 @@
   #user{background-color: #2E2D88;color:white;}
   #pass{background-color: #2E2D88;color: white;}
   #news_item{background-color:#598fe5;}
+  #news_item p{
+    padding-left: 1em;
+    color: black;
+  }
   #menu{
     height: 65px;
   }
@@ -89,49 +94,50 @@
 <div id="page-header" class="page-header">
 
 
-  <div id="img">
+<div id="img">
 <img src="network.png" id="Logo" alt="Network Logo">
 </div>
 <div id="letters">
 <span id="title">MeetTheCircle</span>
 </div>
 
-<nav class="navbar navbar-default">
-  <div id="menu" class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="frienship_logo.png">
-      </a>
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="favorite_logo.png">
-      </a>
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="plus_logo.png">
-      </a>
-    </div>
-  </div>
-</nav>
+<div id="search">
+<form  method="post">
+<div  class="input-group input-group-lg">
+<a href="#" class="input-group-addon glyphicon glyphicon-search" style = "color: #FFFFFF; background-color:#f0ad4e" ></a>
+<input type="text" class="form-control" placeholder="Search for a Circle">
+</div>
+</form>
+</div>
 
-<button  id="button" type="submit" class="btn btn-warning btn-lg">Logout</button>
-
+</div>
 
 <div class="jumbotron">
 
 
   <div id="news_item" class="panel panel-primary">
-    @JoaoMoura#3212 Publicou em MIEIC16/17
+    <h3>@JoaoMoura#3212 Publicou em <a href="#">MIEIC16/17</a></h3>
     <p>Ms sdiwe asud ah quwueue ashdh qo dasaj d.</p>
     </div>
 
     <div id="news_item" class="panel panel-primary">
-      @JoaoMoura#3212 Publicou em Trip17
+      <h3>@JoaoMoura#3212 Publicou em <a href="#">Trip17</a></h3>
       <p>AAasd Uejdabsd sad shaeh eq sadi. </p>
       </div>
       <div id="news_item" class="panel panel-primary">
-        @JoaoMoura#3212 Publicou em FutePorto
+        <h3>@JoaoMoura#3212 Publicou em <a href="#">FutePorto</a></h3>
         <p>Pasd as waea sadias ihw eq aosd e we qweiu asd aequwe . </p>
         </div>
 </div>
+
+<div id="blackBar" class="alert alert-success" style="background-color: #eee">
+<div class="btn btn-default glyphicon glyphicon-off" style="background-color: black; color: white">&nbspLogout</div>   <!-- Logout button -->
+<div class="btn btn-default glyphicon glyphicon-list" style="position: absolute;top: 38%;left: 1%;"></div>  <!-- Side menu button -->
+<!-- <a href="http://facebook.com" style="color: black; position: absolute;top: 50%;left: 45%;">List all my Groups!</a> -->
+
+<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 38%; color: #2E2D88;"></div>
+<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 48%; color: #2E2D88;"></div>
+<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 58%; color: #2E2D88;"></div>
 
 </div>
 
