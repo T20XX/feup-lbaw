@@ -3895,7 +3895,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   white-space: nowrap;
   vertical-align: middle;
 }
-.input-group-addon { /* HERE */
+.input-group-addon {
   padding: 6px 12px;
   font-size: 14px;
   font-weight: normal;
