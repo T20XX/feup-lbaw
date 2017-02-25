@@ -87,6 +87,52 @@
   #menu{
     height: 65px;
   }
+  #post_description{
+    margin-left: 1em;
+    display: inline-block;
+    width: 50%;
+    color: black;
+  }
+
+  #post_img{
+    display: inline-block;
+    width: 30%;
+  }
+
+  #post_header{
+    color: black;
+    margin-bottom: 1em;
+    border-radius: 25px;
+    border: 2px solid #2E2D88;
+    padding: 1em;
+  }
+  #post_header h1{
+    font-size: 2em;
+  }
+
+  .dropdown-replies {
+   position: relative;
+   display: inline-block;
+}
+
+.dropdown-content-replies {
+   display: none;
+   color:black;
+   position: absolute;
+   background-color: #2E2D88;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-replies:hover .dropdown-content-replies {
+   display: block;
+}
+
+.desc-replies {
+   padding: 15px;
+   text-align: center;
+   color: black;
+}
 
 
   .sidenav {
@@ -133,7 +179,6 @@
 
 		<div id="page-header" class="page-header" style="text-align: center">
 
-
 		<div id="img">
 		<img src="network.png" id="Logo" alt="Network Logo">
 		</div>
@@ -141,49 +186,112 @@
 		<span id="title">MeetTheCircle</span>
 		</div>
 
-
-
 		</div>
 
 		<div class="jumbotron">
 
+      <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
 
-		  <div id="news_item" class="panel panel-primary">
-			<div id="news_item_text">
-			<h3>@JoaoMoura publicou em <a href="#">MIEIC16/17</a></h3>
-			<p>Ms sdiwe asud ah .</p>
-			</div>
-			<div id="news_item_img">
-			  <img src="capa1.jpg" width="500px" height="300px">
-			</div>
-		  </div>
+        <div id="post_header">
+        <img src="feop.png" class="img-circle" width="100px" height="100px">
+        <a href="#" style="font-size:4em; color: black;">Feup Circle </a>
+        <br>
+        <h1 style="display: inline-block;"><a>#Member 4</a> [21/02/2017] posted:</h1>
+      </div>
 
-		  <div id="news_item" class="panel panel-primary">
-			<div id="news_item_text">
-			<h3>@JoaoMoura publicou em <a href="#">Trip17</a></h3>
-			<p>Ms sdiwe asud ah .</p>
-			</div>
-			<div id="news_item_img">
-			  <img src="capa2.jpg" width="500px" height="300px">
-			</div>
-		  </div>
+        <div id="post_description">
+        <p>[RCOM] Exercicios do moodle  asdjhada asidha dqwd iqhwd qdqwidh a qiweuqweodofihs df qweoiqyweu  </p>
 
-		  <div id="news_item" class="panel panel-primary">
-			<div id="news_item_text">
-			<h3>@JoaoMoura publicou em <a href="#">FutePorto</a></h3>
-			<p>Ms sdiwe asud ah .</p>
-			</div>
-			<div id="news_item_img">
-			  <img src="capa3.jpg" width="500px" height="300px">
-			</div>
-		  </div>
+        <div class="dropdown-replies">
+    <button type="button">Reply!</button>
+    <div class="dropdown-content-replies">
+    <form  method="POST" id="reply" action="action_create_reply.php">
+      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
+      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
+      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
+      <textarea name="review" rows="5" cols="30"></textarea>
+    <input type="submit" value="Comment">
+    </form>
+    </div>
+    </div>
+      </div>
+
+      <div id="post_img">
+      <img src="networks.png" width="300px" height="300px">
+    </div>
+
+      </div>
+
+      <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
+
+        <div id="post_header">
+        <img src="capa3.jpg" class="img-circle" width="100px" height="100px">
+        <a href="#" style="font-size:4em; color: black;">Basket Circle </a>
+        <br>
+        <h1 style="display: inline-block;"><a>#Member 2</a> [18/02/2017] posted:</h1>
+      </div>
+
+        <div id="post_description">
+        <p>Pessoal siga jogar uma bolinha ao Dragão Caixa? </p>
+
+        <div class="dropdown-replies">
+    <button type="button">Reply!</button>
+    <div class="dropdown-content-replies">
+    <form  method="POST" id="reply" action="action_create_reply.php">
+      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
+      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
+      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
+      <textarea name="review" rows="5" cols="30"></textarea>
+    <input type="submit" value="Comment">
+    </form>
+    </div>
+    </div>
+      </div>
+
+      <div id="post_img">
+      <img src="capa3.jpg" width="300px" height="300px">
+    </div>
+
+      </div>
+
+      <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
+
+        <div id="post_header">
+        <img src="capa2.jpg" class="img-circle" width="100px" height="100px">
+        <a href="#" style="font-size:4em; color: black;">Random Circle </a>
+        <br>
+        <h1 style="display: inline-block;"><a>#Member 1</a> [20/01/2017] posted:</h1>
+      </div>
+
+        <div id="post_description">
+        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris ut diam eu purus dignissim lobortis. </p>
+
+        <div class="dropdown-replies">
+    <button type="button">Reply!</button>
+    <div class="dropdown-content-replies">
+    <form  method="POST" id="reply" action="action_create_reply.php">
+      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
+      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
+      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
+      <textarea name="review" rows="5" cols="30"></textarea>
+    <input type="submit" value="Comment">
+    </form>
+    </div>
+    </div>
+      </div>
+
+      <div id="post_img">
+      <img src="capa2.jpg" width="300px" height="300px">
+    </div>
+
+      </div>
 
 		</div>
 
 		<div id="blackBar" class="alert alert-success" style="background-color: #eee">
 		<div class="btn btn-default glyphicon glyphicon-off" style="background-color: black; color: white">&nbspLogout</div>   <!-- Logout button -->
 		<!--   <!-- Side menu button -->
-		<div class="btn btn-default glyphicon glyphicon-list" onclick="openNav()" style="position: absolute;top: 38%;left: 1%;"></div> 
+		<div class="btn btn-default glyphicon glyphicon-list" onclick="openNav()" style="position: absolute;top: 38%;left: 1%;"></div>
 
 		<!-- <a href="http://facebook.com" style="color: black; position: absolute;top: 50%;left: 45%;">List all my Groups!</a> -->
 
@@ -198,12 +306,12 @@
 <div id="mySidenav" class="sidenav" style="text-align: center">
 		<div  class="input-group input-group-lg" id="search" style="margin: 0 auto;">
 			<a href="#" class="glyphicon glyphicon-search" style = "color: #FFFFFF; background-color:#f0ad4e;" ></a>
-			
+
 			<input type="text" class="form-control" placeholder="Search for a Circle">
 		</div>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
+  <a href="#">My circles</a>
+  <a href="#">Profile</a>
+  <a href="#">Settings</a>
   <a href="#">Contact</a>
 </div>
 
