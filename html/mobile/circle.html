@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="../css/circuloss.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <head>
@@ -17,271 +19,67 @@
     color: white;
   }
 
-  .tab-content{
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-  }
-
-  #Logo{
-    height: 100px;
-    width: 100px;
-  }
-
-  #title{
-    font-size: 6em;
-    vertical-align: middle;
-    font-family: 'Pacifico', cursive;
-    padding-left: 15px;
-    color: #191970;
-  }
-
-  #create{
-    font-size: 3em;
-    vertical-align: middle;
-    font-family: 'Pacifico', cursive;
-    padding-left: 15px;
-    color: white;
-  }
-
-  #page-face{
-    display: inline-block;
-    float: left;
-    width: 400px;
-  }
-  #page-face-img{
-    display: inline-block;
-    float: left;
-    width: 400px;
-    height: 300px;
-  }
-  #page-face-text{font-size: 3em;
-  vertical-align: middle;
-  padding-left: 15px;
-  color: white;}
-  #signup{
-    display: inline-block;
-    transform: translateX(15em );
-      width: 400px;
-  }
-
-  #search{width: 20em; margin: 0;margin-left: 2em;}
-  #img{display: inline-block;}
-  #letters{display: inline-block;}
-  #login{display: inline-block;margin-bottom: 0;transform: translateY(-2em);}
-  #inputs{display: inline-block;width: 20em;float: left;margin-left: 2em;}
-  #button{display: inline-block;margin-left: 1em;}
-  #user{background-color: #2E2D88;color:white;}
-  #pass{background-color: #2E2D88;color: white;}
-  #news_item{background-color:white;}
-  #news_item_text{display: inline-block; width: 500px;}
-  #news_item_img{display: inline-block;}
-  #news_item p{
-    padding-left: 1em;
-    color: black;
-  }
-  #news_item h3{
-    color: black;
-  }
-  #menu{
-    height: 65px;
-  }
-
-  #info{
-    width: 20%;
-    display: inline-block;
-  vertical-align: top;
-  margin-bottom: 0;
-  padding-left: 15px;
-  color: white; background-color: white; height: 100%;}
-
-  #info span {
-    text-align: center
-    color: white;
-    font-size: 3em;
-  }
-
-  #info p{
-    text-align: center;
-    color: blue;
-    font-size: 2em;
-  }
-  #content{
-    display: inline-block;
-    color: white;
-    margin-top:0;
-    width: 65%;
-  }
-  #posts .jumbotron{padding-left: 1em; padding-top:1em;}
-  #posts h1 {color: blue; font-size: 2em;margin-top: 1em;}
-  #posts p {color:#202123;}
-  #group-face {margin-top:1em;}
-  #group-face img{display: inline-block;width:15%;}
-  #group-face h1{display: inline-block;margin-top:0;width: 80%;}
-  #notifications{
-    width: 17%;
-    display: inline-block;
-    position: absolute;
-  vertical-align: top;
-  margin-bottom: 0;
-  padding-left: 15px;
-  color: white; background-color: white; height: 100vh}
-
-  #notifications span {
-    text-align: center
-    color: white;
-    font-size: 3em;
-  }
-
-  #notifications p{
-    text-align: center;
-    color: blue;
-    font-size: 1em;
-  }
-
-  #post_description{
-    display: inline-block;
-    width: 50%;
-  }
-
-  #post_img{
-    display: inline-block;
-    width: 30%;
-  }
-
-  #post_header{
-    margin-bottom: 1em;
-  }
-
-
-
-  .dropdown-replies {
-   position: relative;
-   display: inline-block;
-}
-
-.dropdown-content-replies {
-   display: none;
-   color:black;
-   position: absolute;
-   background-color: #2E2D88;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-replies:hover .dropdown-content-replies {
-   display: block;
-}
-
-.desc-replies {
-   padding: 15px;
-   text-align: center;
-   color: black;
-}
-
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-#todo {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-#circle_header{
+#page-header{
 	display:block;
-	}
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
-#content{
 	width:100%;
+	margin-bottom:10%;
 }
-#post{
-	width:10%;
+
+#btn1
+{	
+	position:absolute;
+	left:0%;
 }
-.page-header{
-	align-text:center;
+#btn2
+{	
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%); 
 }
-#header{
-	display:inline-block;
+#btn3
+{
+	position:absolute;
+	right:0%;
 }
- </style>
+
+h1{
+	color:blue;
+}
+
+  </style>
 </head>
 
 <body>
-<div id = "todo" onclick="clicarfora()">
 
-	<div id="header">
-		<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Members</p>
-		<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-search"></i></button>	<p>Search</p>
-		<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Votes</p>
+	<div id="page-header" class="page-header">
+		<div id="btn1"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Members</p> </div>
+		<div id="btn2"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-search"></i></button>	<p>Search</p></div>
+		<div id="btn3"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Votes</p></div>
 	</div>
-	
-	<div class="jumbotron" style="padding-left:0;padding-top:0; margin-bottom:0;">
 
-  <div id="content">
-      <div class="page-header" id="group-face">
+	<!--<div id="side_bar_members">
+      <ul id="info" class="list-group">
+		<li class="list-group-item" style="font-size:2em; color:#191970">Members: </li>
+		<li class="list-group-item list-group-item-success"><img src="user.png" width="25%" height="10%" shape="circle" style="margin-right: 2em;"> <a href="#">#Member1</a> </li>
+		<li class="list-group-item list-group-item-success"><img src="user.png" width="25%" height="10%" shape="circle" style="margin-right: 2em;"><a href="#">#Member2</a> </li>
+		<li class="list-group-item list-group-item-success"><img src="user.png" width="25%" height="10%" shape="circle" style="margin-right: 2em;"><a href="#">#Member3</a> </li>
+		<li class="list-group-item list-group-item-success"><img src="user.png" width="25%" height="10%" shape="circle" style="margin-right: 2em;"><a href="#">#Member4</a> </li>
+		</ul>
+	</div>-->
+
+
+      <div id="group-face">
         <h1>FEUP Circle</h1>
+        <img src="../../res/a3_only/feup.png" class="img-circle" width="100px" height="100px">
       </div>
 
       <div id="posts">
-
-        <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
+	 <div class="jumbotron">
+        <div class="jumbotron">
 
           <div id="post_header">
           <img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 1em;">
-          <a href="#" style="font-size:2em;">#Member4 </a>
+          <a href="#" style="font-size:2em;">#Member4</a>
           <h1 style="display: inline-block;">[21/02/2017] posted:</h1>
         </div>
 
@@ -300,114 +98,26 @@
       </form>
       </div>
       </div>
-     </div>
+        </div>
 
         <div id="post_img">
         <img src="capa3.jpg" width="300px" height="300px">
-      </div>
 
-        </div
+        </div>
+		
+	</div>
+    </div>
 
 
-      <ul id="notifications" class="list-group" style="padding-left: 0;padding-top:0;">
+     <!-- <ul id="notifications" class="list-group" style="padding-left: 0;padding-top:0;">
     <li class="list-group-item" style="font-size:2em; color:#191970">Notifications: </li>
     <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"> <a href="#">#Guest1</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"> <img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
     <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest2</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
     <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest3</a> <p>Wants to join your Circle</p> <img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
     <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest4</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
-  </ul>
-
-
-		</div>
-
-		<div id="blackBar" class="alert alert-success" style="background-color: #eee">
-		<div class="btn btn-default glyphicon glyphicon-off" style="background-color: black; color: white">&nbspLogout</div>   <!-- Logout button -->
-		<!--   <!-- Side menu button -->
-		<div class="btn btn-default glyphicon glyphicon-list" onclick="openNav()" style="position: absolute;top: 38%;left: 1%;"></div>
-
-		<!-- <a href="http://facebook.com" style="color: black; position: absolute;top: 50%;left: 45%;">List all my Groups!</a> -->
-
-		<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 38%; color: #2E2D88;"></div>
-		<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 48%; color: #2E2D88;"></div>
-		<div class="glyphicon glyphicon-user" style="position: absolute; top: 50%; left: 58%; color: #2E2D88;"></div>
-
-		</div>
-
-	</div>
-</div>
-
-<div id="mySidenav" class="sidenav" style="text-align: center">
-		<div  class="input-group input-group-lg" id="search" style="margin: 0 auto;">
-			<a href="#" class="glyphicon glyphicon-search" style = "color: #FFFFFF; background-color:#f0ad4e;" ></a>
-
-			<input type="text" class="form-control" placeholder="Search for a Circle">
-		</div>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-</body>
-
-</html>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-var clicks = 0;
-function openNav() {
-    document.getElementById("mySidenav").style.width = "350px";
-    document.getElementById("todo").style.marginLeft = "350px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-function closeNav() {
-	console.log("oioi");
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("todo").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-}
-
-
-function clicarfora()
-{
-console.log("clicou");
-if(document.getElementById("todo").style.marginLeft == "350px")
-	if(clicks == 1){
-		closeNav();
-		clicks = 0;
-	}
-	else
-		clicks++;
-}
-
-</script>
-
-  
-
-<body>
-	<div id="circle_header">
-		<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button>
-		<img src="201405197.jpg" class="img-circle">
-		<button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button>
-	</div>
-	
-	<div id="container">
-			<h2>Circle Name</h2>
-			<div id="post">
-				<h4>User Name<h4>
-				<a id="post_comment">asdsadsadaasssssssssssssssssssssssssssssssssdddddddddddddddd</a><br>
-				<img src="201405197.jpg" class="img-circle">
-			</div>
-			<div id="post">
-				<h4>User2</h4>
-				<a id="post_comment">GAY</a>
-			</div>
+  </ul> -->
 	</div>
 
 </body>
 
 </html>
-
