@@ -2,154 +2,111 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<title="MeetTheCircle">
+<title>MeetTheCircle</title>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../js/homepage.js"></script>
+
 <head>
-  <style>
-  .jumbotron{
-    background-color: #2E2D88;
-    color: white;
-  }
+    <style>
+        #title{
+            font-size: 16px;
+            font-size: 4vw;
+            vertical-align: middle;
+            font-family: 'Pacifico', cursive;
+            color: #191970;
+            word-wrap: break-word;
+        }
 
-  .tab-content{
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-  }
+        .img-responsive {
+            margin: 0 auto;
+        }
 
-  #Logo{
-    height: 100px;
-    width: 100px;
-  }
+        .font-pacifico{
+            font-family: 'Pacifico', cursive;
+        }
 
-  #title{
-    font-size: 6em;
-    vertical-align: middle;
-    font-family: 'Pacifico', cursive;
-    padding-left: 15px;
-    color: #191970;
-  }
-
-  #create{
-    font-size: 3em;
-    vertical-align: middle;
-    font-family: 'Pacifico', cursive;
-    padding-left: 15px;
-    color: white;
-  }
-
-  #page-face{
-    display: inline-block;
-    float: left;
-    width: 400px;
-  }
-  #page-face-img{
-    display: inline-block;
-    float: left;
-    width: 400px;
-    height: 300px;
-  }
-  #page-face-text{font-size: 3em;
-  vertical-align: middle;
-  
-  padding-left: 15px;
-  color: white;}
-  #signup{
-    display: inline-block;
-    transform: translateX(15em );
-      width: 400px;
-  }
-
-  #login{width: 30em;}
-  #img{display: inline-block;}
-  #letters{display: inline-block;}
-  #login{display: inline-block;margin-bottom: 0;transform: translateY(-2em);}
-  #inputs{display: inline-block;width: 20em;float: left;margin-left: 2em;}
-  #button{display: inline-block;margin-left: 1em;}
-  #user{background-color: #2E2D88;color:white;}
-  #pass{background-color: #2E2D88;color: white;}
-
-
-  </style>
+        .well{
+            background-color: #2E2D88;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<div id="page-header" class="page-header">
+    <div class="row">
+        <div class="col-sm-2" id="img">
+            <img src="../res/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
+        </div>
+        <div class="col-sm-5 text-center">
+            <span id="title">MeetTheCircle</span>
+        </div>
 
+        <div id="login">
+            <form  id="login_form" method="post">
+                <div class="col-sm-3">
+                    <div id="inputs">
+                        <div  class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="username" type="text" class="form-control" placeholder="Email">
+                        </div><br>
+                        <div  class="input-group input-group-lg" >
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" type="password" class="form-control" placeholder="Password">
+                        </div><br>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button  id="button" type="submit" class="btn btn-warning btn-lg btn-block font-pacifico">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-  <div id="img">
-<img src="../res/logo.png" id="Logo" alt="Network Logo">
+    <div class="row">
+        <div id="page-face" class="well col-sm-6 hidden-xs" >
+            <h1 id="page-face-text">Discuss your interests inside the privacy of your circle.</h1>
+            <img src="../res/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
+        </div>
+
+        <div id="signup" class="col-sm-6 text-center">
+            <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
+            <span id="create" class="hidden-xs font-pacifico">Create New Account</span>
+            <form id="signup_form" method="post">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">First name</span>
+                    <input type="text" class="form-control" placeholder="First name">
+                </div><br>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">Last name</span>
+                    <input type="text" class="form-control" placeholder="Last name">
+                </div><br>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">Email</span>
+                    <input type="text" class="form-control" placeholder="Email">
+                </div><br>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">Password</span>
+                    <input type="password" class="form-control" placeholder="Password">
+                </div><br>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">Password confirmation</span>
+                    <input type="password" class="form-control" placeholder="Password confirmation">
+                </div><br>
+                <button type="submit" class="btn btn-warning btn-lg btn-block font-pacifico">Register</button>
+            </form>
+        </div>
+    </div>
 </div>
-<div id="letters">
-<span id="title">MeetTheCircle</span>
-</div>
-
-
-<form  id="login" method="post">
-  <div id="inputs">
-  <div  class="input-group input-group-lg">
-    <span id="user" class="input-group-addon" style="padding 100px">UserName</span>
-    <input id="username" type="text" class="form-control" placeholder="UserName">
-  </div>
-  <div  class="input-group input-group-lg" >
-    <span id="pass" class="input-group-addon">Password&nbsp</span>
-    <input id="password" type="password" class="form-control" placeholder="Password">
-  </div>
-</div>
-  <button  id="button" type="submit" class="btn btn-warning btn-lg">Login</button>
-</form>
-</div>
-
-<div class="jumbotron">
-
-  <div id="page-face" >
-  <span id="page-face-text">Discuss your interests inside the privacy of your circle.</span>
-  <img src="../res/friendship.png" id="page-face-img" alt="Network Logo">
-</div>
-
-<div id="signup">
-  <span id="create">Create New Account </span>
-<form method="post">
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon">First Name</span>
-    <input type="text" class="form-control" placeholder="First Name">
-  </div><br>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon">Last Name</span>
-    <input type="text" class="form-control" placeholder="Last Name">
-  </div><br>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon">E-Mail</span>
-    <input type="text" class="form-control" placeholder="E-Mail">
-  </div><br>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon">Password</span>
-    <input type="password" class="form-control" placeholder="Password">
-  </div><br>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon">Password Confirmation</span>
-    <input type="password" class="form-control" placeholder="Password Confirmation">
-  </div><br>
-  <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-</form>
-</div>
-
-</div>
-
-</div>
-
 </body>
-
 </html>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
