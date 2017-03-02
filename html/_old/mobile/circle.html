@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<title="Social Network v1">
+<title>MeetTheCircle</title>
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/circuloss.css">
@@ -10,52 +10,141 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../../js/circle.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <head>
   <style>
+    .sidenav {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding:0%;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
   .jumbotron{
     background-color: #2E2D88;
     color: white;
   }
 
+.page-header{
+	height:3%;
+}
+  
 #page-header{
 	display:block;
 	width:100%;
+	height:5%;
 	margin-bottom:10%;
 }
 
 #btn1
 {	
 	position:absolute;
+	top:0%;
 	left:0%;
 }
 #btn2
 {	
 	position: absolute;
+	top:0%;
 	left: 50%;
 	transform: translate(-50%); 
 }
 #btn3
 {
 	position:absolute;
+	top:0%;
 	right:0%;
 }
 
-h1{
+div#group-face h1{
+	display:inline-block;
 	color:blue;
+	width:60%;
+	padding:0%;
+	margin:1%;
+}
+
+div#group-face img{
+	display:inline-block;
+	text-align:center;
+	width:25%;
+	height:15%;
+	padding:0%;
+	margin:1%;
+}
+
+img{
+	width:20%;
+	height:10%;
+}
+div.jumbotron{
+	padding-top:2%;
+}
+#post-header{
+	padding:1%;
+	text-align:center;
+}
+div#post-header a{
+	font-size:250%;
+}
+
+div#post-header p{
+	width:20%;
+	font-size:100%;
+	margin:0%;
+	margin-left:0%;
+}
+
+#post-description{
+	padding:5%;
+}
+
+#post-img{
+text-align:center;
+height:15%;
+}
+
+div#post-description p{
+	border-style:solid;
+	border-color:green;
+	border-radius:5px;
+}
+#search_bar{
+display:none;
 }
 
   </style>
 </head>
 
 <body>
-
+<div id="todo" onclick="clicarfora()">
 	<div id="page-header" class="page-header">
-		<div id="btn1"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Members</p> </div>
+		<div id="btn1"><button  type="button" class="btn btn-primary btn-circle btn-lg" onclick="openNav_memb()"><i class="glyphicon glyphicon-list"></i></button> <p>Members</p> </div>
 		<div id="btn2"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-search"></i></button>	<p>Search</p></div>
-		<div id="btn3"><button  type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button> <p>Votes</p></div>
+		<div id="btn3"><button  type="button" class="btn btn-primary btn-circle btn-lg" onclick="openNav_vote()"><i class="glyphicon glyphicon-list"></i></button> <p>Votes</p></div>
+		<input id="search_bar" type="text" class="form-control" placeholder="Search for a Circle">
 	</div>
+	
 
 	<!--<div id="side_bar_members">
       <ul id="info" class="list-group">
@@ -69,21 +158,20 @@ h1{
 
 
       <div id="group-face">
-        <h1>FEUP Circle</h1>
+        <h1 align="left">FEUP Circle</h1>
         <img src="../../res/a3_only/feup.png" class="img-circle" width="100px" height="100px">
       </div>
 
-      <div id="posts">
-	 <div class="jumbotron">
+      <div id="container">
         <div class="jumbotron">
 
-          <div id="post_header">
-          <img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 1em;">
-          <a href="#" style="font-size:2em;">#Member4</a>
-          <h1 style="display: inline-block;">[21/02/2017] posted:</h1>
+          <div id="post-header">
+		  <p>Posted by: </p>
+          <img src="../../res/user.png" shape="circle">
+          <a href="#">Member4</a>
         </div>
 
-          <div id="post_description">
+          <div id="post-description">
           <p>[RCOM] Exercicios do moodle  asdjhada asidha dqwd iqhwd qdqwidh a qiweuqweodofihs df qweoiqyweu  </p>
 
           <div class="dropdown-replies">
@@ -100,13 +188,11 @@ h1{
       </div>
         </div>
 
-        <div id="post_img">
-        <img src="capa3.jpg" width="300px" height="300px">
-
+        <div id="post-img">
+        <img src="../../res/a3_only/capa3.jpg" style="height:100%; width:50%">
         </div>
 		
 	</div>
-    </div>
 
 
      <!-- <ul id="notifications" class="list-group" style="padding-left: 0;padding-top:0;">
@@ -117,7 +203,59 @@ h1{
     <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest4</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
   </ul> -->
 	</div>
-
+  	</div>
+	<div id="mySidenav_memb" class="sidenav" style="text-align: center">
+		<a href="#">Member1</a>
+		<a href="#">Member2</a>
+		<a href="#">Member3</a>
+		<a href="#">Member4</a>
+	</div>
+	<div id="mySidenav_vote" class="sidenav" style="text-align: center">
+		<ul id="notifications" class="list-group">
+    <li class="list-group-item" style="font-size:2em; color:#191970">Notifications: </li>
+    <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"> <a href="#">#Guest1</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"> <img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
+    <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest2</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
+    <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest3</a> <p>Wants to join your Circle</p> <img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
+    <li class="list-group-item list-group-item-success"><img src="user.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">#Guest4</a> <p>Wants to join your Circle</p><img id="check" src="checked.png" width="30px" height="30px"><img id="uncheck" src="unchecked.png" width="30px" height="30px"></li>
+  </ul>
+	</div>
 </body>
 
 </html>
+
+<script type="text/javascript">
+var clicks = 0;
+function openNav_memb() {
+    document.getElementById("mySidenav_memb").style.width = "25%";
+    document.getElementById("todo").style.marginLeft = "25%";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function openNav_vote() {
+    document.getElementById("mySidenav_vote").style.width = "25%";
+    document.getElementById("todo").style.marginLeft = "25%";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav_memb").style.width = "0";
+	document.getElementById("mySidenav_vote").style.width = "0";
+	console.log("asdsad");
+	document.getElementById("todo").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+
+
+function clicarfora()
+{
+console.log("clicou");
+if(document.getElementById("todo").style.marginLeft == "25%")
+	if(clicks == 1){
+		closeNav();
+		clicks = 0;
+	}
+	else
+		clicks++;
+}
+
+</script>
