@@ -110,7 +110,98 @@
         </div>
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
-            POSTS!
+            <div id="post1" class="row">
+				<div id="circle_title" class="col-xs-12">
+					<h2>Circle Name</h2>
+				</div>
+                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+                <div class="col-xs-11">
+                    <h4>User1 <small><i>Posted on February 19, 2016</i></small></h4>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <p>Cras sit amet nibh libero, in gravida nulla.
+                    <p>Nulla vel metus scelerisque ante sollicitudin.
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla.
+                    Donec lacinia congue felis in faucibus.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6"><img src="../res/book.png" class="img-responsive"></div>
+                <div class="col-xs-1">
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                </div>
+                <div class="col-xs-9">
+                    <h3 class="text-center">Comments</h3>
+                </div>
+                <div class="col-xs-1">
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                </div>
+                <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <img src="../res/user.png" class="media-object" style="width:60px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">User2 <small><i>19/02/2016 22:30</i></small></h4>
+                        <p>És uma merda</p>
+                    </div>
+                </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="../res/user.png" class="media-object" style="width:60px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">User2 <small><i>19/02/2016 22:46</i></small></h4>
+                            <p>Mesmo Caralho</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div id="post1" class="row">
+				<div id="circle_title"  class="col-xs-12">
+					<h2>Circle Nam2e</h2>
+				</div>
+                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+                <div class="col-xs-11">
+                    <h4>User1 <small><i>Posted on February 19, 2016</i></small></h4>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <p>Cras sit amet nibh libero, in gravida nulla.
+                    <p>Nulla vel metus scelerisque ante sollicitudin.
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla.
+                    Donec lacinia congue felis in faucibus.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6"><img src="../res/book.png" class="img-responsive"></div>
+                <div class="col-xs-1">
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                </div>
+                <div class="col-xs-9">
+                    <h3 class="text-center">Comments</h3>
+                </div>
+                <div class="col-xs-1">
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                </div>
+                <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <img src="../res/user.png" class="media-object" style="width:60px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">User2 <small><i>19/02/2016 22:30</i></small></h4>
+                        <p>És uma merda</p>
+                    </div>
+                </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="../res/user.png" class="media-object" style="width:60px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">User2 <small><i>19/02/2016 22:46</i></small></h4>
+                            <p>Mesmo Caralho</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
