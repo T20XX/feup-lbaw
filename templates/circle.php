@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row">circle.php
         <div id="left_sidebar" class="col-xs-2 col-sm-2">
             <div class="row">
                 <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg" id="left_sidebar_btn"
