@@ -86,15 +86,24 @@
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
 			<div class="row">
-				<div class="col-xs-8 col-sm-8"<p><a href="#" class="btn btn-info btn-lg">
-					<span class="glyphicon glyphicon-plus"></span>Add to group</a><input type="text"/></p>
+				<div class="col-xs-4 col-sm-4 ">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-secondary" type="button">Add To Circle</button>
+						</span>
+						<input type="text" class="form-control" placeholder="Search for...">
+					</div>
 				</div>
-				<div class="col-xs-4 col-sm-4"<p><a href="#" class="btn btn-info btn-lg">
-					<span class="glyphicon glyphicon-remove"></span>Leave group</a></p>
-				</div>
-				<div class="col-xs-12 col-sm-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">Post</div>
+				<div class="col-xs-4 col-sm-4 ">
+					<div class="panel-group">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse1">Add post</a>
+								</h4>
+							</div>
+								<div id="collapse1" class="panel-collapse collapse">
+									<div class="panel panel-default">
                 <div class="panel-body">
                     <textarea class="form-control" rows="5" id="comment">
                     Curabitur aliquet felis rutrum ex aliquam laoreet. Pellentesque porttitor, tortor convallis varius sagittis, felis turpis commodo lacus, feugiat auctor est massa at erat.
@@ -107,6 +116,15 @@
 					<button type="button" class="btn btn-default btn-block">Post</button>
                 </div>
             </div>
+									</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-sm-4">
+					<a href="#" class="btn btn-secondary">
+					<span class="glyphicon glyphicon-remove"></span>Leave group</a></p>
+				</div>
+				<div class="col-xs-12 col-sm-12">
 			</div>
             <div id="post1" class="row">
                 <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
