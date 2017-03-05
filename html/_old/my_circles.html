@@ -116,6 +116,34 @@
     font-size: 2em;
   }
 
+  #post_buttons{
+    display: inline-block;
+  }
+
+  #create_circle_buton{
+    margin-bottom: 1em;
+    border-radius: 25px;
+    border: 2px solid #2E2D88;
+    background-color: #57d8ab;
+    padding: 1em;
+    padding-bottom: 0;
+  }
+
+  #create_circle_buton a{
+    margin-left: 1em;
+    font-size: 1.5em;
+  }
+
+  #create_circle_buton .panel-body{
+    color: black;
+  }
+
+  #info{margin-top: 1em;}
+
+  #info li{
+    display: inline-block;
+  }
+
   .dropdown-replies {
    position: relative;
    display: inline-block;
@@ -201,98 +229,96 @@
 
         <div id="post_header">
         <img src="../../res/a3_only/feup.png" class="img-circle" width="100px" height="100px">
-        <a href="#" style="font-size:4em; color: black;">Feup Circle </a>
-        <br>
-        <h1 style="display: inline-block;"><a>#Member 4</a> [21/02/2017] posted:</h1>
+        <a href="#" style="font-size:3em; color: black;">Feup Circle </a>
+        <ul id="info" class="list-group" style="padding-left: 0;padding-top:0;">
+      <li class="list-group-item"><img src="../../res/book.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Add to Favorites</a></li>
+      <li class="list-group-item"><img src="../../res/email.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Send Request</a></li>
+      <li class="list-group-item"><img src="../../res/design.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Settings</a></li>
+      <li class="list-group-item"><img src="../../res/exit.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Leave Circle</a></li>
+    </ul>
       </div>
 
-        <div id="post_description">
-        <p>[RCOM] Exercicios do moodle  asdjhada asidha dqwd iqhwd qdqwidh a qiweuqweodofihs df qweoiqyweu  </p>
+      <div id="post_header">
+      <img src="../../res/a3_only/java.png" class="img-circle" width="100px" height="100px">
+      <a href="#" style="font-size:3em; color: black;">JAVA</a>
+      <ul id="info" class="list-group" style="padding-left: 0;padding-top:0;">
+    <li class="list-group-item"><img src="../../res/book.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Add to Favorites</a></li>
+    <li class="list-group-item"><img src="../../res/email.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Send Request</a></li>
+    <li class="list-group-item"><img src="../../res/design.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Settings</a></li>
+    <li class="list-group-item"><img src="../../res/exit.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Leave Circle</a></li>
+  </ul>
+    </div>
 
-        <div class="dropdown-replies">
-    <button  id="button"  class="btn btn-warning btn-block font-pacifico">Reply</button>
-    <div class="dropdown-content-replies">
-    <form  method="POST" id="reply" action="action_create_reply.php">
-      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
-      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
-      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
-      <textarea name="review" rows="5" cols="30"></textarea>
-    <input type="submit" value="Comment">
-    </form>
-    </div>
-    </div>
+    <div id="post_header">
+    <img src="../../res/a3_only/bodyboard.png" class="img-circle" width="100px" height="100px">
+    <a href="#" style="font-size:3em; color: black;">BodyBoard Matosinhos</a>
+    <ul id="info" class="list-group" style="padding-left: 0;padding-top:0;">
+  <li class="list-group-item"><img src="../../res/book.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Add to Favorites</a></li>
+  <li class="list-group-item"><img src="../../res/email.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Send Request</a></li>
+  <li class="list-group-item"><img src="../../res/design.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Settings</a></li>
+  <li class="list-group-item"><img src="../../res/exit.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Leave Circle</a></li>
+</ul>
+  </div>
+
+  <div id="post_header">
+  <img src="../../res/a3_only/hard.png" class="img-circle" width="100px" height="100px">
+  <a href="#" style="font-size:3em; color: black;">HardClub 18/07/2017</a>
+  <ul id="info" class="list-group" style="padding-left: 0;padding-top:0;">
+<li class="list-group-item"><img src="../../res/book.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Add to Favorites</a></li>
+<li class="list-group-item"><img src="../../res/email.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Send Request</a></li>
+<li class="list-group-item"><img src="../../res/design.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Settings</a></li>
+<li class="list-group-item"><img src="../../res/exit.png" width="50px" height="50px" shape="circle" style="margin-right: 2em;"><a href="#">Leave Circle</a></li>
+</ul>
+</div>
+
+<div id="create_circle_buton">
+
+
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <img src="../../res/plus.png" width="50px" height="50px"><a data-toggle="collapse" href="#collapse1">Create New Circle</a>
+        </h4>
       </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Circle Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Circle Name">
+  </div>
 
-      <div id="post_img">
-      <img src="../../res/a3_only/networks.png" width="300px" height="300px">
-    </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Privacy Preference</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>Public</option>
+      <option>Private</option>
+    </select>
+  </div>
 
+
+
+  <div class="form-group">
+    <label for="exampleInputFile">Choose the Circle's Picture</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+
+</form>
+        </div>
+        <button  class="btn btn-primary btn-block font-pacifico">OK</button>
       </div>
-
-      <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
-
-        <div id="post_header">
-        <img src="../../res/a3_only/capa3.jpg" class="img-circle" width="100px" height="100px">
-        <a href="#" style="font-size:4em; color: black;">Basket Circle </a>
-        <br>
-        <h1 style="display: inline-block;"><a>#Member 2</a> [18/02/2017] posted:</h1>
-      </div>
-
-        <div id="post_description">
-        <p>Pessoal siga jogar uma bolinha ao Dragão Caixa? </p>
-
-        <div class="dropdown-replies">
-    <button  id="button"  class="btn btn-warning btn-block font-pacifico">Reply</button>
-    <div class="dropdown-content-replies">
-    <form  method="POST" id="reply" action="action_create_reply.php">
-      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
-      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
-      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
-      <textarea name="review" rows="5" cols="30"></textarea>
-    <input type="submit" value="Comment">
-    </form>
     </div>
+  </div>
+
+</div>
+
     </div>
-      </div>
-
-      <div id="post_img">
-      <img src="../../res/a3_only/capa3.jpg" width="300px" height="300px">
-    </div>
-
-      </div>
-
-      <div class="jumbotron" style="background-color: white;margin-right:1em;margin-left:1em;">
-
-        <div id="post_header">
-        <img src="../../res/a3_only/capa2.jpg" class="img-circle" width="100px" height="100px">
-        <a href="#" style="font-size:4em; color: black;">Random Circle </a>
-        <br>
-        <h1 style="display: inline-block;"><a>#Member 1</a> [20/01/2017] posted:</h1>
-      </div>
-
-        <div id="post_description">
-        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris ut diam eu purus dignissim lobortis. </p>
-
-        <div class="dropdown-replies">
-    <button  id="button"  class="btn btn-warning btn-block font-pacifico">Reply</button>
-    <div class="dropdown-content-replies">
-    <form  method="POST" id="reply" action="action_create_reply.php">
-      <input type="hidden"  name="username" value="<?=$_SESSION['username']?>">
-      <input type="hidden"  name="cat_id"  value="<?=$restaurant['id']?>">
-      <input type="hidden"  name="reply"  value="<?=$review['id']?>">
-      <textarea name="review" rows="5" cols="30"></textarea>
-    <input type="submit" value="Comment">
-    </form>
-    </div>
-    </div>
-      </div>
-
-      <div id="post_img">
-      <img src="../../res/a3_only/capa2.jpg" width="300px" height="300px">
-    </div>
-
-      </div>
-
 		</div>
 
 		<div id="blackBar" class="alert alert-success" style="background-color: #ffce76">
