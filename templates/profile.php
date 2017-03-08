@@ -8,7 +8,7 @@
         <div class="col-sm-6 col-sm-pull-6">
             <div class="row">
                 <div class="col-xs-9">
-                    <h2>User 1</h2>
+                    <a href="profile.php"><h2>User 1</h2></a>
                 </div>
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-envelope"></span></button>
@@ -61,29 +61,27 @@
         <div class="col-sm-6">
             <div id="circles" class="row text-center well">
                 <div class="col">
-                    <h3>Circles</h3>
+                    <a href="circles.php"><h3>Circles</h3></a>
                 </div>
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-
-                    <p>dfhskd</p>
+					<a href="circle.php"><p>dfhfa</p></a>
                 </div>
                 <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-                    <p>dfhska</p>
+                    <a href="circle.php"><p>dfhfa</p></a>
                 </div>
                 <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-                    <p>dfhfa</p>
+                    <a href="circle.php"><p>dfhfa</p></a>
                 </div>
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-
-                    <p>dfhskd</p>
+					<a href="circle.php"><p>dfhfa</p></a>
                 </div>
                 <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-                    <p>dfhska</p>
+                    <a href="circle.php"><p>dfhfa</p></a>
                 </div>
             </div>
         </div>

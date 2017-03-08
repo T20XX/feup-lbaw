@@ -46,12 +46,12 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header col-sm-3 hidden-xs">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="feed.php">
                     <img src="../res/logo.png" class="img-responsive hidden-xs">
                 </a>
             </div>
             <ul class="nav navbar-nav col-xs-9 col-sm-6">
-                <li><a href="#"><span id="title">MeetTheCircle</span></a></li>
+                <li><a href="feed.php"><span id="title">MeetTheCircle</span></a></li>
             </ul>
             <div class="search nav-content col-sm-3 hidden-xs">
                 <div class="input-group">
