@@ -16,27 +16,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?=$jsPath?>"></script>
     <style>
-        #title{
-            font-size: 16px;
-            font-size: 4vw;
-            vertical-align: middle;
-            font-family: 'Pacifico', cursive;
-            color: #191970;
-            word-wrap: break-word;
-        }
-
-        .img-responsive {
-            margin: 0 auto;
-        }
-
-        .navbar-brand {
-            padding: 0px;
-        }
-        .navbar-brand>img {
-            height: 100%;
-            padding: 2px;
-            width: auto;
-        }
 
     </style>
 </head>
