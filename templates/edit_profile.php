@@ -5,19 +5,19 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">First Name</div>
-                        <div class="panel-body"><input type="text" class="form-control" id="hometown" value="User"></div>
+                        <div class="panel-body"><input type="text" class="form-control" id="first_name" value="User"></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Last Name</div>
-                        <div class="panel-body"><input type="text" class="form-control" id="hometown" value="1"></div>
+                        <div class="panel-body"><input type="text" class="form-control" id="last_name" value="1"></div>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Email</div>
-                        <div class="panel-body"><input type="text" class="form-control" id="hometown" value="user1@gmail.com"></div>
+                        <div class="panel-body"><input type="text" class="form-control" id="email" value="user1@gmail.com"></div>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Birthday</div>
-                        <div class="panel-body"><input type="text" class="form-control" id="hometown" value="16/04/1994"></div>
+                        <div class="panel-body"><input type="text" class="form-control" id="birthday" value="16/04/1994"></div>
                         <div class="panel-footer"><span class="glyphicon glyphicon-eye-close"></div>
                     </div>
                 </div>
