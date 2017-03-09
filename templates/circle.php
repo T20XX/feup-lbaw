@@ -134,30 +134,22 @@
                 <div class="col-xs-11">
                     <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                    <p>Cras sit amet nibh libero, in gravida nulla.
+				<div class="row">
+                <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+					<p>Cras sit amet nibh libero, in gravida nulla.</p>
+					<p>Nulla vel metus scelerisque ante sollicitudin.
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    Fusce condimentum nunc ac nisi vulputate fringilla.
+                    Donec lacinia congue felis in faucibus.</p>
+					<p>Cras sit amet nibh libero, in gravida nulla.</p>
                     <p>Nulla vel metus scelerisque ante sollicitudin.
                     Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     Fusce condimentum nunc ac nisi vulputate fringilla.
                     Donec lacinia congue felis in faucibus.</p>
                 </div>
-
-                <div class="col-xs-12 col-sm-6"><img src="../res/book.png" class="img-responsive"></div>
-				<div class="col-xs-12 col-sm-12">
-					<div class="panel panel-default">
-				<div class="panel-heading">Leave a comment</div>
-                <div class="panel-body">
-                    <textarea class="form-control" rows="5" id="comment">
-                    Curabitur aliquet felis rutrum ex aliquam laoreet. Pellentesque porttitor, tortor convallis varius sagittis, felis turpis commodo lacus, feugiat auctor est massa at erat.
-                    Fusce varius cursus dignissim. Integer sed augue semper, interdum massa ac, tincidunt metus. Morbi cursus ante eget pellentesque gravida.
-					Cras vel feugiat mi. Etiam magna sapien, euismod sit amet mollis in, ornare eget ipsum. Etiam congue eu dolor ut vulputate.
-                    Pellentesque tortor lorem, malesuada vitae efficitur vitae, efficitur vel eros.
-					Sed iaculis, ante eget porttitor fermentum, massa nulla dictum augue, vitae euismod magna arcu in orci.
-                    </textarea>
-                    <button type="button" class="btn btn-default btn-block">Post your comment</button>
-                </div>
-            </div>
+                <div class="col-xs-12 col-sm-5" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
 				</div>
+				<div class="row">
                 <div class="col-xs-2">
                     <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-up"></span></button>
                 </div>
@@ -167,6 +159,16 @@
                 <div class="col-xs-2">
                     <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-arrow-down"></span></button>
                 </div>
+				</div>
+				<div class="col-xs-12 col-sm-12">
+					<div class="panel panel-default">
+                <div class="panel-body">
+                    <textarea class="form-control" rows="1" id="comment">
+                    </textarea>
+                    <button type="button" class="btn btn-default btn-block">Post your comment</button>
+                </div>
+            </div>
+				</div>
                 <div class="col-xs-12">
                 <div class="media">
                     <div class="media-left">
