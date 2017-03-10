@@ -86,6 +86,9 @@
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
+				<div class="col-xs-12">
+					<h2 style="text-align:center; margin-top:0%"><a href="circle.php">Circle Name</a></h2>
+				</div>
                 <div class="col-xs-12 col-sm-5 ">
                     <input type="text" class="form-control" placeholder="Search inside this circle...">
                 </div>
@@ -115,21 +118,15 @@
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel panel-default">
                         <div class="panel-body">
-									<textarea class="form-control" rows="5" id="comment">
-									Curabitur aliquet felis rutrum ex aliquam laoreet. Pellentesque porttitor, tortor convallis varius sagittis, felis turpis commodo lacus, feugiat auctor est massa at erat.
-									Fusce varius cursus dignissim. Integer sed augue semper, interdum massa ac, tincidunt metus. Morbi cursus ante eget pellentesque gravida.
-									Cras vel feugiat mi. Etiam magna sapien, euismod sit amet mollis in, ornare eget ipsum. Etiam congue eu dolor ut vulputate.
-									Pellentesque tortor lorem, malesuada vitae efficitur vitae, efficitur vel eros.
-									Sed iaculis, ante eget porttitor fermentum, massa nulla dictum augue, vitae euismod magna arcu in orci.
-									</textarea>
+									<textarea placeholder="Post here..." class="form-control" rows="3" id="comment"></textarea>
                             <button type="button" class="btn btn-default btn-block">Upload new photo</button>
                             <button type="button" class="btn btn-default btn-block">Post</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div id="post1" class="row" style="margin:2%">
+	<!--border-style:solid; border-width:medium;border-radius:5px; border-color:green;-->
+            <div id="post1" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                 <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
                 <div class="col-xs-11">
                     <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
@@ -166,7 +163,7 @@
                             <textarea  placeholder="Comment here..." class="form-control" rows="1" id="comment"></textarea>
                             <button type="button" class="btn btn-default btn-block">Post your comment</button>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-10">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="../res/user.png" class="media-object" style="width:60px">
@@ -174,8 +171,41 @@
                                 <div class="media-body">
                                     <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
                                     <p>Bom post</p>
+							<div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
+                                    <p>Mesmo</p>
                                 </div>
                             </div>
+							<div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
+                                    <p>Yep</p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+							<div class="row">
+								<div id="collapse_reply1" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+											<button type="button" class="btn btn-default btn-block">Reply</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply1" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
+						<div class="col-xs-10">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="../res/user.png" class="media-object" style="width:60px">
@@ -185,18 +215,30 @@
                                     <p>Top</p>
                                 </div>
                             </div>
+							<div class="row">
+								<div id="collapse_reply2" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+											<button type="button" class="btn btn-default btn-block">Reply</button>
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply2" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
                     </div>
                 </div>
             </div>
-
-            <div id="post2" class="row" style="margin:2%">
+            <div id="post2" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                 <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
                 <div class="col-xs-11">
                     <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                    <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>
                         <p>Nulla vel metus scelerisque ante sollicitudin.
                             Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -208,6 +250,7 @@
                             Fusce condimentum nunc ac nisi vulputate fringilla.
                             Donec lacinia congue felis in faucibus.</p>
                     </div>
+                    <div class="col-xs-12 col-sm-5" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-2">
@@ -226,19 +269,85 @@
                             <textarea  placeholder="Comment here..." class="form-control" rows="1" id="comment"></textarea>
                             <button type="button" class="btn btn-default btn-block">Post your comment</button>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-10">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
+                                    <p>Bom post</p>
+									<div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
+                                    <p>Mesmo</p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+							<div class="row">
+								<div id="collapse_reply3" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+											<button type="button" class="btn btn-default btn-block">Reply</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply3" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
+						<div class="col-xs-10">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User3 </a><small><i>19/02/2016 22:46</i></small></h4>
+                                    <p>Top</p>
+                                </div>
+                            </div>
+							<div class="row">
+								<div id="collapse_reply4" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply4" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
                     </div>
                 </div>
             </div>
 
-            <div id="post3" class="row" style="margin:2%">
+            <div id="post3" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                 <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
                 <div class="col-xs-11">
                     <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+                    <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                        <p>Nulla vel metus scelerisque ante sollicitudin.
+                            Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            Fusce condimentum nunc ac nisi vulputate fringilla.
+                            Donec lacinia congue felis in faucibus.</p>
+                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                        <p>Nulla vel metus scelerisque ante sollicitudin.
+                            Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                            Fusce condimentum nunc ac nisi vulputate fringilla.
+                            Donec lacinia congue felis in faucibus.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-5" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-2">
@@ -257,7 +366,7 @@
                             <textarea  placeholder="Comment here..." class="form-control" rows="1" id="comment"></textarea>
                             <button type="button" class="btn btn-default btn-block">Post your comment</button>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-10">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="../res/user.png" class="media-object" style="width:60px">
@@ -265,8 +374,31 @@
                                 <div class="media-body">
                                     <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
                                     <p>Bom post</p>
+									<div class="media">
+                                <div class="media-left">
+                                    <img src="../res/user.png" class="media-object" style="width:60px">
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php"><h4>User2 </a><small><i>19/02/2016 22:30</i></small></h4>
+                                    <p>Mesmo</p>
                                 </div>
                             </div>
+                                </div>
+                            </div>
+							<div class="row">
+								<div id="collapse_reply5" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply5" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
+						<div class="col-xs-10">
                             <div class="media">
                                 <div class="media-left">
                                     <img src="../res/user.png" class="media-object" style="width:60px">
@@ -276,7 +408,19 @@
                                     <p>Top</p>
                                 </div>
                             </div>
+							<div class="row">
+								<div id="collapse_reply6" class="panel-collapse collapse">
+									<div class="panel panel-default">
+										<div class="panel-body">
+											<textarea placeholder="Reply here..." class="form-control" rows="3" id="comment"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
                         </div>
+						<div class="col-xs-2">
+							<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply6" style="display: block; margin: 0 auto;">Reply</button>
+						</div>
                     </div>
                 </div>
             </div>
