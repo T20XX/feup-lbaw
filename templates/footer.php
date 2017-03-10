@@ -16,7 +16,7 @@
                     <li><a href="invites.php"><span class="glyphicon glyphicon-log-in"></span> <span class="badge">2</span> Invites</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    <li><a href="homepage.html"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
                 </ul>
             </div>
