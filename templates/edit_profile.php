@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row well">
+    <div class="row well" style="border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">

@@ -113,7 +113,7 @@
 			<div class = "row">
 			<div id="invite1">
 				<div class="col-xs-12 col-sm-6">
-					<div class="panel panel-default">
+					<div class="panel panel-default" style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
 						<div class="panel-heading">
 							<p><a href="profile.php">User2</a> invited you to: </p>
 						</div>
@@ -142,7 +142,7 @@
 			</div>
 			<div id="invite2">
 				<div class="col-xs-12 col-sm-6">
-					<div class="panel panel-default">
+					<div class="panel panel-default"style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
 						<div class="panel-heading">
 							<p><a href="profile.php">User2</a> invited you to: </p>
 						</div>
@@ -171,7 +171,7 @@
 			</div>
 			<div id="invite3">
 				<div class="col-xs-12 col-sm-6">
-					<div class="panel panel-default">
+					<div class="panel panel-default"style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
 						<div class="panel-heading">
 							<p><a href="profile.php">User2</a> invited you to: </p>
 						</div>
@@ -200,7 +200,7 @@
 			</div>
 			<div id="invite4">
 				<div class="col-xs-12 col-sm-6">
-					<div class="panel panel-default">
+					<div class="panel panel-default" style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
 						<div class="panel-heading">
 							<p><a href="profile.php">User2</a> invited you to: </p>
 						</div>

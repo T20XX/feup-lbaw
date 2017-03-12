@@ -18,16 +18,16 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-success">
                                 <img src="../res/logo.png" class="img-responsive">
-                                Member 1
+								<a href="messages.php">Member 1</a>
                             </li>
                             <li class="list-group-item list-group-item-success">
-                                Member 2
+								<a href="messages.php">Member 2</a>
                             </li>
                             <li class="list-group-item list-group-item-success">
-                                Member 3
+								<a href="messages.php">Member 3</a>
                             </li>
-                            <li class="list-group-item list-group-item-danger">
-                                Member 4
+                            <li class="list-group-item list-group-item-success">
+								<a href="messages.php">Member 4</a>
                             </li>
                         </ul>
                     </div>

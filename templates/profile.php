@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row well">
+    <div class="row well"style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <div class="col-sm-6 col-sm-push-6">
             <div>
                 <img src="../res/a3_only/capa1.jpg" class="img-responsive img-circle">
