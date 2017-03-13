@@ -118,12 +118,18 @@
                 </div>
             </div>
             <div id="post1" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-				<div id="circle_title" class="col-xs-12">
-					<a href="circle.php"><h2>Circle Name</h2></a>
-				<div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
-                <div class="col-xs-11">
-                    <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
-                </div>
+					<div id="circ	le_title" class="col-xs-12" style="text-align:center">
+						<a href="circle.php"><h2>Circle Name</h2></a>
+					</div>
+				<div class="row">
+					<div class="col-xs-2"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+					<div class="col-xs-8">
+						<a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
+					</div>
+					<div class="col-xs-2">
+						<button type="btn" class="btn-danger glyphicon glyphicon-warning-sign" data-toggle="tooltip" title="Report this post"></span>
+					</div>
+				</div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>
@@ -224,16 +230,22 @@
 						</div>
                     </div>
                 </div>
-			</div>
 		</div>
             <div id="post2" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-				<div id="circle_title" class="col-xs-12">
+				<div class="row">
+				<div id="circle_title" class="col-xs-12" style="text-align:center">
 					<a href="circle.php"><h2>Circle Name</h2></a>
 				</div>
-                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
-                <div class="col-xs-11">
-                    <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
-                </div>
+				</div>
+                <div class="row">
+					<div class="col-xs-2"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+					<div class="col-xs-8">
+						<a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
+					</div>
+					<div class="col-xs-2">
+						<button type="btn" class="btn-danger glyphicon glyphicon-warning-sign" data-toggle="tooltip" title="Report this post"></span>
+					</div>
+				</div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>

@@ -17,17 +17,48 @@
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-success">
-                                <img src="../res/logo.png" class="img-responsive">
-                                <a href="profile.php">Member 1</a>
+								<div class="row">
+									<div class="col-xs-5">
+										<img src="../res/logo.png" class="img-responsive" style="width:60px">
+									</div>
+									<div class="col-xs-7">
+										<a href="profile.php">Member 1</a>
+										<button type="btn" class="btn-danger">Vote Kick</button>
+									</div>
+								</div>
                             </li>
                             <li class="list-group-item list-group-item-success">
-                                <a href="profile.php">Member 2</a>
+								<div class="row">
+									<div class="col-xs-5">
+										<img src="../res/logo.png" class="img-responsive" style="width:60px">
+									</div>
+									<div class="col-xs-7">
+										<a href="profile.php">Member 2</a>
+										<button type="btn" class="btn-danger">Vote Kick</button>
+									</div>
+								</div>
                             </li>
                             <li class="list-group-item list-group-item-success">
-                                <a href="profile.php">Member 3</a>
+								<div class="row">
+									<div class="col-xs-5">
+										<img src="../res/logo.png" class="img-responsive" style="width:60px">
+									</div>
+									<div class="col-xs-7">
+										<a href="profile.php">Member 3</a>
+										<button type="btn" class="btn-danger">Vote Kick</button>
+									</div>
+								</div>
                             </li>
-                            <li class="list-group-item list-group-item-danger">
-                                <a href="profile.php">Member 4</a>
+                            <li class="list-group-item list-group-item-success">
+								<div class="row">
+									<div class="col-xs-5">
+										<img src="../res/logo.png" class="img-responsive" style="width:60px">
+									</div>
+									<div class="col-xs-7">
+										<a href="profile.php">Member 4</a>
+										<button type="btn" class="btn-danger">Vote Kick</button>
+									</div>
+								</div>
                             </li>
                         </ul>
                     </div>
@@ -104,12 +135,13 @@
                             <li><a href="#">
                                     <div class="input-group">
 										<span class="input-group-btn">
-											<button class="btn btn-secondary" type="button"><a>Add to Circle</a></button>
+											<button class="btn btn-secondary btn-block" type="button"><a>Add to Circle</a></button>
 										</span>
                                         <input type="text" class="form-control" placeholder="Search for...">
                                     </div>
                                 </a></li>
-                            <li><button class="btn btn-secondary" type="button"><a>Leave Circle</a></button></li>
+                            <li><button class="btn btn-secondary btn-block" type="button"><a>Report Circle</a></button></li>
+                            <li><button class="btn btn-secondarY  btn-block" type="button"><a>Leave Circle</a></button></li>
                         </ul>
                     </div>
                 </div>
@@ -127,12 +159,17 @@
             </div>
 	<!--border-style:solid; border-width:medium;border-radius:5px; border-color:green;-->
             <div id="post1" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
-                <div class="col-xs-11">
-                    <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
-                </div>
+				<div class="row">
+					<div class="col-xs-2"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+					<div class="col-xs-8">
+						<a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
+					</div>
+					<div class="col-xs-2">
+						<button type="btn" class="btn-danger glyphicon glyphicon-warning-sign" data-toggle="tooltip" title="Report this post"></span>
+					</div>
+				</div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                    <div class="col-xs-12 col-sm-6" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>
                         <p>Nulla vel metus scelerisque ante sollicitudin.
                             Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -144,7 +181,7 @@
                             Fusce condimentum nunc ac nisi vulputate fringilla.
                             Donec lacinia congue felis in faucibus.</p>
                     </div>
-                    <div class="col-xs-12 col-sm-5" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+                    <div class="col-xs-12 col-sm-6" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-2">
@@ -233,10 +270,15 @@
                 </div>
             </div>
             <div id="post2" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
-                <div class="col-xs-11">
-                    <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
-                </div>
+                <div class="row">
+					<div class="col-xs-2"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+					<div class="col-xs-8">
+						<a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
+					</div>
+					<div class="col-xs-2">
+						<button type="btn" class="btn-danger glyphicon glyphicon-warning-sign" data-toggle="tooltip" title="Report this post"></span>
+					</div>
+				</div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>
@@ -330,10 +372,15 @@
             </div>
 
             <div id="post3" class="row" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-                <div class="col-xs-1"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
-                <div class="col-xs-11">
-                    <a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
-                </div>
+                <div class="row">
+					<div class="col-xs-2"><img src="../res/user.png" class="img-responsive"style="width:60px"></div>
+					<div class="col-xs-8">
+						<a href="profile.php"><h4>User1 </a><small><i>Posted on February 19, 2016</i></small></h4>
+					</div>
+					<div class="col-xs-2">
+						<button type="btn" class="btn-danger glyphicon glyphicon-warning-sign" data-toggle="tooltip" title="Report this post"></span>
+					</div>
+				</div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-7" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                         <p>Cras sit amet nibh libero, in gravida nulla.</p>

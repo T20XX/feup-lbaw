@@ -32,3 +32,7 @@ function close_right_sidebar() {
         this.style.setProperty("display", "none");
     });
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
