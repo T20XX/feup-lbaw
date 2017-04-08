@@ -5,7 +5,7 @@
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
   $BASE_DIR = '/opt/lbaw/lbaw1632/public_html/frmk/'; //DONE
-  $BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1632/frmk/'; //DONE
+  $BASE_URL = '/~lbaw1632/frmk/'; //DONE
 
   $conn = new PDO('pgsql:host=dbm;dbname=lbaw1632', 'lbaw1632', 'lw25iy58'); //DONE
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
