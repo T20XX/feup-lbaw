@@ -4,7 +4,7 @@
 
 <title>MeetTheCircle</title>
 
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
             color: #191970;
             word-wrap: break-word;
         }
-		
+
 
         .img-responsive {
             margin: 0 auto;
@@ -47,7 +47,7 @@
 
     <div class="row">
         <div class="col-sm-2" id="img">
-            <img src="../res/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
+            <img src="../../images/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
         </div>
         <div class="col-sm-5 text-center">
             <span id="title">MeetTheCircle</span>
@@ -77,7 +77,7 @@
     <div class="row">
         <div id="page-face" class="well col-sm-6 hidden-xs" >
             <h1 id="page-face-text">Discuss your interests inside the privacy of your circle.</h1>
-            <img src="../res/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
+            <img src="../../images/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
         </div>
         <div id="signup" class="col-sm-6 text-center">
             <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
