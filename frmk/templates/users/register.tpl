@@ -1,4 +1,4 @@
-<!-- {include file='common/header.tpl'} -->
+{* {include file='common/header.tpl'} *}
 
 <section id="register">
   <h2>Register</h2>
@@ -25,4 +25,4 @@
 
 </section>
 
-<!-- {include file='common/footer.tpl'} -->
+{* {include file='common/footer.tpl'} *}
