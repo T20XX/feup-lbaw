@@ -5,7 +5,7 @@
   if (!$_POST['username'] || !$_POST['realname'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL" . 'pages/users/register.php');
+    header("Location: $BASE_URL" . 'pages/auth/register.php');
     exit;
   }
 
