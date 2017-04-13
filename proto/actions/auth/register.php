@@ -19,6 +19,7 @@
 
   try {
     createUser($first_name, $last_name, $email, $password);
+    echo "Success!";
     //move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
     //chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);
   } catch (PDOException $e) {
@@ -34,5 +35,5 @@
     exit;
   }
   $_SESSION['success_messages'][] = 'User registered successfully';
-  header("Location: $BASE_URL" . 'pages/user/');
+  //header("Location: $BASE_URL" . 'pages/user/');
 ?>
