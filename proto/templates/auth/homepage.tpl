@@ -44,6 +44,8 @@
 
 <div class="container">
 
+    $smarty->display('common/aux_header.tpl');
+
     <div class="row">
         <div class="col-sm-2" id="img">
             <img src="../../images/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
@@ -70,16 +72,6 @@
                     <button  id="button" type="submit" class="btn btn-warning btn-lg btn-block font-pacifico">Login</button>
                 </div>
             </form>
-        </div>
-        <div id="error_messages">
-            {foreach $ERROR_MESSAGES as $error}
-                <div class="error">{$error}<a class="close" href="#">X</a></div>
-            {/foreach}
-        </div>
-        <div id="success_messages">
-            {foreach $SUCCESS_MESSAGES as $success}
-                <div class="success">{$success}<a class="close" href="#">X</a></div>
-            {/foreach}
         </div>
     </div>
 
