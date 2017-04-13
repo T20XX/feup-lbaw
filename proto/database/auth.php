@@ -12,7 +12,7 @@
 
   function isLoginCorrect($email, $password) { //TODO verificacao password com hash
     global $conn;
-    $stmt = $conn->prepare('SELECT idPerson
+    $stmt = $conn->prepare('SELECT "Person"."idPerson"
                             FROM "public"."Person"
                             WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));
@@ -22,14 +22,14 @@
 
   function isAdmin($email) {
     global $conn;
-    $stmt = $conn->prepare("SELECT idPerson 
+    $stmt = $conn->prepare('SELECT "Person"."idPerson"
                             FROM 'Person' 
-                            WHERE email = ?");
+                            WHERE email = ?');
     $stmt->execute(array($email));
     $idPerson = $stmt->fetch();
-    $stmt = $conn->prepare("SELECT * 
+    $stmt = $conn->prepare('SELECT * 
                             FROM 'Admin' 
-                            WHERE idPerson = ?");
+                            WHERE idPerson = ?');
     $stmt->execute(array($idPerson));
     return $stmt->fetch() == true;
 }
