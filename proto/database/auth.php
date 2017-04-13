@@ -12,9 +12,9 @@
 
   function isLoginCorrect($email, $password) { //TODO verificacao password com hash
     global $conn;
-    $stmt = $conn->prepare("SELECT idPerson 
+    $stmt = $conn->prepare("SELECT 'idPerson'
                             FROM 'Person' 
-                            WHERE email = ? AND password = ?");
+                            WHERE 'email' = ? AND 'password' = ?");
     $stmt->execute(array($email, sha1($password)));
     return $stmt->fetch() == true;
   }
