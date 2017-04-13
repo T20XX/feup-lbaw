@@ -25,7 +25,6 @@
             word-wrap: break-word;
         }
 
-
         .img-responsive {
             margin: 0 auto;
         }
@@ -54,12 +53,12 @@
         </div>
 
         <div id="login">
-            <form  id="login_form" method="post">
+            <form  id="login_form" action="../../actions/auth/login.php" method="post">
                 <div class="col-sm-3">
                     <div id="inputs">
                         <div  class="input-group input-group-lg">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="username" type="text" class="form-control" placeholder="Email">
+                            <input id="email" type="text" class="form-control" placeholder="Email">
                         </div><br>
                         <div  class="input-group input-group-lg" >
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -86,7 +85,7 @@
         <div id="signup" class="col-sm-6 text-center">
             <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
             <span id="create" class="hidden-xs font-pacifico"  style="color:#191970;">Create New Account</span>
-            <form id="signup_form" method="post">
+            <form id="signup_form" action="../../actions/auth/register.php"  method="post">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">First name</span>
                     <input type="text" class="form-control" placeholder="First name">
