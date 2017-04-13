@@ -96,23 +96,23 @@
             <form id="signup_form" action="../../actions/auth/register.php"  method="post">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">First name</span>
-                    <input type="text" class="form-control" placeholder="First name">
+                    <input id="first_name" type="text" class="form-control" placeholder="First name">
                 </div><br>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">Last name</span>
-                    <input type="text" class="form-control" placeholder="Last name">
+                    <input id="last_name" type="text" class="form-control" placeholder="Last name">
                 </div><br>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">Email</span>
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input id="email" type="text" class="form-control" placeholder="Email">
                 </div><br>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">Password</span>
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input id="password" type="password" class="form-control" placeholder="Password">
                 </div><br>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">Password confirmation</span>
-                    <input type="password" class="form-control" placeholder="Password confirmation">
+                    <input id="password2" type="password" class="form-control" placeholder="Password confirmation">
                 </div><br>
                 <button type="submit" class="btn btn-warning btn-lg btn-block font-pacifico">Register</button>
             </form>

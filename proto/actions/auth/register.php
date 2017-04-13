@@ -2,7 +2,7 @@
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/auth.php');  //TODO
 
-  if (!$_POST['username'] || !$_POST['first_name'] || !$_POST['last_name'] || !$_POST['password']) {
+  if (!$_POST['email'] || !$_POST['first_name'] || !$_POST['last_name'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/auth/');
@@ -11,14 +11,14 @@
 
   $first_name = strip_tags($_POST['first_name']);
   $last_name = strip_tags($_POST['last_name']);
-  $username = strip_tags($_POST['username']);
+  $email = strip_tags($_POST['email']);
   $password = $_POST['password'];
 
   //$photo = $_FILES['photo'];
   //$extension = end(explode(".", $photo["name"]));
 
   try {
-    createUser($first_name, $last_name, $username, $password);
+    createUser($first_name, $last_name, $email, $password);
     //move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
     //chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);
   } catch (PDOException $e) {
