@@ -80,7 +80,7 @@
             <img src="../../images/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
         </div>
 
-        <a href="{$BASE_URL}pages/auth/register.php">Register</a>
+        <a href="register.php">Register</a>
         <br>
 
         <div id="signup" class="col-sm-6 text-center">
