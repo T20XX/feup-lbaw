@@ -1,5 +1,3 @@
-<!-- {include file='common/header.tpl'} -->
-
 <section id="register">
   <h2>Register</h2>
 
@@ -24,5 +22,3 @@
   </form>
 
 </section>
-
-<!-- {include file='common/footer.tpl'} -->
