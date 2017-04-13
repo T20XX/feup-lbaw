@@ -1,5 +1,5 @@
 <?php
-  
+
   function createUser($first_name, $last_name, $email, $password) { //TODO
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "public"."Person" (email,password) VALUES (?, ?)');
@@ -23,12 +23,12 @@
   function isAdmin($email) {
     global $conn;
     $stmt = $conn->prepare('SELECT "Person"."idPerson"
-                            FROM 'Person' 
+                            FROM "public"."Person" 
                             WHERE email = ?');
     $stmt->execute(array($email));
     $idPerson = $stmt->fetch();
     $stmt = $conn->prepare('SELECT * 
-                            FROM 'Admin' 
+                            FROM "public"."Admin" 
                             WHERE idPerson = ?');
     $stmt->execute(array($idPerson));
     return $stmt->fetch() == true;
