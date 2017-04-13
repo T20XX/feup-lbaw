@@ -79,6 +79,10 @@
             <h1 id="page-face-text">Discuss your interests inside the privacy of your circle.</h1>
             <img src="../../images/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
         </div>
+
+        <a href="{$BASE_URL}pages/auth/register.php">Register</a>
+        <br>
+
         <div id="signup" class="col-sm-6 text-center">
             <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
             <span id="create" class="hidden-xs font-pacifico"  style="color:#191970;">Create New Account</span>
