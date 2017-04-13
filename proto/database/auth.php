@@ -12,12 +12,14 @@
 
   function isLoginCorrect($email, $password) { //TODO verificacao password com hash
     global $conn;
-    $stmt = $conn->prepare("SELECT 'idPerson'
-                            FROM 'Person' 
-                            WHERE 'email' = ? AND 'password' = ?");
+echo ' wtf';
+    $stmt = $conn->prepare('SELECT *
+                            FROM "public"."Person"
+                            WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));
     return $stmt->fetch() == true;
   }
+
 
   function isAdmin($email) {
     global $conn;
