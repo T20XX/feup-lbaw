@@ -34,5 +34,5 @@
     exit;
   }
   $_SESSION['success_messages'][] = 'User registered successfully';
-  header("Location: $BASE_URL");
+  header("Location: $BASE_URL" . 'pages/user/');
 ?>
