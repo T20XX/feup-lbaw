@@ -21,7 +21,7 @@
     move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
     chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);
   } catch (PDOException $e) {
-  
+
     if (strpos($e->getMessage(), 'users_pkey') !== false) {
       $_SESSION['error_messages'][] = 'Duplicate username';
       $_SESSION['field_errors']['username'] = 'Username already exists';
@@ -29,9 +29,9 @@
     else $_SESSION['error_messages'][] = 'Error creating user';
 
     $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL" . 'pages/users/register.php');
+    header("Location: $BASE_URL" . 'pages/auth/register.php');
     exit;
   }
-  $_SESSION['success_messages'][] = 'User registered successfully';  
+  $_SESSION['success_messages'][] = 'User registered successfully';
   header("Location: $BASE_URL");
 ?>
