@@ -15,12 +15,12 @@
   if (isLoginCorrect($email, $password)) {
     $_SESSION['email'] = $email;
     $_SESSION['success_messages'][] = 'Login successful';  
-    header("Location: $BASE_URL"."/);
-	echo ' success' ;
+    header("Location: $BASE_URL"."/");
+	echo "success" ;
   } else {
     $_SESSION['error_messages'][] = 'Login failed';  
-	echo 'else';
+	echo "else";
   }
-  // header("Location: $BASE_URL");
+  header("Location: $BASE_URL");
   // header("Location: $BASE_URL");
 ?>
