@@ -6,7 +6,7 @@ if (!$_GET['id']) {
     $id = $_GET['id'];
     $info = getUserInfoFromID($id);
 } else {
-    $info = getUserInfoFromEmail($EMAIL);
+    $info = getUserInfoFromEmail($_SESSION['email']);
 }
 
 $smarty->assign('info', $info);

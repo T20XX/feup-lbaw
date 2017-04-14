@@ -10,7 +10,7 @@
         <div class="col-sm-6 col-sm-pull-6">
             <div class="row">
                 <div class="col-xs-9">
-                    <a href="profile.php"><h2>{$tweet.first_name}</h2></a>
+                    <a href="profile.php"><h2>{$info.first_name}</h2></a>
                 </div>
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-envelope"></span></button>
