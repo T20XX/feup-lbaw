@@ -12,16 +12,14 @@
 
   $email = $_POST['email'];
   $password = $_POST['password'];
-  
-  if (isLoginCorrect($email, $password)) {
-    $_SESSION['email'] = $email;
+  $id = isLoginCorrect($email, $password);
+  if ($id) {
+    $_SESSION['id'] = $id;
     $_SESSION['success_messages'][] = 'Login successful';
-    $info = getUserInfoFromEmail($email);
+    $info = getUserInfo($id);
   if ($info == null) {
       header("Location: $BASE_URL" . "pages/admin");
   } else {
-      $_SESSION['first_name'] = $info['first_name'];
-      $_SESSION['last_name'] = $info['last_name'];
       header("Location: $BASE_URL" . "pages/user/feed.php");
   }
   } else {

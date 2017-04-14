@@ -16,11 +16,11 @@
                             FROM "public"."Person"
                             WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));
-    return $stmt->fetch() == true;
+    return $stmt->fetch();
   }
 
 
-/*  function isAdmin($email) {
+function isAdmin($email) {
     global $conn;
     $idPerson = getIDfromEmail($email);
     $stmt = $conn->prepare('SELECT *
@@ -28,34 +28,5 @@
                             WHERE idPerson = ?');
     $stmt->execute(array($idPerson));
     return $stmt->fetch() == true;
-}
-
-function getIDfromEmail($email) {
-    global $conn;
-    $stmt = $conn->prepare('SELECT "Person"."idPerson"
-                            FROM "public"."Person"
-                            WHERE email = ?');
-    $stmt->execute(array($email));
-    $idPerson = $stmt->fetch();
-    return $idPerson;
-}*/
-
-function getUserInfoFromEmail($email) {
-    global $conn;
-    $stmt = $conn->prepare('SELECT * 
-                            FROM "public"."User" JOIN 
-                                 "public"."Person" USING("idPerson") 
-                            WHERE email = ?');
-    $stmt->execute(array($email));
-    return $stmt->fetchAll();
-}
-
-function getUserInfoFromID($id) {
-    global $conn;
-    $stmt = $conn->prepare('SELECT * 
-                            FROM "public"."User" 
-                            WHERE idPerson = ?');
-    $stmt->execute(array($id));
-    return $stmt->fetchAll();
 }
 ?>
