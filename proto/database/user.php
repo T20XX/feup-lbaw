@@ -5,6 +5,6 @@ function getUserInfo($id) {
                             FROM "public"."User" 
                             WHERE "idPerson" = ?');
     $stmt->execute(array($id));
-    return $stmt->fetchAll();
+    return $stmt->fetch();
 }
 ?>
