@@ -1,1 +1,3 @@
-header('Location: ./feed.php');
+<?php
+header('Location: feed.php');
+?>
