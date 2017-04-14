@@ -1,1 +1,1 @@
-header('Location: feed.php');
+header('Location: ./feed.php');
