@@ -18,11 +18,11 @@
     $_SESSION['success_messages'][] = 'Login successful';
     $info = getUserInfoFromEmail($email);
   if ($info == null) {
-      header("Location: $BASE_URL"."pages/admin");
+      header("Location: $BASE_URL" . "pages/admin");
   } else {
-      $_SESSION['first_name'] = info['first_name'];
-      $_SESSION['last_name'] = info['last_name'];
-      header("Location: $BASE_URL"."pages/user/feed.php");
+      $_SESSION['first_name'] = $info['first_name'];
+      $_SESSION['last_name'] = $info['last_name'];
+      header("Location: $BASE_URL" . "pages/user/feed.php");
   }
   } else {
     $_SESSION['error_messages'][] = 'Login failed';
