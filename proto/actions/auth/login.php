@@ -25,7 +25,7 @@
       header("Location: $BASE_URL"."pages/user/feed.php");
   }
   } else {
-    $_SESSION['error_messages'][] = 'Login failed';  
+    $_SESSION['error_messages'][] = 'Login failed';
     header("Location: $BASE_URL");
 
   }
