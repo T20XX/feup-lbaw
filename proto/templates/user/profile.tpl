@@ -10,7 +10,7 @@
         <div class="col-sm-6 col-sm-pull-6">
             <div class="row">
                 <div class="col-xs-9">
-                    <a href="profile.php"><h2>{$info.first_name}</h2></a>
+                    <a href="profile.php"><h2>"{$info.first_name} {$info.last_name}"</h2></a>
                 </div>
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-envelope"></span></button>
@@ -21,13 +21,14 @@
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-th-large"></span></button>
                 </div>
-
+                {if $info.show_hometown}
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Hometown</div>
-                        <div class="panel-body"><strong>Porto</strong></div>
+                        <div class="panel-body"><strong>{$info.hometown}}</strong></div>
                     </div>
                 </div>
+                {/if}
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Birthday</div>
