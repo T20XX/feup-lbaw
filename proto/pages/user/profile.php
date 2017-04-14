@@ -1,6 +1,6 @@
 <?php
 include_once('../../config/init.php');
-include_once($BASE_DIR .'database/auth.php');
+include_once($BASE_DIR .'database/user.php');
 
 if ($_GET['id']) {
     $id = $_GET['id'];
@@ -8,7 +8,7 @@ if ($_GET['id']) {
     $id = $_SESSION['id'];
 }
 
-$info = getUserInfoFromID($id);
+$info = getUserInfo($id);
 
 $smarty->assign('info', $info);
 $smarty->display('user/profile.tpl');

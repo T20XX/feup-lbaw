@@ -16,8 +16,7 @@
   if ($id) {
     $_SESSION['id'] = $id;
     $_SESSION['success_messages'][] = 'Login successful';
-    $info = getUserInfo($id);
-  if ($info == null) {
+  if (isAdmin($id)) {
       header("Location: $BASE_URL" . "pages/admin");
   } else {
       header("Location: $BASE_URL" . "pages/user/feed.php");
@@ -27,6 +26,4 @@
     header("Location: $BASE_URL");
 
   }
-  //header("Location: $BASE_URL");
-  //header("Location: $BASE_URL");
 ?>

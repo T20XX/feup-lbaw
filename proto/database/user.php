@@ -1,5 +1,5 @@
 <?php
-function getUserInfoFromID($id) {
+function getUserInfo($id) {
     global $conn;
     $stmt = $conn->prepare('SELECT * 
                             FROM "public"."User" 

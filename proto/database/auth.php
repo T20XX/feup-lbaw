@@ -20,13 +20,12 @@
   }
 
 
-function isAdmin($email) {
+function isAdmin($id) {
     global $conn;
-    $idPerson = getIDfromEmail($email);
     $stmt = $conn->prepare('SELECT *
                             FROM "public"."Admin"
                             WHERE idPerson = ?');
-    $stmt->execute(array($idPerson));
+    $stmt->execute(array($id));
     return $stmt->fetch() == true;
 }
 ?>
