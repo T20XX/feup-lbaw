@@ -10,7 +10,7 @@
 
   }
 
-  function isLoginCorrect($email, $password) { //TODO verificacao password com hash
+  function isLoginCorrect($email, $password) {
     global $conn;
     $stmt = $conn->prepare('SELECT "Person"."idPerson"
                             FROM "public"."Person"
@@ -20,17 +20,42 @@
   }
 
 
-  function isAdmin($email) {
+/*  function isAdmin($email) {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Person"."idPerson"
-                            FROM "public"."Person" 
-                            WHERE email = ?');
-    $stmt->execute(array($email));
-    $idPerson = $stmt->fetch();
-    $stmt = $conn->prepare('SELECT * 
-                            FROM "public"."Admin" 
+    $idPerson = getIDfromEmail($email);
+    $stmt = $conn->prepare('SELECT *
+                            FROM "public"."Admin"
                             WHERE idPerson = ?');
     $stmt->execute(array($idPerson));
     return $stmt->fetch() == true;
+}
+
+function getIDfromEmail($email) {
+    global $conn;
+    $stmt = $conn->prepare('SELECT "Person"."idPerson"
+                            FROM "public"."Person"
+                            WHERE email = ?');
+    $stmt->execute(array($email));
+    $idPerson = $stmt->fetch();
+    return $idPerson;
+}*/
+
+function getUserInfoFromEmail($email) {
+    global $conn;
+    $stmt = $conn->prepare('SELECT * 
+                            FROM "public"."User" JOIN 
+                                 "public"."Person" USING(idPerson) 
+                            WHERE email = ?');
+    $stmt->execute(array($email));
+    return $stmt->fetchAll();
+}
+
+function getUserInfoFromID($id) {
+    global $conn;
+    $stmt = $conn->prepare('SELECT * 
+                            FROM "public"."User" 
+                            WHERE idPerson = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetchAll();
 }
 ?>
