@@ -8,9 +8,9 @@
 
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/header.css">
     <link rel="stylesheet" href="<?=$cssPath?>">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/footer.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -21,21 +21,11 @@
 </head>
 <body>
 <header>
-    <div id="error_messages">
-        {foreach $ERROR_MESSAGES as $error}
-            <div class="error">{$error}<a class="close" href="#">X</a></div>
-        {/foreach}
-    </div>
-    <div id="success_messages">
-        {foreach $SUCCESS_MESSAGES as $success}
-            <div class="success">{$success}<a class="close" href="#">X</a></div>
-        {/foreach}
-    </div>
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header col-sm-3 hidden-xs">
                 <a class="navbar-brand" href="feed.php">
-                    <img src="../res/logo.png" class="img-responsive hidden-xs">
+                    <img src="{$BASE_URL}images/logo.png" class="img-responsive hidden-xs">
                 </a>
             </div>
             <ul class="nav navbar-nav col-xs-9 col-sm-6">
@@ -58,5 +48,15 @@
             </div>
         </div>
     </nav>
+    <div id="error_messages">
+        {foreach $ERROR_MESSAGES as $error}
+            <div class="error">{$error}<a class="close" href="#">X</a></div>
+        {/foreach}
+    </div>
+    <div id="success_messages">
+        {foreach $SUCCESS_MESSAGES as $success}
+            <div class="success">{$success}<a class="close" href="#">X</a></div>
+        {/foreach}
+    </div>
 </header>
 <main>
