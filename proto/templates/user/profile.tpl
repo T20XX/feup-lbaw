@@ -10,7 +10,7 @@
         <div class="col-sm-6 col-sm-pull-6">
             <div class="row">
                 <div class="col-xs-9">
-                    <a href="profile.php"><h2>"{$info.first_name} {$info.last_name}"</h2></a>
+                    <h2>{$info.first_name} {$info.last_name}</h2>
                 </div>
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-envelope"></span></button>
@@ -25,36 +25,39 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Hometown</div>
-                        <div class="panel-body"><strong>{$info.hometown}}</strong></div>
+                        <div class="panel-body"><strong>{$info.hometown}</strong></div>
                     </div>
                 </div>
                 {/if}
+                {if $info.show_birthday}
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Birthday</div>
-                        <div class="panel-body"><strong>16/08/1994</strong></div>
+                        <div class="panel-body"><strong>{$info.birthday}</strong></div>
                     </div>
                 </div>
+                {/if}
+                {if $info.show_age}
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Age</div>
-                        <div class="panel-body"><strong>22</strong></div>
-                    </div>
-                </div><div class="col-xs-12 col-sm-6">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">Gender</div>
-                        <div class="panel-body"><strong>Male</strong></div>
+                        <div class="panel-body"><strong>TODO</strong></div>
                     </div>
                 </div>
+                {/if}
+                {if $info.show_gender}
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">Gender</div>
+                        <div class="panel-body"><strong>{$info.gender}</strong></div>
+                    </div>
+                </div>
+                {/if}
                 <div class="col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">Bio</div>
                         <div class="panel-body">
-                            Curabitur aliquet felis rutrum ex aliquam laoreet. Pellentesque porttitor, tortor convallis varius sagittis, felis turpis commodo lacus, feugiat auctor est massa at erat.
-                            Fusce varius cursus dignissim. Integer sed augue semper, interdum massa ac, tincidunt metus. Morbi cursus ante eget pellentesque gravida.
-                            Cras vel feugiat mi. Etiam magna sapien, euismod sit amet mollis in, ornare eget ipsum. Etiam congue eu dolor ut vulputate.
-                            Pellentesque tortor lorem, malesuada vitae efficitur vitae, efficitur vel eros.
-                            Sed iaculis, ante eget porttitor fermentum, massa nulla dictum augue, vitae euismod magna arcu in orci.
+                            {$info.bio}
                         </div>
                     </div>
                 </div>
