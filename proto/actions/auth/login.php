@@ -17,7 +17,7 @@
     $_SESSION['email'] = $email;
     $_SESSION['success_messages'][] = 'Login successful';
     $info = getUserInfoFromEmail($email);
-  if (info == null) {
+  if ($info == null) {
       header("Location: $BASE_URL"."pages/admin");
   } else {
       $_SESSION['first_name'] = info['first_name'];
