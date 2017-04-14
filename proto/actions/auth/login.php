@@ -12,7 +12,8 @@
 
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $id = isLoginCorrect($email, $password);
+  $result = isLoginCorrect($email, $password);
+  $id = $result['idPerson'];
   if ($id) {
     $_SESSION['id'] = $id;
     $_SESSION['success_messages'][] = 'Login successful';
