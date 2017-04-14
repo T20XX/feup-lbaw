@@ -24,7 +24,7 @@ function isAdmin($id) {
     global $conn;
     $stmt = $conn->prepare('SELECT *
                             FROM "public"."Admin"
-                            WHERE idPerson = ?');
+                            WHERE "idPerson" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch() == true;
 }
