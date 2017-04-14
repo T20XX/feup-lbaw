@@ -44,7 +44,7 @@ function getUserInfoFromEmail($email) {
     global $conn;
     $stmt = $conn->prepare('SELECT * 
                             FROM "public"."User" JOIN 
-                                 "public"."Person" USING(idPerson) 
+                                 "public"."Person" USING("idPerson") 
                             WHERE email = ?');
     $stmt->execute(array($email));
     return $stmt->fetchAll();

@@ -44,8 +44,6 @@
 
 <div class="container">
 
-    $smarty->display('common/aux_header.tpl');
-
     <div class="row">
         <div class="col-sm-2" id="img">
             <img src="../../images/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
