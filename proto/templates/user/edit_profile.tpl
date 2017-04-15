@@ -2,6 +2,7 @@
 
 <div class="container">
     <div class="row well" style="border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
+        <form  id="edit_profile_form" action="{$BASE_URL}actions/user/edit_profile.php" method="post">
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
@@ -83,9 +84,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Bio</div>
                         <div class="panel-body">
-                            <textarea class="form-control" rows="5" id="comment">
-                            {$info.bio}
-                            </textarea>
+                            <textarea class="form-control" rows="5" id="comment">{$info.bio}</textarea>
                         </div>
                     </div>
                 </div>
@@ -100,31 +99,35 @@
                 <div class="col-xs-12">
                     <button type="button" class="btn btn-default btn-block">Upload new photo</button>
                 </div>
+            </div>
 
+            <div class="row">
+                Leave these fields blank if you don't want to change your password.
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">New Password</div>
-                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value="123456"></div>
+                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value=""></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Confirm New Password</div>
-                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value="123456"></div>
+                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value=""></div>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Your Password</div>
-                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value="123456"></div>
+                        <div class="panel-body"><input type="password" class="form-control" id="hometown" value=""></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col-xs-12">
-            <button type="button" class="btn btn-default btn-block">Save changes</button>
+            <button type="submit" class="btn btn-default btn-block">Save changes</button>
         </div>
+            </form>
     </div>
 </div>
 
