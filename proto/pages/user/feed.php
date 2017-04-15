@@ -2,7 +2,11 @@
 include_once('../../config/init.php');
 
 if(isset($_SESSION['id'])){
-    $id = $_SESSION['id'];
+    if(!isset($_SESSION['admin'])){
+        $id = $_SESSION['id'];
+    }else {
+        header("Location: $BASE_URL" . 'pages/admin/');
+    }
 } else {
     header("Location: $BASE_URL" . 'pages/auth/');
 }
