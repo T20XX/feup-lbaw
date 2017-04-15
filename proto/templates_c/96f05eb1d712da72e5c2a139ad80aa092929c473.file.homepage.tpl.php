@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-13 16:55:58
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 02:00:04
          compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4335193958ef9bb7675735-14104098%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96f05eb1d712da72e5c2a139ad80aa092929c473' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl',
-      1 => 1492098954,
+      1 => 1492131540,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_58ef9bb76a03b5_79356632',
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58ef9bb76a03b5_79356632')) {function content_58ef9bb76a03b5_79356632($_smarty_tpl) {?><html>
@@ -25,7 +29,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <title>MeetTheCircle</title>
 
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/bootstrap.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,7 +38,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="../../javascript/homepage.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/homepage.js"></script>
 
 <head>
     <style>
@@ -65,18 +71,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="container">
 
-    $smarty->display('common/aux_header.tpl');
-
     <div class="row">
         <div class="col-sm-2" id="img">
-            <img src="../../images/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/logo.png" id="Logo" class="img-responsive" alt="Network Logo">
         </div>
         <div class="col-sm-5 text-center">
             <span id="title">MeetTheCircle</span>
         </div>
 
         <div id="login">
-            <form  id="login_form" action="../../actions/auth/login.php" method="post">
+            <form  id="login_form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/auth/login.php" method="post">
                 <div class="col-sm-3">
                     <div id="inputs">
                         <div  class="input-group input-group-lg">
@@ -99,14 +105,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
         <div id="page-face" class="well col-sm-6 hidden-xs" >
             <h1 id="page-face-text">Discuss your interests inside the privacy of your circle.</h1>
-            <img src="../../images/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/friendship.png" id="page-face-img" class="img-responsive" alt="Friendship">
         </div>
 
 
         <div id="signup" class="col-sm-6 text-center">
             <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
             <span id="create" class="hidden-xs font-pacifico"  style="color:#191970;">Create New Account</span>
-            <form id="signup_form" action="../../actions/auth/register.php"  method="post">
+            <form id="signup_form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/auth/register.php"  method="post">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">First name</span>
                     <input name="first_name" type="text" class="form-control" placeholder="First name">
