@@ -14,13 +14,20 @@ if(isset($_SESSION['id'])){
 
 if ($_GET['id']) {
     $id = $_GET['id'];
+    if($id == $_SESSION['id']){
+        $isSelfProfile = true;
+    } else {
+        $isSelfProfile = false;
+    }
 } else {
     $id = $_SESSION['id'];
+    $isSelfProfile = true;
 }
 
 $info = getUserInfo($id);
 $image = getUserImage($id);
 
+$smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
 $smarty->assign('cssPath', $BASE_URL . "css/user/profile.css");
