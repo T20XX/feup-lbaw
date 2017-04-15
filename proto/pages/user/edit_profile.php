@@ -17,6 +17,6 @@ $smarty->assign('info', $info);
 $smarty->assign('email', $email['email']);
 $smarty->assign('image', $image['path']);
 $smarty->assign('cssPath', $BASE_URL . "css/edit_profile.css");
-$smarty->assign('jsPath', $BASE_URL . "js/edit_profile.js");
+$smarty->assign('jsPath', $BASE_URL . "javascript/edit_profile.js");
 $smarty->display('user/edit_profile.tpl');
 ?>

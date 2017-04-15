@@ -28,13 +28,10 @@
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">Hometown</div>
                         <div class="panel-body"><input type="text" class="form-control" name="hometown" value="{$info.hometown}"></div>
-                        <div class="panel-footer"><input type="hidden" name="show_hometown" value="{$info.show_hometown}"><span class="glyphicon glyphicon-eye-
-                                                        {if $info.show_hometown}
-                                                        open
-                                                        {else}
-                                                        close
-                                                        {/if}
-                                                        "></span></div>
+                        <div class="panel-footer" id="show_hometown">
+                            <input type="hidden" name="show_hometown" value="{$info.show_hometown}">
+                            <span class="glyphicon glyphicon-eye-{if $info.show_hometown}open{else}close{/if}"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">

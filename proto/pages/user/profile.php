@@ -20,6 +20,6 @@ $image = getUserImage($id);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
 $smarty->assign('cssPath', $BASE_URL . "css/profile.css");
-$smarty->assign('jsPath', $BASE_URL . "js/profile.js");
+$smarty->assign('jsPath', $BASE_URL . "javascript/profile.js");
 $smarty->display('user/profile.tpl');
 ?>
