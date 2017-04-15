@@ -25,9 +25,9 @@ function toogleGlyphiconEye(span){
 
 function toogleBooleanInput(input){
     var bool = $(input).val();
-    if(bool == "1"){
-        $(input).val(0);
-    }else if (bool == "0"){
-        $(input).val(1);
+    if(bool == "true"){
+        $(input).val("false");
+    }else if (bool == "false"){
+        $(input).val("true");
     }
 }

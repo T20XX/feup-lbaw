@@ -33,7 +33,7 @@
                             <div class="panel-body"><input type="text" class="form-control" name="hometown"
                                                            value="{$info.hometown}"></div>
                             <div class="panel-footer" id="show_hometown">
-                                <input type="hidden" name="show_hometown" value="{$info.show_hometown}">
+                                <input type="hidden" name="show_hometown" value="{if $info.show_hometown}true{else}false{/if}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_hometown}open{else}close{/if}"></span>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="panel-body"><input type="text" class="form-control" name="birthday"
                                                            value="{$info.birthday}"></div>
                             <div class="panel-footer" id="show_birthday">
-                                <input type="hidden" name="show_birthday" value="{$info.show_birthday->value}">
+                                <input type="hidden" name="show_birthday" value="{if $info.show_birthday}true{else}false{/if}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_birthday}open{else}close{/if}"></span>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                                                    {if $info.gender == 'O'}checked="checked"{/if}>Other</label>
                             </div>
                             <div class="panel-footer" id="show_gender">
-                                <input type="hidden" name="show_gender" value="{$info.show_gender}">
+                                <input type="hidden" name="show_gender" value="{if $info.show_gender}true{else}false{/if}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_gender}open{else}close{/if}"></span>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                             <div class="panel-heading">Age</div>
                             <div class="panel-body">TODO</div>
                             <div class="panel-footer" id="show_age">
-                                <input type="hidden" name="show_age" value="{$info.show_age}">
+                                <input type="hidden" name="show_age" value="{if $info.show_age}true{else}false{/if}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_age}open{else}close{/if}"></span>
                             </div>
                         </div>
