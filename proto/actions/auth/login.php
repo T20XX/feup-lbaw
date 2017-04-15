@@ -18,7 +18,7 @@
     $_SESSION['id'] = $id;
     $_SESSION['success_messages'][] = 'Login successful';
   if (isAdmin($id)) {
-      $_SESSION['admin'] = true;
+      $_SESSION['admin'] = $id;
       header("Location: $BASE_URL" . "pages/admin");
   } else {
       header("Location: $BASE_URL" . "pages/user/feed.php");
