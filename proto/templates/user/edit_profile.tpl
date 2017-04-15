@@ -42,9 +42,9 @@
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">Birthday</div>
                             <div class="panel-body"><input type="text" class="form-control" name="birthday"
-                                                           value="{$info.birthday->value}"></div>
+                                                           value="{$info.birthday}"></div>
                             <div class="panel-footer" id="show_birthday">
-                                <input type="hidden" name="show_birthday" value="{$info.show_birthday}">
+                                <input type="hidden" name="show_birthday" value="{$info.show_birthday->value}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_birthday}open{else}close{/if}"></span>
                             </div>
                         </div>
