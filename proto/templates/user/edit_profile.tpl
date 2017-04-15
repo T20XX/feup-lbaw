@@ -43,14 +43,10 @@
                             <div class="panel-heading">Birthday</div>
                             <div class="panel-body"><input type="text" class="form-control" name="birthday"
                                                            value="{$info.birthday}"></div>
-                            <div class="panel-footer"><span class="glyphicon
-                                                        {if $info.show_birthday}
-                                                        glyphicon-eye-open
-                                                        {else}
-                                                        glyphicon-eye-close
-                                                        {/if}
-                                                        "></span></div>
-                        </div>
+                            <div class="panel-footer"  id="show_birthday">
+                                <input type="hidden" name="show_birthday" value="{$info.show_birthday}">
+                                <span class="glyphicon glyphicon-eye-{if $info.show_birthday}open{else}close{/if}"></span>
+                            </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">
@@ -63,26 +59,20 @@
                                 <label class="radio-inline"><input type="radio" name="gender" value="O"
                                                                    {if $info.gender == 'O'}checked="checked"{/if}>Other</label>
                             </div>
-                            <div class="panel-footer"><span class="glyphicon
-                                                        {if $info.show_gender}
-                                                        glyphicon-eye-open
-                                                        {else}
-                                                        glyphicon-eye-close
-                                                        {/if}
-                                                        "></span></div>
+                            <div class="panel-footer"  id="show_gender">
+                                <input type="hidden" name="show_gender" value="{$info.show_gender}">
+                                <span class="glyphicon glyphicon-eye-{if $info.show_gender}open{else}close{/if}"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">Age</div>
                             <div class="panel-body">TODO</div>
-                            <div class="panel-footer"><span class="glyphicon
-                                                        {if $info.show_age}
-                                                        glyphicon-eye-open
-                                                        {else}
-                                                        glyphicon-eye-close
-                                                        {/if}
-                                                        "></span></div>
+                            <div class="panel-footer"  id="show_age">
+                                <input type="hidden" name="show_age" value="{$info.show_age}">
+                                <span class="glyphicon glyphicon-eye-{if $info.show_age}open{else}close{/if}"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-12">

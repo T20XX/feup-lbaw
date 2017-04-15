@@ -1,10 +1,28 @@
 console.log("tou a correr");
 $(document).ready(function () {
     $('#show_hometown').click(function () {
-        $(this).find('span').toggleClass('glyphicon-eye-close').toggleClass('glyphicon-eye-open');
-        toogleBooleanInput($(this).find('input'))
+        toogleGlyphiconEye($(this).find('span'));
+        toogleBooleanInput($(this).find('input'));
+    });
+    $('#show_birthday').click(function () {
+        toogleGlyphiconEye($(this).find('span'));
+        toogleBooleanInput($(this).find('input'));
+    });
+    $('#show_gender').click(function () {
+        toogleGlyphiconEye($(this).find('span'));
+        toogleBooleanInput($(this).find('input'));
+    });
+    $('#show_age').click(function () {
+        toogleGlyphiconEye($(this).find('span'));
+        toogleBooleanInput($(this).find('input'));
     });
 });
+
+
+function toogleGlyphiconEye(span){
+    $(span).toggleClass('glyphicon-eye-close').toggleClass('glyphicon-eye-open');
+}
+
 
 function toogleBooleanInput(input){
     var bool = $(input).val();
