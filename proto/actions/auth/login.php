@@ -21,7 +21,7 @@
       $_SESSION['admin'] = $id;
       header("Location: $BASE_URL" . "pages/admin");
   } else {
-      header("Location: $BASE_URL" . "pages/user/feed.php");
+      header("Location: $BASE_URL" . "pages/user/index.php");
   }
   } else {
     $_SESSION['error_messages'][] = 'Login failed';

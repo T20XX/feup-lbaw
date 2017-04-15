@@ -8,9 +8,9 @@
 
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$BASE_URL}css/header.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/common/header.css">
     <link rel="stylesheet" href="{$cssPath}">
-    <link rel="stylesheet" href="{$BASE_URL}css/footer.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/common/footer.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -48,15 +48,6 @@
             </div>
         </div>
     </nav>
-    <div id="error_messages">
-        {foreach $ERROR_MESSAGES as $error}
-            <div class="error">{$error}<a class="close" href="#">X</a></div>
-        {/foreach}
-    </div>
-    <div id="success_messages">
-        {foreach $SUCCESS_MESSAGES as $success}
-            <div class="success">{$success}<a class="close" href="#">X</a></div>
-        {/foreach}
-    </div>
+    {include file='common/aux_header.tpl'}
 </header>
 <main>

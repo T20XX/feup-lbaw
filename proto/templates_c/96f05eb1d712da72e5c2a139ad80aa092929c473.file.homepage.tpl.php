@@ -1,12 +1,12 @@
 <?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 02:00:04
-         compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl" */ ?>
+         compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/auth/dashboard.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4335193958ef9bb7675735-14104098%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '96f05eb1d712da72e5c2a139ad80aa092929c473' => 
     array (
-      0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl',
+      0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/auth/dashboard.tpl',
       1 => 1492131540,
       2 => 'file',
     ),
