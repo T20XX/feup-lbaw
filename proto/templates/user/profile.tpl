@@ -4,7 +4,7 @@
     <div class="row well"style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <div class="col-sm-6 col-sm-push-6">
             <div>
-                <img src="../res/a3_only/capa1.jpg" class="img-responsive img-circle">
+                <img src="{$image}" class="img-responsive img-circle">
             </div>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
@@ -16,7 +16,7 @@
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-envelope"></span></button>
                 </div>
                 <div class="col-xs-9">
-                    <h2><small>user_1</small></h2>
+                    <h2><small>TODO que info ou botao por aqui?</small></h2>
                 </div>
                 <div class="col-xs-3">
                     <button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-th-large"></span></button>

@@ -9,9 +9,11 @@ if ($_GET['id']) {
 }
 
 $info = getUserInfo($id);
+$email = getUserEmail($id);
 $image = getUserImage($id);
 
 $smarty->assign('info', $info);
+$smarty->assign('email', $email['email']);
 $smarty->assign('image', $image['path']);
-$smarty->display('user/profile.tpl');
+$smarty->display('user/edit_profile.tpl');
 ?>
