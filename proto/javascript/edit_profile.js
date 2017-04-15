@@ -1,4 +1,3 @@
-console.log("tou a correr");
 $(document).ready(function () {
     $('#show_hometown').click(function () {
         toogleGlyphiconEye($(this).find('span'));
