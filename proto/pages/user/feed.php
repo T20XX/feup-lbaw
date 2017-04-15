@@ -13,5 +13,5 @@ if(isset($_SESSION['id'])){
 
 $smarty->assign('cssPath', $BASE_URL . "css/feed.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/feed.js");
-$smarty->display('user/dashboard.tpl');
+$smarty->display('user/feed.tpl');
 ?>
