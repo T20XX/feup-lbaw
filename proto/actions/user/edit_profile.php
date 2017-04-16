@@ -28,7 +28,7 @@ $id = $_SESSION['id'];
 $email = getUserEmail($id);
 $password = $_POST['password'];
 $result = isLoginCorrect($email, $password);
-if ($result['idPerson']) {
+if (isset($result['idPerson'])) {
     //change email
     if ($email != $_POST['email']) {
         $email = $_POST['email'];
