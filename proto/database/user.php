@@ -36,4 +36,13 @@ function getUserCircles($id) {
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
+
+function getUserInvites($id) {
+    global $conn;
+    $stmt = $conn->prepare('SELECT sender
+                            FROM "public"."Invite"
+                            WHERE "Invite"."receiver" = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetchAll();
+}
 ?>
