@@ -51,8 +51,10 @@ if ($result['idPerson']) {
             $_POST['show_birthday'],
             $_POST['show_gender'],
             $_POST['show_age']);
+
+    header("Location: $BASE_URL"."pages/user/profile.php");
 } else {
     $_SESSION['error_messages'][] = 'Password wrong';
-    header("Location: $BASE_URL");
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 ?>
