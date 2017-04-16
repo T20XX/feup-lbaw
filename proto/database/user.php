@@ -32,7 +32,7 @@ function getUserCircles($id) {
                             FROM ("public"."Ingresso" JOIN
 								"public"."Circle" USING("idCircle")) JOIN
 								"public"."Image" USING("idCircle")
-                            WHERE "Ingresso"."idUser" = ?');
+                            WHERE "idUser" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
