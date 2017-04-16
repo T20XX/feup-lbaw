@@ -37,10 +37,10 @@ if ($result['idPerson']) {
     //change password
     if ($password != $_POST['new_password']) {
         $password = $_POST['new_password'];
-        updatePassword($id, $password);
+        //updatePassword($id, $password);
     }
     //change info
-        updateUserInfo($id,
+        /*updateUserInfo($id,
             $_POST['first_name'],
             $_POST['last_name'],
             $_POST['hometown'],
@@ -50,7 +50,7 @@ if ($result['idPerson']) {
             $_POST['show_hometown'],
             $_POST['show_birthday'],
             $_POST['show_gender'],
-            $_POST['show_age']);
+            $_POST['show_age']);*/
 
     header("Location: $BASE_URL"."pages/user/profile.php");
 } else {
