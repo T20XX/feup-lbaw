@@ -86,7 +86,7 @@
                     <img src="../res/check.png" class="img-circle img-responsive">
                     <a href="circle.php"><p>$circle.idCircle</p></a>
                 </div>
-				{foreach}
+				{/foreach}
             </div>
         </div>
     </div>
