@@ -55,6 +55,9 @@ if ($result['idPerson']) {
         $_POST['show_gender'],
         $_POST['show_age']);
 
+    //change profile photo
+    //TODO
+
     header("Location: $BASE_URL" . "pages/user/profile.php");
 } else {
     $_SESSION['error_messages'][] = 'Password wrong';
