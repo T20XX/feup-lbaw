@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row well" style="border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-        <form id="edit_profile_form" action="{$BASE_URL}actions/user/edit_profile.php" method="post">
+        <form id="edit_profile_form" action="{$BASE_URL}actions/user/edit_profile.php" method="post" enctype="multipart/form-data">
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
@@ -90,10 +90,10 @@
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
-                        <img src="{$image}" class="img-responsive img-circle">
+                        <img id="preview" src="{$image}" class="img-responsive img-circle">
                     </div>
                     <div class="col-xs-12">
-                        <button type="button" class="btn btn-default btn-block">Upload new photo</button>
+                        <button type="file" name="profile_photo" id="profile_photo" class="btn btn-default btn-block">Upload new photo</button>
                     </div>
                 </div>
 
