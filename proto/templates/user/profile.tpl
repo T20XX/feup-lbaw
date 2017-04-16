@@ -79,7 +79,7 @@
         <div class="col-sm-6">
             <div id="circles" class="row text-center well">
                 <div class="col">
-                    <a href="circles.php"><h3>Circles</h3></a>
+                    <h3>Circles</h3>
                 </div>
 				{foreach $circles as $circle}
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
