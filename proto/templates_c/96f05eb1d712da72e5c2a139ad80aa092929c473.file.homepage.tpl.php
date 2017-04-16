@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-14 02:00:04
-         compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/auth/dashboard.tpl" */ ?>
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 22:04:26
+         compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4335193958ef9bb7675735-14104098%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '96f05eb1d712da72e5c2a139ad80aa092929c473' => 
     array (
-      0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/auth/dashboard.tpl',
-      1 => 1492131540,
+      0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/auth/homepage.tpl',
+      1 => 1492290241,
       2 => 'file',
     ),
   ),
@@ -29,17 +29,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <title>MeetTheCircle</title>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/homepage.js"></script>
+javascript/auth/homepage.js"></script>
 
 <head>
     <style>

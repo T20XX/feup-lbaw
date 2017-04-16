@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-15 17:37:53
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 01:41:50
          compiled from "/opt/lbaw/lbaw1632/public_html/proto/templates/user/edit_profile.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:34016425558f22a462aac10-99073896%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b756ed35cbbc811d5ce5dcdda476d8a375d1958f' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/proto/templates/user/edit_profile.tpl',
-      1 => 1492274272,
+      1 => 1492303307,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="container">
     <div class="row well" style="border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <form id="edit_profile_form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/user/edit_profile.php" method="post">
+actions/user/edit_profile.php" method="post" enctype="multipart/form-data">
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
@@ -126,11 +126,12 @@ actions/user/edit_profile.php" method="post">
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
-                        <img src="<?php echo $_smarty_tpl->tpl_vars['image']->value;?>
+                        <img id="preview" src="<?php echo $_smarty_tpl->tpl_vars['image']->value;?>
 " class="img-responsive img-circle">
                     </div>
                     <div class="col-xs-12">
-                        <button type="button" class="btn btn-default btn-block">Upload new photo</button>
+                        Upload new photo
+                        <input type="file" name="profile_photo" id="profile_photo" class="btn btn-default btn-block">
                     </div>
                 </div>
 
