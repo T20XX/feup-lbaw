@@ -48,6 +48,7 @@ function getUserInvites($id) {
                             WHERE "Invite"."receiver" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
+}
 
 function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age)
 {
