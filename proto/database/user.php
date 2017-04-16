@@ -25,4 +25,13 @@ function getUserImage($id) {
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
+
+function getUserCircles($id) {
+    global $conn;
+    $stmt = $conn->prepare('SELECT idCircle
+                            FROM "public"."Ingresso"
+                            WHERE "idUser" = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetchAll();
+}
 ?>

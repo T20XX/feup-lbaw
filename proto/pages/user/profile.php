@@ -26,11 +26,13 @@ if ($_GET['id']) {
 
 $info = getUserInfo($id);
 $image = getUserImage($id);
+$circles = getUserCircles($id);
 
 $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
 $smarty->assign('cssPath', $BASE_URL . "css/user/profile.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/user/profile.js");
+$smarty->assign('circles', $circles);
 $smarty->display('user/profile.tpl');
 ?>
