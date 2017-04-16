@@ -37,7 +37,7 @@ if ($result['idPerson']) {
     //change password
     if ($password != $_POST['new_password']) {
         $password = $_POST['new_password'];
-        //updatePassword($id, $password);
+        updatePassword($id, $password);
     }
     //change info
         /*updateUserInfo($id,
