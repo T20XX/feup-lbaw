@@ -15,22 +15,22 @@ $(document).ready(function () {
         toogleGlyphiconEye($(this).find('span'));
         toogleBooleanInput($(this).find('input'));
     });
-    $("#profile_photo").change(function(){
+    $("#profile_photo").change(function () {
         readTempURL(this);
     });
 });
 
 
-function toogleGlyphiconEye(span){
+function toogleGlyphiconEye(span) {
     $(span).toggleClass('glyphicon-eye-close').toggleClass('glyphicon-eye-open');
 }
 
 
-function toogleBooleanInput(input){
+function toogleBooleanInput(input) {
     var bool = $(input).val();
-    if(bool == "true"){
+    if (bool == "true") {
         $(input).val("false");
-    }else if (bool == "false"){
+    } else if (bool == "false") {
         $(input).val("true");
     }
 }
