@@ -41,7 +41,6 @@ function getUserCircles($id)
     return $stmt->fetchAll();
 }
 
-<<<<<<< HEAD
 function getUserInvites($id) {
     global $conn;
     $stmt = $conn->prepare('SELECT sender
@@ -49,7 +48,7 @@ function getUserInvites($id) {
                             WHERE "Invite"."receiver" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
-=======
+
 function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age)
 {
     global $conn;
@@ -57,6 +56,5 @@ function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gen
                             SET (first_name, last_name, hometown, birthday, gender, bio, show_hometown, show_birthday, show_gender, show_age) = (? , ?, ?, ?, ?, ?, ?, ?, ?, ?)
                             WHERE "idPerson" = ?');
     $stmt->execute(array($first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age, $id));
->>>>>>> f2f91c6c76a796184ac95ec3aaccd38ee84659d7
 }
 ?>
