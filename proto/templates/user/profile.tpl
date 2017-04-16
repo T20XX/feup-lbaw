@@ -84,7 +84,7 @@
 				{foreach $circles as $circle}
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
                     <img src="{$circle.path}" class="img-circle img-responsive">
-                    <a href= "{$BASE_URL}circle/index.php?id={$idCircle}"><p>{$circle.name}</p></a>
+                    <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}"><p>{$circle.name}</p></a>
                 </div>
 				{/foreach}
             </div>
