@@ -81,26 +81,12 @@
                 <div class="col">
                     <a href="circles.php"><h3>Circles</h3></a>
                 </div>
+				{foreach $circles as $circle}
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
                     <img src="../res/check.png" class="img-circle img-responsive">
-                    <a href="circle.php"><p>dfhfa</p></a>
+                    <a href="circle.php"><p>$circle.idCircle</p></a>
                 </div>
-                <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
-                    <img src="../res/check.png" class="img-circle img-responsive">
-                    <a href="circle.php"><p>dfhfa</p></a>
-                </div>
-                <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
-                    <img src="../res/check.png" class="img-circle img-responsive">
-                    <a href="circle.php"><p>dfhfa</p></a>
-                </div>
-                <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
-                    <img src="../res/check.png" class="img-circle img-responsive">
-                    <a href="circle.php"><p>dfhfa</p></a>
-                </div>
-                <div class="col-xs-4 col-sm-2 col-sm-offset-2 text-center">
-                    <img src="../res/check.png" class="img-circle img-responsive">
-                    <a href="circle.php"><p>dfhfa</p></a>
-                </div>
+				{foreach}
             </div>
         </div>
     </div>
