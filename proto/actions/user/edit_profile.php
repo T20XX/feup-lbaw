@@ -35,7 +35,10 @@ if ($result['idPerson']) {
         updateEmail($id, $email);
     }
     //change password
-    if ($password != $_POST['new_password']) {
+    if ($_POST['new_password'] &&
+        $password != $_POST['new_password'] &&
+        $_POST['new_password'] == $_POST['new_password2']
+    ) {
         $password = $_POST['new_password'];
         updatePassword($id, $password);
     }
