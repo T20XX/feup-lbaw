@@ -40,19 +40,19 @@ if ($result['idPerson']) {
         updatePassword($id, $password);
     }
     //change info
-        /*updateUserInfo($id,
-            $_POST['first_name'],
-            $_POST['last_name'],
-            $_POST['hometown'],
-            $_POST['birthday'],
-            $_POST['gender'],
-            $_POST['bio'],
-            $_POST['show_hometown'],
-            $_POST['show_birthday'],
-            $_POST['show_gender'],
-            $_POST['show_age']);*/
+    updateUserInfo($id,
+        $_POST['first_name'],
+        $_POST['last_name'],
+        $_POST['hometown'],
+        $_POST['birthday'],
+        $_POST['gender'],
+        $_POST['bio'],
+        $_POST['show_hometown'],
+        $_POST['show_birthday'],
+        $_POST['show_gender'],
+        $_POST['show_age']);
 
-    header("Location: $BASE_URL"."pages/user/profile.php");
+    header("Location: $BASE_URL" . "pages/user/profile.php");
 } else {
     $_SESSION['error_messages'][] = 'Password wrong';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
