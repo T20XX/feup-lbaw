@@ -36,4 +36,12 @@ function updateEmail($id, $email) {
                             WHERE "idPerson" = ?');
     $stmt->execute(array($email, $id));
 }
+
+function updatePassword($id, $password) {
+    global $conn;
+    $stmt = $conn->prepare('UPDATE "public"."Person"
+                            SET password = ?
+                            WHERE "idPerson" = ?');
+    $stmt->execute(array(sha1($password), $id));
+}
 ?>

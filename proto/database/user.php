@@ -1,5 +1,6 @@
 <?php
-function getUserInfo($id) {
+function getUserInfo($id)
+{
     global $conn;
     $stmt = $conn->prepare('SELECT * 
                             FROM "public"."User" 
@@ -8,7 +9,8 @@ function getUserInfo($id) {
     return $stmt->fetch();
 }
 
-function getUserEmail($id) {
+function getUserEmail($id)
+{
     global $conn;
     $stmt = $conn->prepare('SELECT email 
                             FROM "public"."Person" 
@@ -17,7 +19,8 @@ function getUserEmail($id) {
     return $stmt->fetch();
 }
 
-function getUserImage($id) {
+function getUserImage($id)
+{
     global $conn;
     $stmt = $conn->prepare('SELECT path 
                             FROM "public"."Image" 
@@ -26,7 +29,8 @@ function getUserImage($id) {
     return $stmt->fetch();
 }
 
-function getUserCircles($id) {
+function getUserCircles($id)
+{
     global $conn;
     $stmt = $conn->prepare('SELECT "idCircle", "public"."Circle".name, "public"."Image".path
                             FROM (("public"."Ingresso" JOIN
@@ -37,6 +41,7 @@ function getUserCircles($id) {
     return $stmt->fetchAll();
 }
 
+<<<<<<< HEAD
 function getUserInvites($id) {
     global $conn;
     $stmt = $conn->prepare('SELECT sender
@@ -44,5 +49,14 @@ function getUserInvites($id) {
                             WHERE "Invite"."receiver" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
+=======
+function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age)
+{
+    global $conn;
+    $stmt = $conn->prepare('UPDATE "public"."User"
+                            SET (first_name, last_name, hometown, birthday, gender, bio, show_hometown, show_birthday, show_gender, show_age) = (? , ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            WHERE "idPerson" = ?');
+    $stmt->execute(array($first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age, $id));
+>>>>>>> f2f91c6c76a796184ac95ec3aaccd38ee84659d7
 }
 ?>
