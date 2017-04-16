@@ -28,4 +28,12 @@ function isAdmin($id) {
     $stmt->execute(array($id));
     return $stmt->fetch() == true;
 }
+
+function updateEmail($id, $email) {
+    global $conn;
+    $stmt = $conn->prepare('UPDATE "public"."Person"
+                            SET email = ?
+                            WHERE "idPerson" = ?');
+    $stmt->execute(array($email, $id));
+}
 ?>

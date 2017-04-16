@@ -93,7 +93,8 @@
                         <img id="preview" src="{$image}" class="img-responsive img-circle">
                     </div>
                     <div class="col-xs-12">
-                        <input type="file" name="profile_photo" id="profile_photo" class="btn btn-default btn-block">Upload new photo</input>
+                        Upload new photo
+                        <input type="file" name="profile_photo" id="profile_photo" class="btn btn-default btn-block">
                     </div>
                 </div>
 
