@@ -69,7 +69,6 @@
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">Age</div>
-                            <div class="panel-body">TODO</div>
                             <div class="panel-footer" id="show_age">
                                 <input type="hidden" name="show_age" value="{if $info.show_age}true{else}false{/if}">
                                 <span class="glyphicon glyphicon-eye-{if $info.show_age}open{else}close{/if}"></span>
@@ -90,7 +89,7 @@
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
-                        <img id="preview" src="{$image}" class="img-responsive img-circle">
+                        <img id="preview" src="{$BASE_URL}{$image}" class="img-responsive img-circle">
                     </div>
                     <div class="col-xs-12">
                         Upload new photo

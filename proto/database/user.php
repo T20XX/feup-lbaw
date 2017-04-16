@@ -41,7 +41,8 @@ function getUserCircles($id)
     return $stmt->fetchAll();
 }
 
-function getUserInvites($id) {
+function getUserInvites($id)
+{
     global $conn;
     $stmt = $conn->prepare('SELECT "public"."Invite".sender, "public"."Image".path, "public"."Circle".name
                             FROM (("public"."Invite" JOIN
@@ -60,4 +61,16 @@ function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gen
                             WHERE "idPerson" = ?');
     $stmt->execute(array($first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age, $id));
 }
+
+function updateUserImage($id, $profile_photo)
+{
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "public"."Image" (path, "idUser")
+VALUES (?, ?)
+ON CONFLICT ("idUser") DO UPDATE 
+  SET path = ?, 
+      "idUser" = ?');
+    $stmt->execute(array($profile_photo, $id, $profile_photo, $id));
+}
+
 ?>

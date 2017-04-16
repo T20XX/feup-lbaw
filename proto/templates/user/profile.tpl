@@ -5,7 +5,7 @@
          style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <div class="col-sm-6 col-sm-push-6">
             <div>
-                <img src="{$image}" class="img-responsive img-circle">
+                <img src="{$BASE_URL}{$image}" class="img-responsive img-circle">
             </div>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
@@ -83,7 +83,7 @@
                 </div>
 				{foreach $circles as $circle}
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
-                    <img src="{$circle.path}" class="img-circle img-responsive">
+                    <img src="{$BASE_URL}{$circle.path}" class="img-circle img-responsive">
                     <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}"><p>{$circle.name}</p></a>
                 </div>
 				{/foreach}
