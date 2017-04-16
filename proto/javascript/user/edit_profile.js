@@ -15,6 +15,9 @@ $(document).ready(function () {
         toogleGlyphiconEye($(this).find('span'));
         toogleBooleanInput($(this).find('input'));
     });
+    $("#profile_photo").change(function(){
+        readTempURL(this);
+    });
 });
 
 
@@ -31,3 +34,16 @@ function toogleBooleanInput(input){
         $(input).val("true");
     }
 }
+
+function readTempURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#preview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
