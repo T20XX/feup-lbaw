@@ -23,7 +23,7 @@ $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
 $smarty->assign('circles', $circles);
-$smarty->assin('invites', $invites);
+$smarty->assign('invites', $invites);
 $smarty->assign('cssPath', $BASE_URL . "css/user/profile.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/user/profile.js");
 $smarty->display('user/invite.tpl');
