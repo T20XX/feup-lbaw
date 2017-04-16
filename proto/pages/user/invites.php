@@ -12,6 +12,8 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
+$id = $_SESSION['id'];
+
 $info = getUserInfo($id);
 $image = getUserImage($id);
 $circles = getUserCircles($id);
