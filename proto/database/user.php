@@ -26,9 +26,9 @@ function getUserImage($id) {
     return $stmt->fetch();
 }
 
-functio	n getUserCircles($id) {
+function getUserCircles($id) {
     global $conn;
-    $stmt = $conn->prepare('SELECT "idCircle", "public"."Circle".name, "public"."Image".path
+    $stmt = $conn->prepare('SELECT "idCircle", "public"."Circle".name, path
                             FROM "public"."Ingresso" JOIN
 								"public"."Circle" USING("idCircle"),
 								"public"."Image" USING("idCircle")
