@@ -43,7 +43,7 @@ function getUserCircles($id)
 
 function getUserInvites($id) {
     global $conn;
-    $stmt = $conn->prepare('SELECT "public"."Invite".sender "public"."Image".path
+    $stmt = $conn->prepare('SELECT "public"."Invite".sender, "public"."Image".path
                             FROM ("public"."Invite" JOIN
 								"public"."Image" USING("idCircle"))
                             WHERE "Invite"."receiver" = ?');
