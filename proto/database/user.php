@@ -72,5 +72,4 @@ ON CONFLICT ("idUser") DO UPDATE
       "idUser" = ?');
     $stmt->execute(array($profile_photo, $id, $profile_photo, $id));
 }
-
 ?>
