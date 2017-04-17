@@ -1,11 +1,11 @@
 {include file='common/header.tpl'}
 
 <div class="container">
-    <div class="row well"
-         style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
-		 
+    <div class="row">
+	
 		{include file='common/side_bar1.tpl'}
 		{include file='common/side_bar2.tpl'}
+		
 		<div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
 			<div class = "row">
 				{foreach $invites as $invite}
