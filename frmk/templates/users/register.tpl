@@ -1,4 +1,4 @@
-{include file='common/aux_header.tpl'}
+{include file='common/header.tpl'}
 
 <section id="register">
   <h2>Register</h2>
