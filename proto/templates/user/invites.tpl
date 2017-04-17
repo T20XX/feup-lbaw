@@ -13,7 +13,7 @@
                         <div class="panel panel-default"
                              style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                             <div class="panel-heading">
-                                <p><a href="profile.php">{$invite.sender} TODO NAME</a> invited you to: </p>
+                                <p><a href="profile.php">{$invite.sender}{$invite.first_name} {$invite.last_name}</a> invited you to: </p>
                             </div>
                             <div class="panel-body">
                                 <div class="row">

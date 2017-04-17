@@ -44,9 +44,10 @@ function getUserCircles($id)
 function getUserInvites($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "public"."Invite".sender, "public"."Circle".name, "public"."Circle"."idCircle"
-                            FROM "public"."Invite" JOIN
-								"public"."Circle" USING("idCircle")
+    $stmt = $conn->prepare('SELECT "public"."Invite".sender, "public"."Circle".name, "public"."User".first_name, "public"."User".last_name
+                            FROM (("public"."Invite" JOIN
+								"public"."Circle" USING("idCircle")) JOIN
+								"public"."User" ON("public"."User"."idPerson" = "public"."Invite".sender))
                             WHERE "Invite"."receiver" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
