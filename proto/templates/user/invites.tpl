@@ -21,7 +21,7 @@
                                         <h3><a href="">{$invite.name}</a></h3>
                                     </div>
                                     <div class="col-xs-6">
-                                        <img src="" class="img-responsive" style="height:60px">
+                                        <img src="{$invite.path}" class="img-responsive" style="height:60px">
                                     </div>
                                 </div>
                             </div>
