@@ -64,7 +64,8 @@ if ($result['idPerson']) {
         if (file_exists($image_path)) unlink($image_path);
 
         if (move_uploaded_file($_FILES['profile_photo']['tmp_name'], $image_path)) {
-            updateUserImage($id, $image_path);
+            $image_url = $BASE_URL . "images/users/" . $id;
+            updateUserImage($id, $image_url);
         } else {
 
         }
