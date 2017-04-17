@@ -65,8 +65,6 @@ if ($result['idPerson']) {
 
         if (move_uploaded_file($_FILES['profile_photo']['tmp_name'], $image_path)) {
             updateUserImage($id, $image_path);
-
-            $_SESSION['error_messages'][] = 'Password wrong';
         } else {
 
         }
