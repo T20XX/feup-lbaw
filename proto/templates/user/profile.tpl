@@ -53,7 +53,7 @@
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">Age</div>
-                            <div class="panel-body">{$age}<strong>TODO</strong></div>
+                            <div class="panel-body"><strong>{$age}</strong></div>
                         </div>
                     </div>
                 {/if}
