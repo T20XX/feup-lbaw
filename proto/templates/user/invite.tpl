@@ -8,6 +8,7 @@
 		
 		<div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
 			<div class = "row">
+				{foreach $invites as $invite}
 				<div id="invite">
 					<div class="col-xs-12 col-sm-6">
 						<div class="panel panel-default" style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
@@ -36,6 +37,7 @@
 						</div>
 					</div>
 				</div>
+				{/foreach}
 			</div>
 		</div>
 	</div>
