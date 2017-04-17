@@ -13,12 +13,12 @@
                         <div class="panel panel-default"
                              style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                             <div class="panel-heading">
-                                <p><a href="profile.php">User2 TODO</a> invited you to: </p>
+                                <p><a href="profile.php">{$invite.sender} TODO</a> invited you to: </p>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <h3><a href=""></a></h3>
+                                        <h3><a href="">{$invite.name}</a></h3>
                                     </div>
                                     <div class="col-xs-6">
                                         <img src="" class="img-responsive" style="height:60px">
