@@ -66,7 +66,7 @@ function updateUserImage($id, $profile_photo)
     global $conn;
     $stmt = $conn->prepare('UPDATE "public"."Image"
                             SET path = ?
-                            WHERE "idPerson" = ?');
+                            WHERE "idUser" = ?');
     $stmt->execute(array($profile_photo, $id));
 }
 ?>
