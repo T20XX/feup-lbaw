@@ -83,6 +83,7 @@
                 </div>
 				{foreach $invites as $invite}
                 <div class="col-xs-4 col-sm-2 col-sm-offset-1 text-center">
+                    <img src="{$invite.path}" class="img-circle img-responsive">
                     <a href=""><p>{$invite.sender}</p></a>
                 </div>
 				{/foreach}
