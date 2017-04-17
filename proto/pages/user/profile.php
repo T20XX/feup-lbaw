@@ -27,7 +27,12 @@ if ($_GET['id']) {
 $info = getUserInfo($id);
 $image = getUserImage($id);
 $circles = getUserCircles($id);
+$date = new DateTime($info['birthday']);
+$now = new DateTime();
+$interval = $now->diff($date);
+$age = $interval->y;
 
+$smarty->assign('age', $age);
 $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
