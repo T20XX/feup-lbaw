@@ -21,7 +21,7 @@
                                         <h3><a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}">{$invite.name}</a></h3>
                                     </div>
                                     <div class="col-xs-6">
-                                        <img src="{$BASE_URL}{$invite.path}" class="img-responsive" style="height:60px">
+                                        <img src="{$invite.path}" class="img-responsive" style="height:60px">
                                     </div>
                                 </div>
                             </div>
