@@ -64,12 +64,10 @@ function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gen
 function updateUserImage($id, $profile_photo)
 {
     global $conn;
-    $stmt = $conn->prepare('INSERT INTO "public"."Image" (path, "idUser")
-VALUES (?, ?)
-ON CONFLICT ("idUser") DO UPDATE 
-  SET path = ?, 
-      "idUser" = ?');
-    $stmt->execute(array($profile_photo, $id, $profile_photo, $id));
+    $stmt = $conn->prepare('UPDATE "public"."Image"
+                            SET path = ?
+                            WHERE "idPerson" = ?');
+    $stmt->execute(array($profile_photo, $id));
 }
 
 ?>
