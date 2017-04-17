@@ -8,7 +8,6 @@
 		
 		<div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
 			<div class = "row">
-				{foreach $invites as $invite}
 				<div id="invite">
 					<div class="col-xs-12 col-sm-6">
 						<div class="panel panel-default" style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
@@ -18,10 +17,10 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-xs-6">
-									<h3><a href="">{$invite.name}</a></h3>
+									<h3><a href=""></a></h3>
 								</div>
 								<div class="col-xs-6">
-									<img src="{$invite.path}" class="img-responsive" style="height:60px">
+									<img src="" class="img-responsive" style="height:60px">
 								</div>
 							</div>
 						</div>
@@ -37,7 +36,6 @@
 						</div>
 					</div>
 				</div>
-				{/foreach}
 			</div>
 		</div>
 	</div>
