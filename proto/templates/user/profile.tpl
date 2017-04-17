@@ -52,8 +52,8 @@
                 {if $info.show_age}
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">
-                            <div class="panel-heading">{$age}</div>
-                            <div class="panel-body"><strong>TODO</strong></div>
+                            <div class="panel-heading">Age</div>
+                            <div class="panel-body">{$age}<strong>TODO</strong></div>
                         </div>
                     </div>
                 {/if}
