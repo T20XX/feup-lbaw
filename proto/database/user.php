@@ -32,11 +32,11 @@ function getUserImage($id)
 function getUserCircles($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT idCircle, Circle.name, Image.path
-                            FROM ((Ingresso JOIN
-								Circle USING(idCircle))JOIN
-								Image USING(idCircle))
-                            WHERE Ingresso.idUser = ?');
+    $stmt = $conn->prepare('SELECT "idCircle", "Circle".name, "Image".path
+                            FROM (("Ingresso" JOIN
+								"Circle" USING("idCircle"))JOIN
+								"Image" USING("idCircle"))
+                            WHERE "Ingresso"."idUser" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
@@ -44,12 +44,12 @@ function getUserCircles($id)
 function getUserInvites($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT Invite.sender, Circle.idCircle, Circle.name, "User".first_name, "User".last_name, Image.path
-                            FROM (((Invite JOIN
-								Circle USING(idCircle)) JOIN
-								"User" ON("User".idPerson = Invite.sender)) JOIN
-								Image USING(idCircle))
-                            WHERE Invite.receiver = ?');
+    $stmt = $conn->prepare('SELECT "Invite".sender, "Circle"."idCircle", "Circle".name, "User".first_name, "User".last_name, "Image".path
+                            FROM ((("Invite" JOIN
+								"Circle" USING("idCircle")) JOIN
+								"User" ON("User"."idPerson" = "Invite".sender)) JOIN
+								"Image" USING("idCircle"))
+                            WHERE "Invite".receiver = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
@@ -59,16 +59,16 @@ function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gen
     global $conn;
     $stmt = $conn->prepare('UPDATE "User"
                             SET (first_name, last_name, hometown, birthday, gender, bio, show_hometown, show_birthday, show_gender, show_age) = (? , ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                            WHERE idPerson = ?');
+                            WHERE "idPerson" = ?');
     $stmt->execute(array($first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age, $id));
 }
 
 function updateUserImage($id, $profile_photo)
 {
     global $conn;
-    $stmt = $conn->prepare('UPDATE Image
+    $stmt = $conn->prepare('UPDATE "Image"
                             SET path = ?
-                            WHERE idUser = ?');
+                            WHERE "idUser" = ?');
     $stmt->execute(array($profile_photo, $id));
 }
 ?>
