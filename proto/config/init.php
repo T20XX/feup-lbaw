@@ -1,18 +1,17 @@
 <?php
-  session_set_cookie_params(3600, '/~lbaw1632'); //DONE
+  session_set_cookie_params(3600, '/~lbaw1632');
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-  $BASE_DIR = '/opt/lbaw/lbaw1632/public_html/proto/'; //DONE
-  $BASE_URL = '/~lbaw1632/proto/'; //DONE
+  $BASE_DIR = '/opt/lbaw/lbaw1632/public_html/proto/';
+  $BASE_URL = '/~lbaw1632/proto/';
 
   $conn = new PDO('pgsql:host=dbm.fe.up.pt;dbname=lbaw1632', 'lbaw1632', 'lw25iy58'); //DONE
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn->exec('SET search_path TO meet_the_circle');
-  //$conn->exec('SET SCHEMA meet_the_circle'); //FIXME?
+  $conn->exec('SET SCHEMA \'meet_the_circle\'');
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
