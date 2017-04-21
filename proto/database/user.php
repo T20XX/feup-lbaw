@@ -4,7 +4,7 @@ function getUserInfo($id)
     global $conn;
     $stmt = $conn->prepare('SELECT * 
                             FROM User 
-                            WHERE idPerson = ?');
+                            WHERE "idPerson" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
@@ -13,8 +13,8 @@ function getUserEmail($id)
 {
     global $conn;
     $stmt = $conn->prepare('SELECT email 
-                            FROM Person
-                            WHERE idPerson = ?');
+                            FROM "Person"
+                            WHERE "idPerson" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
@@ -23,8 +23,8 @@ function getUserImage($id)
 {
     global $conn;
     $stmt = $conn->prepare('SELECT path 
-                            FROM Image 
-                            WHERE idUser = ?');
+                            FROM "Image" 
+                            WHERE "idUser" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch();
 }
