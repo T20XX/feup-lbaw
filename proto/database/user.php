@@ -63,8 +63,7 @@ function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gen
     $stmt->execute(array($first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age, $id));
 }
 
-function updateUserImage($id, $profile_photo)
-{
+function updateUserImage($id, $profile_photo){
     global $conn;
     $stmt = $conn->prepare('UPDATE "Image"
                             SET path = ?
@@ -72,8 +71,7 @@ function updateUserImage($id, $profile_photo)
     $stmt->execute(array($profile_photo, $id));
 }
 
-function addUserImage($id, $profile_photo)
-{
+function addUserImage($id, $profile_photo){
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "Image" (path, "idUser") VALUES (?, ?)');
     $stmt->execute(array($profile_photo, $id));
@@ -90,6 +88,12 @@ function getMessagesAfter($id, $idUser1, $idUser2) {
                             ORDER BY "idMessage" ASC');
     $stmt->execute(array($id, $idUser1, $idUser2, $idUser2, $idUser1));
     return $stmt->fetchAll();
+}
+
+function addMessage($content, $sender, $receiver){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "Message" (content, sender, receiver) VALUES (?, ?, ?)');
+    $stmt->execute(array($content, $sender, $receiver));
 }
 
 ?>

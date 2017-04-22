@@ -46,4 +46,3 @@ function readTempURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-

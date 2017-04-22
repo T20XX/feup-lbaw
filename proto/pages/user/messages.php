@@ -15,20 +15,19 @@ if(isset($_SESSION['id'])){
 if ($_GET['id']) {
     $id = $_GET['id'];
     if($id != $_SESSION['id']){
-        $ownId = $_SESSION['id'];
-        $otherId = $_GET['id'];
+        $sender = $_SESSION['id']; // own id
+        $receiver = $_GET['id']; // other id
     }
 } else {
 }
 
-$messages = getMessagesAfter(0,$ownId, $otherId);
+$messages = getMessagesAfter(0,$sender, $receiver);
 $lastMessageId = end($messages)['idMessage'];
 
 
-$smarty->assign('ownId', $ownId);
-$smarty->assign('otherId', $otherId);
+$smarty->assign('sender', $sender);
+$smarty->assign('receiver', $receiver);
 $smarty->assign('messages', $messages);
 $smarty->assign('lastMessageId', $lastMessageId);
-
 $smarty->display('user/messages.tpl');
 ?>

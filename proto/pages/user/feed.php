@@ -11,7 +11,7 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
-$smarty->assign('cssPath', $BASE_URL . "css/feed.css");
-$smarty->assign('jsPath', $BASE_URL . "javascript/feed.js");
+$smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
+$smarty->assign('jsPath', $BASE_URL . "javascript/user/feed.js");
 $smarty->display('user/feed.tpl');
 ?>

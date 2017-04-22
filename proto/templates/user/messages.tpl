@@ -55,13 +55,21 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="input-group">
-                        <textarea class="form-control custom-control" rows="3"></textarea>
+                        <textarea id="send_content" class="form-control custom-control" rows="3"></textarea>
                         <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-picture"></span></span>
-                        <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-right"></span></span>
+                        <span id="send_btn" class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-right"></span></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>sender = {$sender}</script>
+<script>receiver = {$receiver}</script>
+<script>lastMessageId = {$lastMessageId}</script>
+
+<script src="{$BASE_URL}javascript/user/messages.js"></script>
+
 {include file='common/footer.tpl'}
