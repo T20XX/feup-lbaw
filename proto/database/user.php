@@ -81,11 +81,12 @@ function addUserImage($id, $profile_photo)
 
 function getMessagesAfter($id, $idUser1, $idUser2) {
     global $conn;
-    $stmt = $conn->prepare('(SELECT * 
+    $stmt = $conn->prepare('SELECT * 
+                            FROM (SELECT *
                             FROM "Message" 
                             WHERE "idMessage" > ? AND ((sender = ? AND receiver = ?) OR (sender = ? AND receiver = ?))
                             ORDER BY "idMessage" DESC
-                            LIMIT 20)
+                            LIMIT 20) AS unordered_messages
                             ORDER BY "idMessage" ASC');
     $stmt->execute(array($id, $idUser1, $idUser2, $idUser2, $idUser1));
     return $stmt->fetchAll();

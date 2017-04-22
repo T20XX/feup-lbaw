@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-08 15:37:06
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-17 03:45:08
          compiled from "/opt/lbaw/lbaw1632/public_html/frmk/templates/tweets/list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:60507487958e8f592374452-50754482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ccae80afd77acfec26983afaa59d96c2e2aaee7' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/frmk/templates/tweets/list.tpl',
-      1 => 1491213682,
+      1 => 1492397105,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58e8f59252ed51_75020173',
   'variables' => 
   array (
     'tweets' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'last_tweet_id' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58e8f59252ed51_75020173',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58e8f59252ed51_75020173')) {function content_58e8f59252ed51_75020173($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 

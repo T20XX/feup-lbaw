@@ -43,7 +43,7 @@
                 <div class="col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-body" style="max-height:380px;overflow-y:scroll;">
-                            {foreach $messages as $messages}
+                            {foreach $messages as $message}
                                 <div class="col-xs-10 col-sm-7 {if $message.sender == $ID}col-xs-offset-2 col-sm-offset-5{/if}">
                                     <div class="panel {if $message.sender == $ID}panel-primary{else}panel-default{/if}">
                                         <div class="panel-heading">Nulla vel metus scelerisque ante sollicitudin.</div>

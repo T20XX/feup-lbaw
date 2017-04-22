@@ -30,5 +30,5 @@ $smarty->assign('otherId', $otherId);
 $smarty->assign('messages', $messages);
 $smarty->assign('lastMessageId', $lastMessageId);
 
-$smarty->display('user/profile.tpl');
+$smarty->display('user/messages.tpl');
 ?>
