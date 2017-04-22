@@ -89,7 +89,7 @@
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
-                        <img id="preview" src="{$image}" class="img-responsive img-circle">
+                        <img id="preview" src="{if $image}{$image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle">
                     </div>
                     <div class="col-xs-12">
                         Upload new photo
