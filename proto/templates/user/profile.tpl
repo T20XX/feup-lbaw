@@ -5,7 +5,8 @@
          style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
         <div class="col-sm-6 col-sm-push-6">
             <div>
-                <img src="{$image}" class="img-responsive img-circle">
+
+                <img src="{if $image}{$image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle">
             </div>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
