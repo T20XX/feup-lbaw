@@ -59,12 +59,12 @@ if ($result['idPerson']) {
 
 //change profile photo
     if (!empty($_FILES['profile_photo']['name'])) {
-        $image_path = $BASE_DIR . "images/users/" . $id;
+        $image_path = $BASE_DIR . "resources/users/" . $id;
 
         if (file_exists($image_path)) unlink($image_path);
 
         if (move_uploaded_file($_FILES['profile_photo']['tmp_name'], $image_path)) {
-            $image_url = $BASE_URL . "images/users/" . $id;
+            $image_url = $BASE_URL . "resources/users/" . $id;
             updateUserImage($id, $image_url);
         } else {
 
