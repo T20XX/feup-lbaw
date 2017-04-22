@@ -61,18 +61,22 @@ if ($result['idPerson']) {
     if (!empty($_FILES['profile_photo']['name'])) {
         $image_path = $BASE_DIR . "resources/users/" . $id;
         $image_url = $BASE_URL . "resources/users/" . $id;
+        $file_existed = false;
 
-        if (file_exists($image_path)){
-       unlink($image_path);
+        if (file_exists($image_path)) {
+            unlink($image_path);
+            $file_existed = true;
+        }
         if (move_uploaded_file($_FILES['profile_photo']['tmp_name'], $image_path)) {
-            updateUserImage($id, $image_url);
+            if ($file_existed) {
+                updateUserImage($id, $image_url);
+            }else{
+                addUserImage($id, $image_url);
+            }
         } else {
 
         }
-        }else{
-            addUserImage($id, $image_url);
-        }
-}
+    }
 
 
     header("Location: $BASE_URL" . "pages/user/profile.php");
