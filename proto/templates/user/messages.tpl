@@ -46,7 +46,7 @@
                             {foreach $messages as $message}
                                 <div class="col-xs-10 col-sm-7 {if $message.sender == $ID}col-xs-offset-2 col-sm-offset-5{/if}">
                                     <div class="panel {if $message.sender == $ID}panel-primary{else}panel-default{/if}">
-                                        <div class="panel-heading">Nulla vel metus scelerisque ante sollicitudin.</div>
+                                        <div class="panel-heading">{$message.content}</div>
                                     </div>
                                 </div>
                                 {/foreach}
