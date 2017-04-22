@@ -20,7 +20,7 @@
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
                     {else}
-                        <a href="messages.php?id={$_GET['id']" class="btn btn-default btn-block">
+                        <a href="messages.php?id={$_GET['id']}" class="btn btn-default btn-block">
                             <span class="glyphicon glyphicon-envelope"></span>
                         </a>
                     {/if}
