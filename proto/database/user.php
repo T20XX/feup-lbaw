@@ -71,4 +71,11 @@ function updateUserImage($id, $profile_photo)
                             WHERE "idUser" = ?');
     $stmt->execute(array($profile_photo, $id));
 }
+function addUserImage($id, $profile_photo)
+{
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "Image" (path, "idUser") VALUES (?, ?)');
+    $stmt->execute(array($profile_photo, $id));
+}
+
 ?>
