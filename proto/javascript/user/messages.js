@@ -6,7 +6,7 @@ $(document).ready(function () {
             data: {
                 "sender": sender,
                 "receiver": receiver,
-                "content": $('#send_content').val(),
+                "content": $('#send_content').val()
             },
             success: function(){
 
