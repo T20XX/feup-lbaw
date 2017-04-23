@@ -5,7 +5,6 @@ $(document).ready(function () {
             url: BASE_URL + "api/user/send_message.php",
             type: "POST",
             data: {
-                "sender": sender,
                 "receiver": receiver,
                 "content": $('#send_content').val()
             },
@@ -23,28 +22,26 @@ function checkForNewMessages() {
         type: "POST",
         data: {
             "lastMessageId": lastMessageId,
-            "sender": sender,
             "receiver": receiver
         },
         success: function(data){
+            console.log(data);
             $.each(data, function(i, message) {
                 $.each(data, function(i, message) {
-                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ' +
-                    /*if(message.sender == sender){
-                        'col-xs-offset-2 col-sm-offset-5'
-                    }*/
-                    '">' +
-                    '<div class="panel ' +
-                    /*if(message.sender == sender){
-                        'panel-primary'
-                    }else{
-                        'panel-default'
-                    }*/
-                    '">' +
-                    '<div class="panel-heading">' +
-                    message.content +
-                    '</div></div></div>');
-                    last_message_id = message.idMessage;
+                    if(message.sender == sender){
+                        $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
+                            '<div class="panel panel-primary">' +
+                            '<div class="panel-heading">' +
+                            message.content +
+                            '</div></div></div>');
+                    } else {
+                        $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ">' +
+                            '<div class="panel panel-default ">' +
+                            '<div class="panel-heading">' +
+                            message.content +
+                            '</div></div></div>');
+                    }
+                    lastMessageId = message.idMessage;
                 });
             });
         }
