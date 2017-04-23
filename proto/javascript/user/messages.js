@@ -14,6 +14,8 @@ $(document).ready(function () {
             }
         });
     });
+    var messages_panel = $('#messages')[0];
+    messages_panel.scrollTop = messages_panel.scrollHeight;
 });
 
 function checkForNewMessages() {
