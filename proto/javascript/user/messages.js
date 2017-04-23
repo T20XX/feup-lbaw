@@ -42,8 +42,10 @@ function checkForNewMessages() {
                 }
                 lastMessageId = message.idMessage;
             });
-            var messages_panel = $('#messages');
+            if (JSON.parse(data).length > 0){
+            var messages_panel = $('#messages')[0];
             messages_panel.scrollTop = messages_panel.scrollHeight;
+            }
         }
     });
 }
