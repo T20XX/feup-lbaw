@@ -27,22 +27,20 @@ function checkForNewMessages() {
         success: function(data){
             console.log(data);
             $.each(data, function(i, message) {
-                $.each(data, function(i, message) {
-                    if(message.sender == sender){
-                        $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
-                            '<div class="panel panel-primary">' +
-                            '<div class="panel-heading">' +
-                            message.content +
-                            '</div></div></div>');
-                    } else {
-                        $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ">' +
-                            '<div class="panel panel-default ">' +
-                            '<div class="panel-heading">' +
-                            message.content +
-                            '</div></div></div>');
-                    }
-                    lastMessageId = message.idMessage;
-                });
+                if(message.sender == sender){
+                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
+                        '<div class="panel panel-primary">' +
+                        '<div class="panel-heading">' +
+                        message.content +
+                        '</div></div></div>');
+                } else {
+                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ">' +
+                        '<div class="panel panel-default ">' +
+                        '<div class="panel-heading">' +
+                        message.content +
+                        '</div></div></div>');
+                }
+                lastMessageId = message.idMessage;
             });
         }
     });
