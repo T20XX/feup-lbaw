@@ -29,21 +29,21 @@ function checkForNewMessages() {
         success: function(data){
             $.each(data, function(i, message) {
                 $.each(data, function(i, message) {
-                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 '
-                    if(message.sender == sender){
-                        + 'col-xs-offset-2 col-sm-offset-5'
-                    }
-                    + '">'
-                    + '<div class="panel '
-                    if(message.sender == sender){
-                        + 'panel-primary'
+                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ' +
+                    /*if(message.sender == sender){
+                        'col-xs-offset-2 col-sm-offset-5'
+                    }*/
+                    '">' +
+                    '<div class="panel ' +
+                    /*if(message.sender == sender){
+                        'panel-primary'
                     }else{
-                        + 'panel-default'
-                    }
-                    + '">'
-                    + '<div class="panel-heading">'
-                    + message.content
-                    + '</div></div></div>');
+                        'panel-default'
+                    }*/
+                    '">' +
+                    '<div class="panel-heading">' +
+                    message.content +
+                    '</div></div></div>');
                     last_message_id = message.idMessage;
                 });
             });
