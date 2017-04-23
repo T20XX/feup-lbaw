@@ -42,6 +42,7 @@ function checkForNewMessages() {
                 }
                 lastMessageId = message.idMessage;
             });
+            $('#messages').scrollTop = $('#messages').scrollHeight;
         }
     });
 }
