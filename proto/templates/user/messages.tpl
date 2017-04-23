@@ -42,14 +42,14 @@
                 <div class="col-xs-6"><h4>User1</h4></div>
                 <div class="col-xs-12">
                     <div class="panel panel-default">
-                        <div class="panel-body" style="max-height:380px;overflow-y:scroll;">
+                        <div id="messages" class="panel-body" style="max-height:380px;overflow-y:scroll;">
                             {foreach $messages as $message}
-                                <div class="col-xs-10 col-sm-7 {if $message.sender == $ID}col-xs-offset-2 col-sm-offset-5{/if}">
+                                <div class="message-data col-xs-10 col-sm-7 {if $message.sender == $ID}col-xs-offset-2 col-sm-offset-5{/if}">
                                     <div class="panel {if $message.sender == $ID}panel-primary{else}panel-default{/if}">
                                         <div class="panel-heading">{$message.content}</div>
                                     </div>
                                 </div>
-                                {/foreach}
+                            {/foreach}
                         </div>
                     </div>
                 </div>
