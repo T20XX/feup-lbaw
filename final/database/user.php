@@ -2,8 +2,8 @@
 function getUserInfo($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * 
-                            FROM "User" 
+    $stmt = $conn->prepare('SELECT *
+                            FROM "User"
                             WHERE "idPerson" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch();
@@ -12,7 +12,7 @@ function getUserInfo($id)
 function getUserEmail($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT email 
+    $stmt = $conn->prepare('SELECT email
                             FROM "Person"
                             WHERE "idPerson" = ?');
     $stmt->execute(array($id));
@@ -22,8 +22,8 @@ function getUserEmail($id)
 function getUserImage($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT path 
-                            FROM "Image" 
+    $stmt = $conn->prepare('SELECT path
+                            FROM "Image"
                             WHERE "idUser" = ?');
     $stmt->execute(array($id));
     return $stmt->fetch();
@@ -49,9 +49,26 @@ function getUserInvites($id)
 								"Circle" USING("idCircle")) JOIN
 								"User" ON("User"."idPerson" = "Invite".sender)) JOIN
 								"Image" USING("idCircle"))
-                            WHERE "Invite".receiver = ?');
+                            WHERE "Invite".receiver = ? and "Invite".accepted  = false ');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
+}
+
+function acceptInvite($id){
+  global $conn;
+  $stmt = $conn->prepare('UPDATE "Invite"
+                          SET accepted = true
+                          WHERE "idInvite" = ?');
+  $stmt->execute(array($id));
+
+}
+
+function removeInvite($id){
+  global $conn;
+  $stmt = $conn->prepare('DELETE FROM "Invite"
+                          WHERE "idInvite" = ?');
+  $stmt->execute(array($id));
+
 }
 
 function updateUserInfo($id, $first_name, $last_name, $hometown, $birthday, $gender, $bio, $show_hometown, $show_birthday, $show_gender, $show_age)
@@ -79,9 +96,9 @@ function addUserImage($id, $profile_photo){
 
 function getMessagesAfter($id, $idUser1, $idUser2) {
     global $conn;
-    $stmt = $conn->prepare('SELECT * 
+    $stmt = $conn->prepare('SELECT *
                             FROM (SELECT *
-                            FROM "Message" 
+                            FROM "Message"
                             WHERE "idMessage" > ? AND ((sender = ? AND receiver = ?) OR (sender = ? AND receiver = ?))
                             ORDER BY "idMessage" DESC
                             LIMIT 20) AS unordered_messages
