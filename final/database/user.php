@@ -44,7 +44,7 @@ function getUserCircles($id)
 function getUserInvites($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Invite".sender, "Circle"."idCircle", "Circle".name, "User".first_name, "User".last_name, "Image".path
+    $stmt = $conn->prepare('SELECT "Invite".idInvite "Invite".sender, "Circle"."idCircle", "Circle".name, "User".first_name, "User".last_name, "Image".path
                             FROM ((("Invite" JOIN
 								"Circle" USING("idCircle")) JOIN
 								"User" ON("User"."idPerson" = "Invite".sender)) JOIN

@@ -37,7 +37,7 @@
                                     <div class="col-xs-6">
                                       <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php" method="post">
                                       <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                                        <button type="submit" class="btn btn-success btn-block">Accept <span
+                                        <button type="submit" class="btn btn-error btn-block">Remove <span
                                                     class="glyphicon glyphicon-ok"></span></button>
                                       </form>
                                     </div>
