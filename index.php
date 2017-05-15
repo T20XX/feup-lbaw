@@ -3,7 +3,7 @@
 <body>
 
 <?php 
-header('Location: proto');
+header('Location: final');
 ?>
 </body>
 
