@@ -17,17 +17,21 @@ if ($_GET['id']) {
     if($id != $_SESSION['id']){
         $sender = $_SESSION['id']; // own id
         $receiver = $_GET['id']; // other id
+
+        $messages = getMessagesAfter(0,$sender, $receiver);
+        $lastMessageId = end($messages)['idMessage'];
+
+
+        $smarty->assign('sender', $sender);
+        $smarty->assign('receiver', $receiver);
+        $smarty->assign('messages', $messages);
+        $smarty->assign('lastMessageId', $lastMessageId);
+    }else{
+
     }
 } else {
+
 }
 
-$messages = getMessagesAfter(0,$sender, $receiver);
-$lastMessageId = end($messages)['idMessage'];
-
-
-$smarty->assign('sender', $sender);
-$smarty->assign('receiver', $receiver);
-$smarty->assign('messages', $messages);
-$smarty->assign('lastMessageId', $lastMessageId);
 $smarty->display('user/messages.tpl');
 ?>
