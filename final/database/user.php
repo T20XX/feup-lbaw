@@ -113,6 +113,7 @@ function addMessage($content, $sender, $receiver){
     $stmt->execute(array($content, $sender, $receiver));
 }
 
+
 function getPostsFromCircle($idCircle){
 	global $conn;
 	$stmt = $conn->prepare('SELECT "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  array_agg(i2.path)
@@ -124,6 +125,19 @@ function getPostsFromCircle($idCircle){
 					GROUP BY "Post"."idPost", "User"."idPerson", i1.path');
 					
     $stmt->execute(array($idCircle));
+	return $stmt->fetchAll();
+}
+
+function getRecentMessagesUsers($id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT DISTINCT ON (sender) "Message".sender , "Message"."idMessage", "User".first_name, "User".last_name, "Image".path
+                            FROM (("Message" JOIN
+                              "User" ON ("User"."idPerson" = "Message".sender)) LEFT JOIN
+                                "Image" ON ("Image"."idUser" = "Message".sender))
+                            WHERE receiver = 1
+                            ORDER BY sender, "idMessage" DESC
+                            LIMIT 10');
+    $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
 

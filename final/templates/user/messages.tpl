@@ -17,19 +17,12 @@
                                         class="glyphicon glyphicon-remove"></span></a>
                         </div>
                         <ul class="list-group">
+                            {foreach $recentMessagesUsers as $recentMessagesUser}
                             <li class="list-group-item list-group-item-success">
-                                <img src="../res/logo.png" class="img-responsive">
-                                <a href="messages.php">Member 1</a>
+                                <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
+                                <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
                             </li>
-                            <li class="list-group-item list-group-item-success">
-                                <a href="messages.php">Member 2</a>
-                            </li>
-                            <li class="list-group-item list-group-item-success">
-                                <a href="messages.php">Member 3</a>
-                            </li>
-                            <li class="list-group-item list-group-item-success">
-                                <a href="messages.php">Member 4</a>
-                            </li>
+                            {/foreach}
                         </ul>
                     </div>
                 </nav>
@@ -40,7 +33,7 @@
             <div class="row">
                 {if $messages}
                 <div class="col-xs-1 col-xs-offset-5"><img src="{if $receiver_image}{$receiver_image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle" style="width:60px"></div>
-                <div class="col-xs-6"><h4>{$receiver.first_name} {$receiver.last_name}</h4></div>
+                <div class="col-xs-6"><h4>{$receiver_info.first_name} {$receiver_info.last_name}</h4></div>
                 <div class="col-xs-12">
                     <div class="panel panel-default">
                             <div id="messages" class="panel-body" style="max-height:380px;overflow:auto;">
