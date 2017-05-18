@@ -119,7 +119,7 @@ function getRecentMessagesUsers($id){
                             FROM (("Message" JOIN
                               "User" ON ("User"."idPerson" = "Message".sender)) LEFT JOIN
                                 "Image" ON ("Image"."idUser" = "Message".sender))
-                            WHERE receiver = 1
+                            WHERE receiver = ?
                             ORDER BY sender, "idMessage" DESC
                             LIMIT 10');
     $stmt->execute(array($id));
