@@ -24,11 +24,14 @@ if ($_GET['id']) {
         $messages = getMessagesAfter(0,$sender, $receiver);
         $lastMessageId = end($messages)['idMessage'];
 
+        $recentMessagesUsers = getRecentMessagesUsers($sender);
+
 
         $smarty->assign('sender', $sender);
         $smarty->assign('receiver', $receiver);
         $smarty->assign('receiver_info', $receiver_info);
         $smarty->assign('receiver_image', $receiver_image['path']);
+        $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
         $smarty->assign('messages', $messages);
         $smarty->assign('lastMessageId', $lastMessageId);
     }else{

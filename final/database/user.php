@@ -113,4 +113,20 @@ function addMessage($content, $sender, $receiver){
     $stmt->execute(array($content, $sender, $receiver));
 }
 
+function getRecentMessagesUsers($id){
+    global $conn;
+    $stmt = $conn->prepare(//'SELECT * FROM (
+                            'SELECT DISTINCT sender, "User".first_name, "User".last_name  "Image".path
+                            FROM (("Message" JOIN
+								"User" ON ("User"."idPerson" = "Invite".sender)) JOIN
+								"Image" USING("idCircle"))
+                            WHERE receiver = ?
+                            ORDER BY "idMessage" DESC
+                            LIMIT 10');
+                             //AS unordered_messages
+                            //ORDER BY "idMessage" ASC');
+    $stmt->execute(array($id));
+    return $stmt->fetchAll();
+}
+
 ?>
