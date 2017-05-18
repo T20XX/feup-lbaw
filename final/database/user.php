@@ -115,16 +115,13 @@ function addMessage($content, $sender, $receiver){
 
 function getRecentMessagesUsers($id){
     global $conn;
-    $stmt = $conn->prepare(//'SELECT * FROM (
-                            'SELECT DISTINCT "Message".sender, "User".first_name, "User".last_name,  "Image".path
+    $stmt = $conn->prepare('SELECT DISTINCT ON (sender) "Message".sender , "Message"."idMessage", "User".first_name, "User".last_name, "Image".path
                             FROM (("Message" JOIN
-								"User" ON ("User"."idPerson" = "Message".sender)) LEFT JOIN
-								"Image" ON ("Image"."idUser" = "Message".sender))
-                            WHERE receiver = ?');
-                            //ORDER BY "idMessage" DESC
-                            //LIMIT 10');
-                             //AS unordered_messages
-                            //ORDER BY "idMessage" ASC');
+                              "User" ON ("User"."idPerson" = "Message".sender)) LEFT JOIN
+                                "Image" ON ("Image"."idUser" = "Message".sender))
+                            WHERE receiver = 1
+                            ORDER BY sender, "idMessage" DESC
+                            LIMIT 10');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
