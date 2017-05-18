@@ -28,12 +28,18 @@
                             <div class="panel-footer">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <button type="button" class="btn btn-success btn-block">Accept <span
+                                      <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php" method="post">
+                                      <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                        <button type="submit" class="btn btn-success btn-block">Accept <span
                                                     class="glyphicon glyphicon-ok"></span></button>
+                                      </form>
                                     </div>
                                     <div class="col-xs-6">
-                                        <button type="button" class="btn btn-danger btn-block">Remove <span
-                                                    class="glyphicon glyphicon-remove"></span></button>
+                                      <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php" method="post">
+                                      <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                        <button type="submit" class="btn btn-error btn-block">Remove <span
+                                                    class="glyphicon glyphicon-ok"></span></button>
+                                      </form>
                                     </div>
                                 </div>
                             </div>
