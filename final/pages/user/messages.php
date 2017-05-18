@@ -18,12 +18,17 @@ if ($_GET['id']) {
         $sender = $_SESSION['id']; // own id
         $receiver = $_GET['id']; // other id
 
+        $receiver_info = getUserInfo($receiver);
+        $receiver_image = getUserImage($receiver);
+
         $messages = getMessagesAfter(0,$sender, $receiver);
         $lastMessageId = end($messages)['idMessage'];
 
 
         $smarty->assign('sender', $sender);
         $smarty->assign('receiver', $receiver);
+        $smarty->assign('receiver_info', $receiver_info);
+        $smarty->assign('receiver_image', $receiver_image['path']);
         $smarty->assign('messages', $messages);
         $smarty->assign('lastMessageId', $lastMessageId);
     }else{
