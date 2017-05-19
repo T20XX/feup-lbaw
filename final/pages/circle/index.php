@@ -1,6 +1,6 @@
 <?php
 include_once('../../config/init.php');
-include_once($BASE_URL .'database/user.php');
+include_once($BASE_DIR .'database/user.php');
 
 if(isset($_SESSION['id'])){
     if(isset($_SESSION['admin'])){
