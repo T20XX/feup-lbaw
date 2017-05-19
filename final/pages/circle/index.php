@@ -24,6 +24,7 @@ if ($_GET['id']) {
 
 
 		$smarty->assign('posts', $posts);
+        $smarty->assign('posts.json_agg', json_decode($posts.json_agg));
 		$smarty->assign('circle', $circle);
 		}
 	}

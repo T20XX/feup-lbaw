@@ -35,31 +35,14 @@
                         <a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}"> {$invite.name} </a>
                         <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php" method="post">
                             <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                            <button type="submit" class="badge"><span
-                                        class="glyphicon glyphicon-ok"></span></button>
+                            <button type="submit" class="badge"><span class="glyphicon glyphicon-ok"></span></button>
                         </form>
                         <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php" method="post">
                             <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                            <button type="submit" class="badge"><span
-                                        class="glyphicon glyphicon-remove"></span></button>
+                            <button type="submit" class="badge"><span class="glyphicon glyphicon-remove"></span></button>
                         </form>
                     </li>
                 {/foreach}
-                <li class="list-group-item">
-                    <a href="circle.php"> Circle 1 </a>
-                    <span class="badge"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="badge"><span class="glyphicon glyphicon-ok"></span></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="circle.php"> Circle 2 </a>
-                    <span class="badge"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="badge"><span class="glyphicon glyphicon-ok"></span></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="circle.php"> Circle 3 </a>
-                    <span class="badge"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="badge"><span class="glyphicon glyphicon-ok"></span></span>
-                </li>
             </ul>
         </div>
     </div>
