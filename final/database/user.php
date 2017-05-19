@@ -166,4 +166,11 @@ function fetchAllUsers(){
   return $stmt->fetchAll();
 }
 
+function fetchAllCircles(){
+  global $conn;
+  $stmt = $conn->prepare('SELECT * FROM "Circle"');
+  $stmt->execute();
+  return $stmt->fetchAll();
+}
+
 ?>
