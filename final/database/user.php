@@ -61,7 +61,7 @@ function getUserInvites($id)
 								"Image" USING("idCircle"))
                             WHERE "Invite".receiver = ? and "Invite".accepted  = false');
     $stmt->execute(array($id));
-    return $stmt->fetchAll();
+    return $stmt->fetchAll(); //yooo
 }
 
 function getCircleInfo($id){
