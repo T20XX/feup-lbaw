@@ -16,9 +16,11 @@ $id = $_SESSION['id'];
 
 $recentMessagesUsers = getRecentMessagesUsers($id);
 $invites = getUserInvites($id);
+$posts = getPostsForFeed($id);
 
 $smarty->assign('invites', $invites);
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
+$smarty->assign('posts', $posts);
 
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/user/feed.js");
