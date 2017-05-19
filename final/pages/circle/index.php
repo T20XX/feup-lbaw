@@ -25,7 +25,7 @@ if ($_GET['id']) {
 		}
 	}
 }
-}
+
 $smarty->assign('jsPath', $BASE_URL . "javascript/circle/index.js");
 $smarty->display('user/invites.tpl');
 ?>
