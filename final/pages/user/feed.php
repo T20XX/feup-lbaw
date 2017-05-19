@@ -20,6 +20,7 @@ $posts = getPostsForFeed($id);
 
 $smarty->assign('invites', $invites);
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
+$smarty->assign('posts.json_agg', json_decode($posts.json_agg));
 $smarty->assign('posts', $posts);
 
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
