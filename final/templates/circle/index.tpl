@@ -62,17 +62,14 @@
                         </div>
                     </div>
                     <div class="row">
-					if{$array_agg}{
-                        <div class="col-xs-12 col-sm-6" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+					{if post.content}
+                        <div class="col-xs-12 {if $post.array_agg}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                             <p>{$post.content}</p>
                         </div>
-                        <div class="col-xs-12 col-sm-6" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
-						}
-					else {
-						<div class="col-xs-12 col-sm-12" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
-                            <p>{$post.content}</p>
-                        </div>
-					}
+					{/if}
+					{if $post.array_agg}
+                        <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}" ><img src="{$post.array_agg[0]}" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+					{/if}
                     </div>
                     <div class="row">
                         <div class="col-xs-2">
