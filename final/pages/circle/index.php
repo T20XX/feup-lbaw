@@ -22,6 +22,7 @@ if ($_GET['id']) {
 		$posts = getPostsFromCircle($idCircle);
 		$circle = getCircleInfo($idCircle);
 
+
 		$smarty->assign('posts', $posts);
 		$smarty->assign('circle', $circle);
 		}

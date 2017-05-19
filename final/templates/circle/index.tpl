@@ -63,12 +63,12 @@
                     </div>
                     <div class="row">
 					{if $post.content}
-                        <div class="col-xs-12 {if $post.json_agg}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                        <div class="col-xs-12 {if $post.json_agg == "[]"}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                             <p>{$post.content}</p>
                         </div>
 					{/if}
-					{if $post.json_agg}
-                        <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}" ><img src="{$post.json_agg[0]}" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+					{if $post.json_agg == "[]"}
+                        <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}" ><img src="{$post.json_agg[1]}" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
 					{/if}
                     </div>
                     <div class="row">
