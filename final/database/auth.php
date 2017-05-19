@@ -1,23 +1,23 @@
 <?php
 
-  function createUser($first_name, $last_name, $email, $password) { //TODO
+function createUser($first_name, $last_name, $email, $password) { //TODO
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "Person" (email,password) VALUES (?, ?)');
     $stmt->execute(array($email, sha1($password)));
-      $idPerson = $stmt->fetch();
-      $stmt = $conn->prepare('INSERT INTO "User" ("idPerson", first_name, last_name) VALUES (?,?,?)');
-      $stmt->execute(array($idPerson, $first_name, $last_name));
+    $idPerson = $stmt->fetch();
+    $stmt = $conn->prepare('INSERT INTO "User" ("idPerson", first_name, last_name) VALUES (?,?,?)');
+    $stmt->execute(array($idPerson, $first_name, $last_name));
 
-  }
+}
 
-  function isLoginCorrect($email, $password) {
+function isLoginCorrect($email, $password) {
     global $conn;
     $stmt = $conn->prepare('SELECT "idPerson"
                             FROM "Person"
                             WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));
     return $stmt->fetch();
-  }
+}
 
 
 function isAdmin($id) {

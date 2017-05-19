@@ -161,7 +161,9 @@ function getRecentMessagesUsers($id){
 
 function fetchAllUsers(){
   global $conn;
-  $stmt = $conn->prepare('SELECT * FROM "User"');
+  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
+                          FROM ("User" JOIN
+                          "Person" USING("idPerson"))');
   $stmt->execute();
   return $stmt->fetchAll();
 }
