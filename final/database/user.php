@@ -162,7 +162,7 @@ function getPostsForFeed($idUser){
 					ORDER BY "Post"."idPost" DESC
                             LIMIT 10');
 
-    $stmt->execute(array($idCircle));
+    $stmt->execute(array($idUser));
 	return $stmt->fetchAll();
 }
 
