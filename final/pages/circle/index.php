@@ -7,7 +7,7 @@ if(isset($_SESSION['id'])){
         header("Location: $BASE_URL" . 'pages/admin/');
     }
 }else {
-    header("Location: $BASE_URL" . 'h/');
+    header("Location: $BASE_URL" . 'pages/auth/');
 }
 
 $id = $_SESSION['id'];
@@ -27,5 +27,5 @@ if ($_GET['id']) {
 }
 
 $smarty->assign('jsPath', $BASE_URL . "javascript/circle/index.js");
-$smarty->display('user/invites.tpl');
+$smarty->display('circle/index.tpl');
 ?>
