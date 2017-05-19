@@ -1,6 +1,5 @@
 {include file='admin/header.tpl'}
 
-<!-->
 <div class="container">
     <div class="row jumbotron text-center">
       {foreach $users as $user}
@@ -10,6 +9,6 @@
       {/foreach}
     </div>
 </div>
-<--!>
+
 
 {include file='admin/footer.tpl'}
