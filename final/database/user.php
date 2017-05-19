@@ -57,9 +57,9 @@ function getUserInvites($id)
     $stmt = $conn->prepare('SELECT "Invite"."idInvite", "Invite".sender, "Circle"."idCircle", "Circle".name, "User".first_name, "User".last_name, "Image".path
                             FROM ((("Invite" JOIN
 								"Circle" USING("idCircle")) JOIN
-								"User" ON("User"."idPerson" = "Invite".sender)) JOIN
+								"User" ON("User"."idPerson" = "Invite".sender)) LEFT JOIN
 								"Image" USING("idCircle"))
-                            WHERE "Invite".receiver = ? and "Invite".accepted  = false ');
+                            WHERE "Invite".receiver = ? and "Invite".accepted  = false');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
