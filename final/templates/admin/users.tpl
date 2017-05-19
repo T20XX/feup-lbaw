@@ -4,7 +4,7 @@
     <div class="row jumbotron text-center">
       {foreach $users as $user}
       <li class="list-group-item list-group-item-success">
-          <span>{$user.first_name} {$user.last_name}</span>
+          <a>{$user.first_name} {$user.last_name}</a>
       </li>
       {/foreach}
     </div>
