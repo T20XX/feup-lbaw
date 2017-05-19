@@ -5,8 +5,9 @@ include_once($BASE_URL .'database/user.php');
 if(isset($_SESSION['id'])){
     if(isset($_SESSION['admin'])){
         header("Location: $BASE_URL" . 'pages/admin/');
-    }else {
-    header("Location: $BASE_URL" . 'pages/auth/');
+    }
+}else {
+    header("Location: $BASE_URL" . 'h/');
 }
 
 $id = $_SESSION['id'];
