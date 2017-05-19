@@ -25,7 +25,7 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header col-sm-3 hidden-xs">
-                <a class="navbar-brand" href="feed.php">
+                <a class="navbar-brand" href="{$BASE_URL}user/feed.php">
                     <img src="{$BASE_URL}images/logo.png" class="img-responsive hidden-xs">
                 </a>
             </div>
