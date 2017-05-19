@@ -10,7 +10,7 @@
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
                 <div class="col-xs-12">
-                    <h2 style="text-align:center; margin-top:0%"><a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle	}">{$circle.name}</a></h2>
+                    <h2 style="text-align:center; margin-top:0%"><a href="{if $circle.image}{$circle.image}{else}{$BASE_URL}images/default_circle{/if}">{$circle.name}</a></h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
                     <input type="text" class="form-control" placeholder="Search inside this circle...">
@@ -53,7 +53,7 @@
             {foreach $posts as $post}
                 <div class="row post" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
-                        <div class="col-xs-2"><img src="{$post.path}" class="img-responsive"style="width:60px"></div>
+                        <div class="col-xs-2"><img src="{if $post.path}{$post.path}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive"style="width:60px"></div>
                         <div class="col-xs-8">
                             <a href="{$BASE_URL}pages/user/profile.php?id={$post.idPerson}"><h4>{$post.first_name} {$post.last_name}</a><small><i>Posted on {$post.date}</i></small></h4>
                         </div>
@@ -62,10 +62,17 @@
                         </div>
                     </div>
                     <div class="row">
+					if{$array_agg}{
                         <div class="col-xs-12 col-sm-6" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                             <p>{$post.content}</p>
                         </div>
                         <div class="col-xs-12 col-sm-6" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+						}
+					else {
+						<div class="col-xs-12 col-sm-12" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                            <p>{$post.content}</p>
+                        </div>
+					}
                     </div>
                     <div class="row">
                         <div class="col-xs-2">
