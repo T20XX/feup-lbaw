@@ -10,7 +10,7 @@
              class="panel-group left_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="{$BASE_URL}user/messages.php"><strong>Messages</strong></a>
+                    <a href="{$BASE_URL}pages/user/messages.php"><strong>Messages</strong></a>
                     <a href="javascript:void(0)" class="closebtn hidden-sm hidden-md hidden-lg"
                        onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>

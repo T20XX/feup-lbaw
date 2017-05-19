@@ -25,12 +25,12 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header col-sm-3 hidden-xs">
-                <a class="navbar-brand" href="{$BASE_URL}user/feed.php">
+                <a class="navbar-brand" href="{$BASE_URL}pages/user/feed.php">
                     <img src="{$BASE_URL}images/logo.png" class="img-responsive hidden-xs">
                 </a>
             </div>
             <ul class="nav navbar-nav col-xs-9 col-sm-6">
-                <li><a href="feed.php"><span id="title">MeetTheCircle</span></a></li>
+                <li><a href="{$BASE_URL}pages/user/feed.php"><span id="title">MeetTheCircle</span></a></li>
             </ul>
             <div class="search nav-content col-sm-3 hidden-xs">
                 <div class="input-group">
