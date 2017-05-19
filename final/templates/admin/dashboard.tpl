@@ -9,7 +9,7 @@
             <a href="{$BASE_URL}pages/admin/users.php" class="btn btn-lg btn-block btn-info" style="padding:25% 0;"><span class="glyphicon glyphicon-user"></span> Users</a>
         </div>
         <div class="col-sm-4">
-            <a href="circles.php" class="btn btn-lg btn-block btn-warning" style="padding:25% 0;"><span class="glyphicon glyphicon-record"></span> Circles</a>
+            <a href="{$BASE_URL}pages/admin/circles.php" class="btn btn-lg btn-block btn-warning" style="padding:25% 0;"><span class="glyphicon glyphicon-record"></span> Circles</a>
         </div>
         <div class="col-sm-4">
             <a href="posts.php" class="btn btn-lg btn-block btn-danger" style="padding:25% 0;"><span class="glyphicon glyphicon-file"></span> Posts</a>
