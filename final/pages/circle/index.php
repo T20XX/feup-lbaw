@@ -20,8 +20,10 @@ if ($_GET['id']) {
 		}else{
 		
 		$posts = getPostsFromCircle($idCircle);
+		$circle = getCircleInfo($idCircle);
 
 		$smarty->assign('posts', $posts);
+		$smarty->assign('circle', $circle);
 		}
 	}
 }

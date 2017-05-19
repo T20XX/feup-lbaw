@@ -64,6 +64,14 @@ function getUserInvites($id)
     return $stmt->fetchAll();
 }
 
+function getCircleInfo($id){
+	global $conn;
+    $stmt = $conn->prepare('SELECT *
+                            FROM "Circle"
+                            WHERE "idCircle" = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch();
+}
 function acceptInvite($id){
   global $conn;
   $stmt = $conn->prepare('UPDATE "Invite"

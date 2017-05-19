@@ -10,7 +10,7 @@
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
                 <div class="col-xs-12">
-                    <h2 style="text-align:center; margin-top:0%"><a href="circle.php">Circle Name</a></h2>
+                    <h2 style="text-align:center; margin-top:0%"><a href="circle.php">{circle.name}</a></h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
                     <input type="text" class="form-control" placeholder="Search inside this circle...">
