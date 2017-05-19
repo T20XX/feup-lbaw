@@ -141,7 +141,7 @@ function getPostsFromCircle($idCircle){
 								"Image" i2 ON(i2."idPost" = "Post"."idPost"))
 							WHERE "Post"."idCircle" = ?
 					GROUP BY "Post"."idPost", "User"."idPerson", i1.path
-					ORDER BY "idPost" ASC
+					ORDER BY "Post"."idPost" DESC
                             LIMIT 10');
 
     $stmt->execute(array($idCircle));
@@ -157,9 +157,9 @@ function getPostsForFeed($idUser){
                                                                 "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN								 
 								"Image" i1 ON(i1."idUser" = "Ingresso"."idUser")) FULL OUTER JOIN
 								"Image" i2 ON(i2."idPost" = "Ingresso"."idUser"))
-							WHERE "Ingresso"."idUser" = 1
+							WHERE "Ingresso"."idUser" = ?
 					GROUP BY "Post"."idPost", "User"."idPerson", i1.path, "Circle"."idCircle"
-					ORDER BY "idPost" ASC
+					ORDER BY "Post"."idPost" DESC
                             LIMIT 10');
 
     $stmt->execute(array($idCircle));
