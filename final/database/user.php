@@ -41,6 +41,16 @@ function getUserCircles($id)
     return $stmt->fetchAll();
 }
 
+function isUserCircle($idUser, $idCircle)
+{
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+                            FROM "Ingresso"
+                            WHERE "idUser" = ? AND "idCircle" = ?');
+    $stmt->execute(array($idUser, $idCircle));
+    return $stmt->fetch() == true;
+}
+
 function getUserInvites($id)
 {
     global $conn;
