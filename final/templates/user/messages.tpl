@@ -19,7 +19,7 @@
                         <ul class="list-group">
                             {foreach $recentMessagesUsers as $recentMessagesUser}
                             <li class="list-group-item list-group-item-success">
-                               <!-- <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">-->
+                                <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
                                 <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
                             </li>
                             {/foreach}
@@ -31,7 +31,7 @@
 
         <div id="center" class="col-xs-12 col-sm-9">
             <div class="row">
-                {if $messages}
+                {if $receiver}
                 <div class="col-xs-1 col-xs-offset-5"><img src="{if $receiver_image}{$receiver_image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle" style="width:60px"></div>
                 <div class="col-xs-6"><h4>{$receiver_info.first_name} {$receiver_info.last_name}</h4></div>
                 <div class="col-xs-12">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 {else}
-                    <div class="col-xs-12"><h4>Select one user to start a conversation...</h4></div>
+                    <div class="col-xs-12"><h4>{if $recentMessagesUsers}Select one user from a recent conversation...{else}Search for a user to start a converstion...{/if}</h4></div>
                 {/if}
             </div>
         </div>

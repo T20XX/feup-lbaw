@@ -12,26 +12,25 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
+$sender = $_SESSION['id']; // own id
 if ($_GET['id']) {
     $id = $_GET['id'];
     if($id != $_SESSION['id']){
-        $sender = $_SESSION['id']; // own id
         $receiver = $_GET['id']; // other id
 
         $receiver_info = getUserInfo($receiver);
         $receiver_image = getUserImage($receiver);
 
         $messages = getMessagesAfter(0,$sender, $receiver);
+        $lastMessageId = 0;
         $lastMessageId = end($messages)['idMessage'];
 
-        $recentMessagesUsers = getRecentMessagesUsers($sender);
 
 
         $smarty->assign('sender', $sender);
         $smarty->assign('receiver', $receiver);
         $smarty->assign('receiver_info', $receiver_info);
         $smarty->assign('receiver_image', $receiver_image['path']);
-        $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
         $smarty->assign('messages', $messages);
         $smarty->assign('lastMessageId', $lastMessageId);
     }else{
@@ -40,6 +39,8 @@ if ($_GET['id']) {
 } else {
 
 }
+$recentMessagesUsers = getRecentMessagesUsers($sender);
+$smarty->assign('recentMessagesUsers', $recentMessagesUsers);
 
 $smarty->display('user/messages.tpl');
 ?>
