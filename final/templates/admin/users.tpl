@@ -4,6 +4,7 @@
     <div class="row jumbotron text-center">
       {foreach $users as $user}
       <li class="list-group-item list-group-item-success">
+        <img src="{if $path}{$path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
           <a>{$user.first_name} {$user.last_name}</a>
       </li>
       {/foreach}

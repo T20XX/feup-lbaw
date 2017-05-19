@@ -16,6 +16,7 @@ if(isset($_SESSION['id'])){
 $users = fetchAllUsers();
 
 $smarty->assign('users', $users);
+$smarty->assign('path', $path);
 $smarty->assign('jsPath', $BASE_URL . "");
 $smarty->display('admin/users.tpl');
 ?>
