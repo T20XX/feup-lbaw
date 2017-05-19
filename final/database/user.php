@@ -134,7 +134,7 @@ function addMessage($content, $sender, $receiver){
 
 function getPostsFromCircle($idCircle){
 	global $conn;
-	$stmt = $conn->prepare('SELECT "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  array_agg(i2.path)
+	$stmt = $conn->prepare('SELECT "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
                             FROM ((("Post" JOIN
 								"User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
 								"Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
