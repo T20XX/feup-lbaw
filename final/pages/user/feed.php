@@ -15,6 +15,9 @@ if(isset($_SESSION['id'])){
 $id = $_SESSION['id'];
 
 $recentMessagesUsers = getRecentMessagesUsers($id);
+$invites = getUserInvites($id);
+
+$smarty->assign('invites', $invites);
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
 
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
