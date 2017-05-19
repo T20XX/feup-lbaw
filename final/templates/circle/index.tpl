@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="row">
-					{if post.content}
+					{if $post.content}
                         <div class="col-xs-12 {if $post.array_agg}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                             <p>{$post.content}</p>
                         </div>
