@@ -61,7 +61,7 @@ function getUserInvites($id)
 								"Image" USING("idCircle"))
                             WHERE "Invite".receiver = ? and "Invite".accepted  = false ');
     $stmt->execute(array($id));
-    return $stmt->fetchAll();
+    return $stmt->fetchAll(); 
 }
 
 function acceptInvite($id){
@@ -133,7 +133,7 @@ function getPostsFromCircle($idCircle){
 								"Image" i2 ON(i2."idPost" = "Post"."idPost"))
 							WHERE "Post"."idCircle" = ?
 					GROUP BY "Post"."idPost", "User"."idPerson", i1.path');
-					
+
     $stmt->execute(array($idCircle));
 	return $stmt->fetchAll();
 }
