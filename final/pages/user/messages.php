@@ -22,6 +22,7 @@ if ($_GET['id']) {
         $receiver_image = getUserImage($receiver);
 
         $messages = getMessagesAfter(0,$sender, $receiver);
+        $lastMessageId = 0;
         $lastMessageId = end($messages)['idMessage'];
 
 

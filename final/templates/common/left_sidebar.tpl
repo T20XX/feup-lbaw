@@ -15,14 +15,12 @@
                        onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <img src="../res/logo.png" class="img-responsive">
-                        <a href="profile.php"> Member 1 </a>
-                        <span class="badge">14</span>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="profile.php"> Member 2 </a>
-                    </li>
+                    {foreach $recentMessagesUsers as $recentMessagesUser}
+                        <li class="list-group-item">
+                            <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
+                            <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
+                        </li>
+                    {/foreach}
                     <li class="list-group-item">
                         <a href="profile.php"> Member 3 </a>
                         <span class="badge">33</span>
