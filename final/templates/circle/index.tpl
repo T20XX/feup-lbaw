@@ -10,7 +10,7 @@
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
                 <div class="col-xs-12">
-                    <h2 style="text-align:center; margin-top:0%"><a href="circle.php">{$circle.name}</a></h2>
+                    <h2 style="text-align:center; margin-top:0%"><a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle	}">{$circle.name}</a></h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
                     <input type="text" class="form-control" placeholder="Search inside this circle...">
@@ -63,16 +63,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
-                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                            <p>Nulla vel metus scelerisque ante sollicitudin.
-                                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                Fusce condimentum nunc ac nisi vulputate fringilla.
-                                Donec lacinia congue felis in faucibus.</p>
-                            <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                            <p>Nulla vel metus scelerisque ante sollicitudin.
-                                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                Fusce condimentum nunc ac nisi vulputate fringilla.
-                                Donec lacinia congue felis in faucibus.</p>
+                            <p>{$post.content}</p>
                         </div>
                         <div class="col-xs-12 col-sm-6" ><img src="../res/book.png" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
                     </div>
