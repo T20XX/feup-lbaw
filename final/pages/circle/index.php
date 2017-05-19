@@ -13,7 +13,7 @@ $id = $_SESSION['id'];
 
 if ($_GET['id']) {
 	$idCircle = $_GET['id'];
-	if(isUserCircle($_SESSION['id'], $idCircle){
+	if(isUserCircle($id, $idCircle)){
 	if($_GET['post']){
 		
 		}else{
