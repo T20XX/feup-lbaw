@@ -12,8 +12,9 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
+$id = $_SESSION['id'];
 
-$recentMessagesUsers = getRecentMessagesUsers($sender);
+$recentMessagesUsers = getRecentMessagesUsers($id);
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
 
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
