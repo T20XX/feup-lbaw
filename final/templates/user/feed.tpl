@@ -12,7 +12,7 @@
             {foreach $posts as $post}
                 <div class="row post" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
-						<a href="{$BASE_URL}pages/circle/index.php?id={$post.idCircle}"><h2>{$post.name}</a></h2>
+						<a href="{$BASE_URL}pages/circle/index.php?id={$post.idCircle}"><h2 style="text-align:center;">{$post.name}</a></h2>
 					</div>
 					<div class="row">
                         <div class="col-xs-2"><img src="{if $post.path}{$post.path}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive"style="width:60px"></div>
