@@ -15,6 +15,16 @@
                     </button>
                 </div>
             </div>
+			 <div class="row">
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <textarea placeholder="Circle Name" class="form-control" rows="3"></textarea>
+                            <button type="button" class="btn btn-default btn-block">Create Circle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {foreach $posts as $post}
                 <div class="row post" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
@@ -126,9 +136,7 @@
                     </div>
                 </div>
             {/foreach}
-			<div class="col-xs-2">
-				<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply4" style="display: block; margin: 0 auto;">Reply</button>
-			</div>
+			
         </div>
 
     </div>
