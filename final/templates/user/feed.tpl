@@ -15,7 +15,7 @@
                     </button>
 				</div>
 				<div class="col-xs-8">
-					<div id="collapse1">
+					<div id="collapse1"  style="display: none;">
 						<textarea placeholder="Circle Name" class="form-control" rows="1"></textarea>
 						<button type="button" class="btn btn-default btn-block">Create Circle</button>
 					</div>
