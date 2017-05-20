@@ -14,8 +14,6 @@
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </div>
-            </div>
-			<div class="row">
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel panel-default">
                         <div class="panel-body">
