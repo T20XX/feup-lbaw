@@ -15,9 +15,7 @@
                     </button>
                 </div>
             </div>
-			<div class="col-xs-8">
-			</div>
-			 <div class="row">
+			<div class="row">
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -27,6 +25,8 @@
                     </div>
                 </div>
             </div>
+			<div class="col-xs-8">
+			</div>
             {foreach $posts as $post}
                 <div class="row post" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
