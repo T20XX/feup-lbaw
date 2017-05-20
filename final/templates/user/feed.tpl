@@ -126,6 +126,9 @@
                     </div>
                 </div>
             {/foreach}
+			<div class="col-xs-2">
+				<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse_reply4" style="display: block; margin: 0 auto;">Reply</button>
+			</div>
         </div>
 
     </div>
