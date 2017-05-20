@@ -8,7 +8,13 @@
         {include file='common/right_sidebar.tpl'}
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
-
+			<div class="row well">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse1">Create circle
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
             {foreach $posts as $post}
                 <div class="row post" style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
