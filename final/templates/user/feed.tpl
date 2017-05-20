@@ -9,17 +9,19 @@
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
 			<div class="row well">
-                <div class="col-xs-12">
+                <div class="col-xs-4">
                     <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="collapse" href="#collapse1">Create circle
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </div>
             </div>
+			<div class="col-xs-8">
+			</div>
 			 <div class="row">
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <textarea placeholder="Circle Name" class="form-control" rows="3"></textarea>
+                            <textarea placeholder="Circle Name" class="form-control" rows="1"></textarea>
                             <button type="button" class="btn btn-default btn-block">Create Circle</button>
                         </div>
                     </div>
