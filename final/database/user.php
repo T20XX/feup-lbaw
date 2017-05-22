@@ -207,4 +207,12 @@ function fetchAllCircles(){
   return $stmt->fetchAll();
 }
 
+function addBan($id, $reason){
+  global $conn;
+  $stmt = $conn->prepare('UPDATE "User"
+                          SET (banned , ban_reason) = (true, ?)
+                          WHERE "idPerson" = ?');
+  $stmt->execute(array($reason, $id));
+}
+
 ?>
