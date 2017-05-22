@@ -15,4 +15,7 @@ else if($_POST['idPost']){
 
 }
 
+
+
+
 ?>
