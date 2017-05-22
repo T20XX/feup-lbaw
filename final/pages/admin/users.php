@@ -12,7 +12,7 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
-if($_GET['reported'] == true){
+if($_GET['reported'] === true){
 $users = fetchAllReportedUsers();
 }
 else{
