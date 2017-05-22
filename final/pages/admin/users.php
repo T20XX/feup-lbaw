@@ -15,7 +15,7 @@ if(isset($_SESSION['id'])){
 if($_GET['reported'] === true){
 $users = fetchAllReportedUsers();
 }
-else{
+else if ($_GET['reported'] === false){
 $users = fetchAllUsers();
 }
 
