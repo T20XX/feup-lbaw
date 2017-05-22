@@ -6,6 +6,6 @@ $(document).ready(function () {
 
     $(document).on("click", ".showBanReason", function () {
         var reason = $(this).data('id');
-        $("#showBanReason").html(ban_reason);
+        $("#showBanReason").html(reason);
     });
 });
