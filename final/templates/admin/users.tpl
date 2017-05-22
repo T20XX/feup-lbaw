@@ -40,7 +40,7 @@
                             <td>{$user.email}</td>
                             <td><button class="open-showBio btn btn-primary btn-xs" data-title="Edit" data-id="{$user.bio}" data-toggle="modal" data-target="#showBio" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             {if $user.banned}
-                            <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-id="{$user.ban_reason}" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                            <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-id="{$user.ban_reason}" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             {else}
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
                             {/if}
@@ -111,7 +111,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">Bio</h4>
+                <h4 class="modal-title custom_align" id="Heading">Ban Reason</h4>
             </div>
             <div class="modal-body" id="showBanReason">
             </div>
