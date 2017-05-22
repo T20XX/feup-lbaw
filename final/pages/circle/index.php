@@ -3,9 +3,9 @@ include_once('../../config/init.php');
 include_once($BASE_DIR .'database/user.php');
 
 if(isset($_SESSION['id'])){
-    if(isset($_SESSION['admin'])){
-        header("Location: $BASE_URL" . 'pages/admin/');
-    }
+  //  if(isset($_SESSION['admin'])){
+        //header("Location: $BASE_URL" . 'pages/admin/');
+    //}
 }else {
     header("Location: $BASE_URL" . 'pages/auth/');
 }
@@ -16,9 +16,9 @@ if ($_GET['id']) {
 	$idCircle = $_GET['id'];
 	if(isUserCircle($id, $idCircle)){
 	if($_GET['post']){
-		
+
 		}else{
-		
+
 		$posts = getPostsFromCircle($idCircle);
 		$circle = getCircleInfo($idCircle);
 

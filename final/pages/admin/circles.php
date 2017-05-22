@@ -12,14 +12,11 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
-if($_GET['reported'] == 'true'){
-$users = fetchAllReportedUsers();
-}
-else {
-$users = fetchAllUsers();
-}
 
-$smarty->assign('users', $users);
-$smarty->assign('jsPath', $BASE_URL . "javascript/admin/users.js");
-$smarty->display('admin/users.tpl');
+$circles = fetchAllCircles();
+
+$smarty->assign('circles', $circles);
+$smarty->assign('path', $path);
+$smarty->assign('jsPath', $BASE_URL . "");
+$smarty->display('admin/circles.tpl');
 ?>

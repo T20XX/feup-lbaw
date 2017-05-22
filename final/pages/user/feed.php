@@ -17,10 +17,14 @@ $id = $_SESSION['id'];
 $recentMessagesUsers = getRecentMessagesUsers($id);
 $invites = getUserInvites($id);
 $circles = getUserCircles($id);
+$posts = getPostsForFeed($id);
 
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);
 $smarty->assign('invites', $invites);
 $smarty->assign('circles', $circles);
+
+$smarty->assign('posts.json_agg', json_decode($posts.json_agg));
+$smarty->assign('posts', $posts);
 
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/user/feed.js");

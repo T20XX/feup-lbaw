@@ -140,11 +140,32 @@ function getPostsFromCircle($idCircle){
 								"Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
 								"Image" i2 ON(i2."idPost" = "Post"."idPost"))
 							WHERE "Post"."idCircle" = ?
-					GROUP BY "Post"."idPost", "User"."idPerson", i1.path');
+					GROUP BY "Post"."idPost", "User"."idPerson", i1.path
+					ORDER BY "Post"."idPost" DESC
+                            LIMIT 10');
 
     $stmt->execute(array($idCircle));
 	return $stmt->fetchAll();
 }
+
+function getPostsForFeed($idUser){
+	global $conn;
+	$stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+                            FROM ((((("Ingresso" JOIN
+                                                                "Circle" ON ("Circle"."idCircle" = "Ingresso"."idCircle")) JOIN
+								"Post" ON ("Post"."idCircle"= "Ingresso"."idCircle")) JOIN
+                                                                "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
+								"Image" i1 ON(i1."idUser" = "Ingresso"."idUser")) FULL OUTER JOIN
+								"Image" i2 ON(i2."idPost" = "Ingresso"."idUser"))
+							WHERE "Ingresso"."idUser" = ?
+					GROUP BY "Post"."idPost", "User"."idPerson", i1.path, "Circle"."idCircle"
+					ORDER BY "Post"."idPost" DESC
+                            LIMIT 10');
+
+    $stmt->execute(array($idUser));
+	return $stmt->fetchAll();
+}
+
 
 function getRecentMessagesUsers($id){
     global $conn;
@@ -161,9 +182,29 @@ function getRecentMessagesUsers($id){
 
 function fetchAllUsers(){
   global $conn;
-  $stmt = $conn->prepare('SELECT * FROM "User"');
+  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
+                          FROM ("User" JOIN
+                          "Person" USING("idPerson"))');
   $stmt->execute();
-  return $stmt->fetchAll;
+  return $stmt->fetchAll();
+}
+
+function fetchAllReportedUsers(){
+  global $conn;
+  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
+                          FROM (("User" JOIN
+                          "ReportUser" ON ("User"."idPerson" = "ReportUser"."idUser"))
+                          JOIN
+                          "Person" USING("idPerson"))');
+  $stmt->execute();
+  return $stmt->fetchAll();
+}
+
+function fetchAllCircles(){
+  global $conn;
+  $stmt = $conn->prepare('SELECT * FROM "Circle"');
+  $stmt->execute();
+  return $stmt->fetchAll();
 }
 
 ?>
