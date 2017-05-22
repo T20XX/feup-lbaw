@@ -40,7 +40,7 @@
                             <td>{$user.email}</td>
                             <td><button class="open-showBio btn btn-primary btn-xs" data-title="Edit" data-id="{$user.bio}" data-toggle="modal" data-target="#showBio" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             {if $user.banned}
-                            <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                            <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-id="{$user.ban_reason}" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-trash"></span></button></td>
                             {else}
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
                             {/if}
