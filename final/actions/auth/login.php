@@ -1,6 +1,7 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/auth.php');  
+  include_once($BASE_DIR .'database/auth.php');
+include_once($BASE_DIR .'database/user.php');
  
   if (!$_POST['email'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'Invalid login';
@@ -16,7 +17,8 @@
   $id = $result['idPerson'];
   if ($id) {
     $_SESSION['id'] = $id;
-    $_SESSION['name'] = $result['first_name'] + " " + $result['last_name'];
+    $info = getUserInfo($id);
+    $_SESSION['name'] = $info['first_name'] + " " + $info['last_name'];
     $_SESSION['success_messages'][] = 'Login successful';
   if (isAdmin($id)) {
       $_SESSION['admin'] = $id;
