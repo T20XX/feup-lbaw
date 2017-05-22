@@ -22,18 +22,6 @@
                             <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}">{$circle.name}</a>
                         </li>
                     {/foreach}
-                    <li class="list-group-item">
-                        <a href="circle.php"> Circle 4 </a>
-                        <span class="badge">3</span>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="circle.php"> Circle 5 </a>
-                        <span class="badge">4</span>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="circle.php"> Circle 6 </a>
-                        <span class="badge"></span>
-                    </li>
                 </ul>
             </div>
         </nav>

@@ -12,7 +12,7 @@ function createUser($first_name, $last_name, $email, $password) { //TODO
 
 function isLoginCorrect($email, $password) {
     global $conn;
-    $stmt = $conn->prepare('SELECT "idPerson"
+    $stmt = $conn->prepare('SELECT "idPerson", first_name, last_name
                             FROM "Person"
                             WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));

@@ -16,6 +16,7 @@
   $id = $result['idPerson'];
   if ($id) {
     $_SESSION['id'] = $id;
+    $_SESSION['name'] = $result['first_name'] + " " + $result['last_name'];
     $_SESSION['success_messages'][] = 'Login successful';
   if (isAdmin($id)) {
       $_SESSION['admin'] = $id;
