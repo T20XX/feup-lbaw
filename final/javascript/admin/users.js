@@ -11,6 +11,6 @@ $(document).ready(function () {
 
     $(document).on("click", ".delete", function () {
         var id = $(this).data('id');
-        $("#delete").html(id);
+        $("#idUser").html(id);
     });
 });
