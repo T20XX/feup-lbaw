@@ -73,7 +73,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
         <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
       </div>
-      <form method="POST" action="{$BASE_URL}actions/user/ban_remove.php">
+      <form method="post" action="{$BASE_URL}actions/user/ban_remove.php">
         <input type="hidden" value="{$user.idPerson}" id="idUser">
         <div class="modal-body">
           <div class="alert alert-danger">
