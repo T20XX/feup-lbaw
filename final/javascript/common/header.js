@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	//var umatres = 1;
-	
+
 	//if(document.getElementById('schbar').value
 	//document.onreadystatechange=function(){
 	$('#schbar').bind('input',function(){
@@ -8,7 +8,7 @@ $(document).ready(function () {
 		/*if(umatres != 3)
 			umatres++;
 		else{
-			
+
 		}*/
 		$.ajax({
         url: BASE_URL + "api/user/search_users_circles.php",
@@ -17,7 +17,9 @@ $(document).ready(function () {
             "query" : document.getElementById('schbar').value
         },
         success: function(data){
-		console.log(data);
+
+
+				console.log(data);
 				console.log(data.content);
 				document.getElementById('schbar').value = data;
                 /*if(message.sender == sender){
@@ -32,11 +34,10 @@ $(document).ready(function () {
                         '<div class="panel-heading">' +
                         message.content +
                         '</div></div></div>');
-						
+
                 }*/
         }
     });
-		
+
 	})
 });
-
