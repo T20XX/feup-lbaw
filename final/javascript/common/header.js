@@ -18,10 +18,10 @@ $(document).ready(function () {
         },
         success: function(data){
 
-
 				console.log(data);
+				console.log(JSON.parse(data));
 				console.log(data.content);
-				document.getElementById('schbar').value = data;
+//				document.getElementById('schbar').value = data;
                 /*if(message.sender == sender){
                     $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
                         '<div class="panel panel-primary">' +

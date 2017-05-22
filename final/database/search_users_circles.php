@@ -5,7 +5,7 @@ function get5Users($texto){
 	global $conn;
     $stmt = $conn->prepare('SELECT "idPerson", first_name, last_name, path
                             FROM "User" LEFT JOIN "Image" ON "Image"."idUser" = "User"."idPerson"
-                            WHERE to_tsvector("User".first_name || ' ' || "User".last_name) @@ to_tsquery(?) LIMIT 5');
+                            WHERE to_tsvector("User".first_name || \' \' || "User".last_name) @@ to_tsquery(?) LIMIT 5');
     $stmt->execute(array($texto));
     return $stmt->fetchAll();
 	

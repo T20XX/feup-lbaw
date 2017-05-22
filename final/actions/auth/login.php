@@ -18,7 +18,7 @@ include_once($BASE_DIR .'database/user.php');
   if ($id) {
     $_SESSION['id'] = $id;
     $info = getUserInfo($id);
-    $_SESSION['name'] = $info['first_name'] + " " + $info['last_name'];
+    $_SESSION['name'] = $info['first_name'] . " " . $info['last_name'];
     $_SESSION['success_messages'][] = 'Login successful';
   if (isAdmin($id)) {
       $_SESSION['admin'] = $id;
