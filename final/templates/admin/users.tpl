@@ -74,7 +74,7 @@
         <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
       </div>
       <form method="post" action="{$BASE_URL}actions/user/ban_remove.php">
-        <input type="hidden" id="idUser">
+        <input type="hidden" value="" id="idUser">
         <div class="modal-body">
           <div class="alert alert-danger">
             <p><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to ban this user?</p>
