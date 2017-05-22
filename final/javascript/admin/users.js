@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".delete", function () {
-        var reason = $(this).data('id');
-        $("#showBanReason").html(reason);
+        var id = $(this).data('id');
+        $("#delete").html(id);
     });
 });

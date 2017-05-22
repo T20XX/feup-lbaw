@@ -42,7 +42,7 @@
               {if $user.banned }
               <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-id="{$user.ban_reason}" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
               {else}
-              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-id="{$user.idPerson}" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+              <td><button class="delete btn btn-danger btn-xs" data-title="Delete" data-id="{$user.idPerson}" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
               {/if}
             </tr>
             {/foreach}
