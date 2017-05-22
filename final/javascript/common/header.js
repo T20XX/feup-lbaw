@@ -17,7 +17,8 @@ $(document).ready(function () {
         },
         success: function(data){
             $.each(JSON.parse(data), function(i, message) {
-				
+				console.log(message);
+				document.getElementById('schbar').value = message;
                 /*if(message.sender == sender){
                     $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
                         '<div class="panel panel-primary">' +
