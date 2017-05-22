@@ -16,6 +16,12 @@
                        onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <ul class="list-group">
+                    {foreach $circles as $circle}
+                        <li class="list-group-item">
+                            <img src="{if $circle.path}{$circle.path}{else}{$BASE_URL}images/default_circle{/if}"  class="img-responsive img-circle" style="width:60px">
+                            <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}">{$circle.name}</a>
+                        </li>
+                    {/foreach}
                     <li class="list-group-item">
                         <a href="circle.php"> Circle 4 </a>
                         <span class="badge">3</span>
@@ -33,7 +39,7 @@
         </nav>
     </div>
 
-    <div class="row hidden-xs">
+    <!--<div class="row hidden-xs">
         <div class="panel panel-default">
             <div class="panel-heading"><strong>Suggested</strong></div>
             <ul class="list-group">
@@ -51,6 +57,6 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>-->
 
 </div>

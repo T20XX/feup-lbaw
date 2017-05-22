@@ -28,7 +28,7 @@
 
     <div class="row hidden-xs">
         <div class="panel panel-default">
-            <div class="panel-heading"><a href="{$BASE_URL}user/invites.php"><strong>Invites</strong></a></div>
+            <div class="panel-heading"><a href="{$BASE_URL}pages/user/invites.php"><strong>Invites</strong></a></div>
             <ul class="list-group">
                 {foreach $invites as $invite}
                     <li class="list-group-item">
