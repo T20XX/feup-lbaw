@@ -2,7 +2,7 @@
 include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/user.php');
 
-if($_POST['idUser']){
+if($_POST['idUser'] != ''){
 $id = $_POST['idUser'];
 $reason = $_POST['reason'];
 addBan($id, $reason);
