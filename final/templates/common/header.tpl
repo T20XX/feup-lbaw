@@ -16,6 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="{$BASE_URL}javascript/main.js"></script>
     <script src="{$jsPath}"></script>
+	<script src="{$BASE_URL}javascript/common/header.js"></script>
     <style>
 
     </style>
@@ -34,7 +35,7 @@
             </ul>
             <div class="search nav-content col-sm-3 hidden-xs">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input id="schbar" type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" id="search-btn" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
