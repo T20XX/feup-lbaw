@@ -12,6 +12,8 @@ $(document).ready(function () {
     $(document).on("click", ".delete", function () {
         var id = $(this).data('id');
         console.log(id);
-        $("#idUser").value = id;
+        //$("#idUser").value = id;
+
+        document.getElementById("idUser").value = $(this).data('id');
     });
 });
