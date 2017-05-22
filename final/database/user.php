@@ -191,7 +191,7 @@ function fetchAllUsers(){
 
 function fetchAllReportedUsers(){
   global $conn;
-  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
+  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio, banned, ban_reason
                           FROM (("User" JOIN
                           "ReportUser" ON ("User"."idPerson" = "ReportUser"."idUser"))
                           JOIN

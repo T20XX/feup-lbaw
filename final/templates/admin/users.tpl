@@ -39,7 +39,11 @@
                             <td><a href="{$BASE_URL}pages/user/profile.php?id={$user.idPerson}">{$user.first_name} {$user.last_name}</a></td>
                             <td>{$user.email}</td>
                             <td><button class="open-showBio btn btn-primary btn-xs" data-title="Edit" data-id="{$user.bio}" data-toggle="modal" data-target="#showBio" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            {if($user.banned == false)}
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                            {else}
+                            <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                            {/if}
                         </tr>
                     {/foreach}
                     </tbody>
@@ -97,6 +101,19 @@
                 <h4 class="modal-title custom_align" id="Heading">Bio</h4>
             </div>
             <div class="modal-body" id="showBio-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ban_reason" tabindex="-1" role="dialog" aria-labelledby="Ban Reason" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h4 class="modal-title custom_align" id="Heading">Bio</h4>
+            </div>
+            <div class="modal-body" id="showBanReason">
             </div>
         </div>
     </div>
