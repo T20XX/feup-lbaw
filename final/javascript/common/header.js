@@ -3,7 +3,8 @@ $(document).ready(function () {
 	
 	//if(document.getElementById('schbar').value
 	//document.onreadystatechange=function(){
-	$('schbar').change(function(){
+	$('#schbar').bind('input',function(){
+	console.log("bye!!");
 		/*if(umatres != 3)
 			umatres++;
 		else{
@@ -39,3 +40,4 @@ $(document).ready(function () {
 		
 	})
 });
+

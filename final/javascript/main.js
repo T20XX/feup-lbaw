@@ -1,4 +1,4 @@
-BASE_URL = '/~lbaw1632/proto/';
+BASE_URL = '/~lbaw1632/final/';
 
 $(document).ready(function() {
     initMessageClosers();
