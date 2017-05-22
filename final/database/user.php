@@ -193,8 +193,7 @@ function fetchAllReportedUsers(){
   global $conn;
   $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
                           FROM ("User" JOIN
-                          "Person" USING("idPerson"))
-                          WHERE reported=true ');
+                          "ReportUser" ON ("User"."idPerson" = "ReportUser"."idUser"))');
   $stmt->execute();
   return $stmt->fetchAll();
 }
