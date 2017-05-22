@@ -8,4 +8,9 @@ $(document).ready(function () {
         var reason = $(this).data('id');
         $("#showBanReason").html(reason);
     });
+
+    $(document).on("click", ".delete", function () {
+        var reason = $(this).data('id');
+        $("#showBanReason").html(reason);
+    });
 });

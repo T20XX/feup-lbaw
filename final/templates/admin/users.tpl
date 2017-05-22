@@ -42,7 +42,7 @@
               {if $user.banned }
               <td><button class="showBanReason btn btn-danger btn-xs" data-title="Ban Reason" data-id="{$user.ban_reason}" data-toggle="modal" data-target="#ban_reason" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
               {else}
-              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-id="{$user.idPerson}" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
               {/if}
             </tr>
             {/foreach}
@@ -74,7 +74,7 @@
         <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
       </div>
       <form method="post" action="{$BASE_URL}actions/user/ban_remove.php">
-        <input type="hidden" value="{$user.idPerson}" id="idUser">
+        <input type="hidden" value="" id="idUser">
         <div class="modal-body">
           <div class="alert alert-danger">
             <p><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to ban this user?</p>
