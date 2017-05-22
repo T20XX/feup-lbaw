@@ -154,7 +154,7 @@ function getPostsForFeed($idUser){
                             FROM ((((("Ingresso" JOIN
                                                                 "Circle" ON ("Circle"."idCircle" = "Ingresso"."idCircle")) JOIN
 								"Post" ON ("Post"."idCircle"= "Ingresso"."idCircle")) JOIN
-                                                                "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN								 
+                                                                "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
 								"Image" i1 ON(i1."idUser" = "Ingresso"."idUser")) FULL OUTER JOIN
 								"Image" i2 ON(i2."idPost" = "Ingresso"."idUser"))
 							WHERE "Ingresso"."idUser" = ?
@@ -185,6 +185,16 @@ function fetchAllUsers(){
   $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
                           FROM ("User" JOIN
                           "Person" USING("idPerson"))');
+  $stmt->execute();
+  return $stmt->fetchAll();
+}
+
+function fetchAllReportedUsers(){
+  global $conn;
+  $stmt = $conn->prepare('SELECT "idPerson", email, first_name, last_name, bio
+                          FROM ("User" JOIN
+                          "Person" USING("idPerson"))
+                          WHERE reported=true ');
   $stmt->execute();
   return $stmt->fetchAll();
 }
