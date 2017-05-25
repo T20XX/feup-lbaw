@@ -1,6 +1,6 @@
 <div id="left_sidebar" class="col-xs-2 col-sm-2">
     <div class="row">
-        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
+        <button class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
                 id="left_sidebar_btn" type="submit">
             <span class="glyphicon glyphicon-envelope"></span>
         </button>
@@ -11,11 +11,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="{$BASE_URL}pages/user/messages.php"><strong>Messages</strong></a>
-                    <a href="javascript:void(0)" class="closebtn hidden-sm hidden-md hidden-lg"
-                       onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a href="javascript:void(0)" class="left_close_btn hidden-sm hidden-md hidden-lg"
+                       ><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <ul class="list-group">
-                    {foreach $recentMessagesUsers as $recentMessagesUser}
+                    {foreach $recentMessagesUsers_aux as $recentMessagesUser}
                         <li class="list-group-item">
                             <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
                             <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
@@ -30,7 +30,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><a href="{$BASE_URL}pages/user/invites.php"><strong>Invites</strong></a></div>
             <ul class="list-group">
-                {foreach $invites as $invite}
+                {foreach $invites_aux as $invite}
                     <li class="list-group-item">
                         <a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}"> {$invite.name} </a>
                         <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php" method="post">

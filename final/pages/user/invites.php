@@ -19,7 +19,11 @@ $image = getUserImage($id);
 $circles = getUserCircles($id);
 $invites = getUserInvites($id);
 
+$recentMessagesUsers = getRecentMessagesUsers($id);
 
+$smarty->assign('recentMessagesUsers_aux', $recentMessagesUsers);
+$smarty->assign('invites_aux', $invites);
+$smarty->assign('circles_aux', $circles);
 
 $smarty->assign('title', "Invites (" . sizeof($invites) . ")");
 $smarty->assign('isSelfProfile', $isSelfProfile);

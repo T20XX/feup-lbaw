@@ -8,8 +8,10 @@ if (isset($_SESSION['id'])) {
             $idUser = $_SESSION['id'];
             $idPost = $_GET['idPost'];
 
-            if (!upvotePost($idUser, $idPost))
-                die(header("HTTP/1.0 404 Post Not Found"));
+            updateUpvotePost($idUser, $idPost);
+            if (addUpvotePost($idUser, $idPost) != ECPG_NO_ERROR) {
+                die(header("HTTP/1.1 404 Post Not Found"));
+            } else echo("success");
         }
     } else {
         die(header("HTTP/1.0 404 Post Not Found"));
