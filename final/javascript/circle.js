@@ -1,11 +1,11 @@
-$(document).ready(function(){
-    $("#btn2 button").click(function(){
-        if($("#search_bar").css("display") == "none"){
-			$("#search_bar").css("display" , "block")
-		}
-		else{
-			$("#search_bar").css("display" , "none");
-		}
+$(document).ready(function () {
+    $("#btn2 button").click(function () {
+        if ($("#search_bar").css("display") == "none") {
+            $("#search_bar").css("display", "block")
+        }
+        else {
+            $("#search_bar").css("display", "none");
+        }
     });
 });
 
@@ -33,6 +33,6 @@ function close_right_sidebar() {
     });
 }
 
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
 });

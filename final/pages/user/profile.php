@@ -32,6 +32,7 @@ $now = new DateTime();
 $interval = $now->diff($date);
 $age = $interval->y;
 
+$smarty->assign('title', $info['first_name'] . " " . $info['last_name']);
 $smarty->assign('age', $age);
 $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);

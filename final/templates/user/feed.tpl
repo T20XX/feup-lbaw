@@ -1,4 +1,3 @@
-
 {include file='common/header.tpl'}
 
 <div class="container">
@@ -47,7 +46,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-2">
-                            <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-up"></span></button>
+                            <button type="button" class="upvote btn btn-success"><span class="glyphicon glyphicon-arrow-up"></span></button>
                         </div>
                         <div class="col-xs-8">
                             <h3 class="text-center">Comments</h3>

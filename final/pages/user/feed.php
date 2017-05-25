@@ -19,13 +19,14 @@ $invites = getUserInvites($id);
 $circles = getUserCircles($id);
 $posts = getPostsForFeed($id);
 
-$smarty->assign('recentMessagesUsers', $recentMessagesUsers);
-$smarty->assign('invites', $invites);
-$smarty->assign('circles', $circles);
+$smarty->assign('recentMessagesUsers_aux', $recentMessagesUsers);
+$smarty->assign('invites_aux', $invites);
+$smarty->assign('circles_aux', $circles);
 
 $smarty->assign('posts.json_agg', json_decode($posts.json_agg));
 $smarty->assign('posts', $posts);
 
+$smarty->assign('title', "Feed");
 $smarty->assign('cssPath', $BASE_URL . "css/user/feed.css");
 $smarty->assign('jsPath', $BASE_URL . "javascript/user/feed.js");
 $smarty->display('user/feed.tpl');

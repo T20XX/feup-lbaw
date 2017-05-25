@@ -26,7 +26,7 @@ if ($_GET['id']) {
         $lastMessageId = end($messages)['idMessage'];
 
 
-
+        $smarty->assign('title', "Messages (". $receiver_info['first_name'] . " " . $receiver_info['last_name'] .")");
         $smarty->assign('sender', $sender);
         $smarty->assign('receiver', $receiver);
         $smarty->assign('receiver_info', $receiver_info);
@@ -34,10 +34,10 @@ if ($_GET['id']) {
         $smarty->assign('messages', $messages);
         $smarty->assign('lastMessageId', $lastMessageId);
     }else{
-
+        $smarty->assign('title', "Messages");
     }
 } else {
-
+    $smarty->assign('title', "Messages");
 }
 $recentMessagesUsers = getRecentMessagesUsers($sender);
 $smarty->assign('recentMessagesUsers', $recentMessagesUsers);

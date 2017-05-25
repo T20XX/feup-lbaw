@@ -19,6 +19,9 @@ $image = getUserImage($id);
 $circles = getUserCircles($id);
 $invites = getUserInvites($id);
 
+
+
+$smarty->assign('title', "Invites (" . sizeof($invites) . ")");
 $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);

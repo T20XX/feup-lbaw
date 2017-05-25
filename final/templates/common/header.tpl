@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MeetTheCircle</title>
+    <title>{if ($title)}{$title}{else}Meet The Circle{/if}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"><link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -17,8 +17,8 @@
     <script src="{$BASE_URL}javascript/main.js"></script>
     <script src="{$jsPath}"></script>
 	<script src="{$BASE_URL}javascript/common/header.js"></script>
-    <style>
 
+    <style>
     </style>
 </head>
 <body>

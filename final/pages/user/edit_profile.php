@@ -16,6 +16,8 @@ if(isset($_SESSION['id'])){
 $info = getUserInfo($id);
 $email = getUserEmail($id);
 $image = getUserImage($id);
+
+$smarty->assign('title', "Edit Profile");
 $smarty->assign('info', $info);
 $smarty->assign('email', $email['email']);
 $smarty->assign('image', $image['path']);
