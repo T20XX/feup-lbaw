@@ -2,7 +2,7 @@
     <div class="row">
 
         <button onclick="open_right_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
-                id="left_sidebar_btn" type="submit">
+                id="right_sidebar_btn" type="submit">
             <span class="glyphicon glyphicon-record"></span>
         </button>
 
@@ -12,7 +12,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="circles.php"><strong>Your circles</strong></a>
-                    <a href="javascript:void(0)" class="closebtn hidden-sm hidden-md hidden-lg"
+                    <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
                        onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <ul class="list-group">

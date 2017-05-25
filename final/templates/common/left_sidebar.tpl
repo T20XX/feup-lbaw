@@ -1,7 +1,6 @@
 <div id="left_sidebar" class="col-xs-2 col-sm-2">
     <div class="row">
-        <button class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
-                id="left_sidebar_btn" type="submit">
+        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg" id="left_sidebar_btn" type="submit">
             <span class="glyphicon glyphicon-envelope"></span>
         </button>
 
@@ -12,7 +11,7 @@
                 <div class="panel-heading">
                     <a href="{$BASE_URL}pages/user/messages.php"><strong>Messages</strong></a>
                     <a href="javascript:void(0)" class="left_close_btn hidden-sm hidden-md hidden-lg"
-                       ><span class="glyphicon glyphicon-remove"></span></a>
+                       onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <ul class="list-group">
                     {foreach $recentMessagesUsers_aux as $recentMessagesUser}
