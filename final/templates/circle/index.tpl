@@ -138,9 +138,10 @@
             </div>
             <div class="row">
                 <div id="collapse1" class="panel-collapse collapse">
-                        <form id="create_circle_form" action="{$BASE_URL}actions/circle/create_post.php"  enctype="multipart/form-data" method="post">
-                            <textarea placeholder="Post here..." class="form-control" rows="3" id="comment" name="content"></textarea>
-                            <button type="button" class="btn btn-default btn-block" name="post_photo">Upload new photo</button>
+                        <form id="create_circle_form" action="{$BASE_URL}actions/circle/create_post.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="idCircle" value="{$idCircle}">
+                            <textarea placeholder="Post here..." class="form-control" rows="3" name="content"></textarea>
+                            <button type="file" class="btn btn-default btn-block" name="post_photo">Upload new photo</button>
                             <button type="submit" class="btn btn-default btn-block">Post</button>
                         </form>
                 </div>
@@ -169,7 +170,7 @@
                         <div class="col-xs-12 {if $post.json_agg}col-sm-6{else}col-sm-12{/if}"
                              style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
                             <p>{$post.content}</p>
-                        </div>javascript:FriendAccept( '76561198390668231', 'accept' )
+                        </div>
                     {/if}
                     {if $post.json_agg}
                         <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}"><img

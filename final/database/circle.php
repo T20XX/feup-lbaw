@@ -42,7 +42,7 @@ function getCircleMembers($idCircle)
     return $stmt->fetchAll();
 }
 
-function createPost($idCircle, $idUser, $content)
+function createPost($idUser, $idCircle,  $content)
 {
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "Post" ("idCircle", poster, content, upvotes) VALUES(?,?,?,0)
@@ -54,7 +54,7 @@ function createPost($idCircle, $idUser, $content)
 function addImagetoPost($idPost, $path)
 {
     global $conn;
-    $stmt = $conn->prepare('INSERT INTO "Image" (path, "idPost") VALUES(?,?)');
+    $stmt = $conn->prepare('INSERT INTO "Image" ("idPost", path) VALUES(?,?)');
     $stmt->execute(array($idPost, $path));
     return $stmt->fetch();
 }

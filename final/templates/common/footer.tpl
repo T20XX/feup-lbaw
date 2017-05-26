@@ -11,9 +11,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> {$NAME}</a></li>
-                    <li><a href="messages.php"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
-                    <li><a href="invites.php"><span class="glyphicon glyphicon-log-in"></span> Invites</a></li>
+                    <li><a href="{$BASE_URL}pages/user/profile.php"><span class="glyphicon glyphicon-user"></span> {$NAME}</a></li>
+                    <li><a href="{$BASE_URL}pages/user/messages.php"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+                    <li><a href="{$BASE_URL}pages/user/invites.php"><span class="glyphicon glyphicon-log-in"></span> Invites</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{$BASE_URL}actions/auth/logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
