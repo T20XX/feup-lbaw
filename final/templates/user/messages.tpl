@@ -12,7 +12,7 @@
                 <nav id="members" class="panel-group left_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                            <strong>Members</strong>
+                            <strong>Recent messages</strong>
                             <a href="javascript:void(0)" class="closebtn hidden-sm hidden-md hidden-lg" onclick="close_left_sidebar()"><span
                                         class="glyphicon glyphicon-remove"></span></a>
                         </div>
@@ -20,7 +20,7 @@
                             {foreach $recentMessagesUsers as $recentMessagesUser}
                             <li class="list-group-item list-group-item-success">
                                 <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
-                                <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
+                                <a href="{$BASE_URL}pages/user/messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
                             </li>
                             {/foreach}
                         </ul>
@@ -33,7 +33,7 @@
             <div class="row">
                 {if $receiver}
                 <div class="col-xs-1 col-xs-offset-5"><img src="{if $receiver_image}{$receiver_image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle" style="width:60px"></div>
-                <div class="col-xs-6"><h4>{$receiver_info.first_name} {$receiver_info.last_name}</h4></div>
+                    <div class="col-xs-6"><h4><a href="{$BASE_URL}pages/user/profile.php?id={$receiver_info.idPerson}">{$receiver_info.first_name} {$receiver_info.last_name}</a></h4></div>
                 <div class="col-xs-12">
                     <div class="panel panel-default">
                             <div id="messages" class="panel-body" style="max-height:380px;overflow:auto;">

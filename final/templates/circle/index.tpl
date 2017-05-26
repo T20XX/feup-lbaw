@@ -141,7 +141,7 @@
                         <form id="create_circle_form" action="{$BASE_URL}actions/circle/create_post.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="idCircle" value="{$idCircle}">
                             <textarea placeholder="Post here..." class="form-control" rows="3" name="content"></textarea>
-                            <button type="file" class="btn btn-default btn-block" name="post_photo">Upload new photo</button>
+                            <input type="file" class="btn btn-default btn-block" name="post_photo">Upload new photo</input>
                             <button type="submit" class="btn btn-default btn-block">Post</button>
                         </form>
                 </div>
