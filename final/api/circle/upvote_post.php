@@ -9,9 +9,9 @@ if (isset($_SESSION['id'])) {
             $idPost = $_GET['idPost'];
 
             updateUpvotePost($idUser, $idPost);
-            if (addUpvotePost($idUser, $idPost) != ECPG_NO_ERROR) {
+            echo(addUpvotePost($idUser, $idPost));
                 die(header("HTTP/1.1 404 Post Not Found"));
-            } else echo("success");
+            echo("success");
         }
     } else {
         die(header("HTTP/1.0 404 Post Not Found"));

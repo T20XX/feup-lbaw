@@ -1,6 +1,7 @@
 <?php
 include_once('../../config/init.php');
 include_once($BASE_DIR .'database/user.php');
+include_once($BASE_DIR .'database/circle.php');
 
 if(isset($_SESSION['id'])){
   //  if(isset($_SESSION['admin'])){
@@ -21,15 +22,16 @@ if ($_GET['id']) {
 
 		$posts = getPostsFromCircle($idCircle);
 		$circle = getCircleInfo($idCircle);
+		$members = getCircleMembers($idCircle);
 
-
+        $smarty->assign('title', $circle['name']);
+        $smarty->assign('members', $members);
 		$smarty->assign('posts', $posts);
         $smarty->assign('posts.json_agg', json_decode($posts.json_agg));
 		$smarty->assign('circle', $circle);
 		}
 	}
 }
-
 $smarty->assign('jsPath', $BASE_URL . "javascript/circle/index.js");
 $smarty->display('circle/index.tpl');
 ?>

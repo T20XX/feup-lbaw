@@ -4,8 +4,91 @@
 <div class="container">
     <div class="row">
 
-        {include file='common/left_sidebar.tpl'}
-        {include file='common/right_sidebar.tpl'}
+        <div id="left_sidebar" class="col-xs-2 col-sm-2">
+            <div class="row">
+                <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg" id="left_sidebar_btn" type="submit">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </button>
+
+
+                <nav id="messages"
+                     class="panel-group left_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>Members ({$circle.nusers})</strong>
+                            <a href="javascript:void(0)" class="left_close_btn hidden-sm hidden-md hidden-lg"
+                               onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
+                        </div>
+                        <ul class="list-group">
+                            {foreach $members as $member}
+                                <li class="list-group-item list-group-item-success">
+                                    <div class="row">
+                                        <div class="col-xs-5">
+                                            <img  src="{if $member.path}{$member.path}{else}{$BASE_URL}images/default_user{/if}"class="img-responsive" style="width:60px">
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <a href="{$BASE_URL}pages/user/profile.php?id={$member.idPerson}">{$member.first_name} {$member.last_name}</a>
+                                            <button class="btn btn-danger">Kick</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div id="right_sidebar" class="col-xs-2 col-xs-offset-8 col-sm-2 col-sm-offset-0 col-sm-push-8">
+            <div class="row">
+
+                <button onclick="open_right_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
+                        id="right_sidebar_btn" type="submit">
+                    <span class="glyphicon glyphicon-record"></span>
+                </button>
+
+
+                <nav id="circles"
+                     class="panel-group right_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="circles.php"><strong>Your circles</strong></a>
+                            <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
+                               onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
+                        </div>
+                        <ul class="list-group">
+                            {foreach $circles_aux as $circle}
+                                <li class="list-group-item">
+                                    <img src="{if $circle.path}{$circle.path}{else}{$BASE_URL}images/default_circle{/if}"  class="img-responsive img-circle" style="width:60px">
+                                    <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}">{$circle.name}</a>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!--<div class="row hidden-xs">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Suggested</strong></div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="circle.php"> Circle 7 </a>
+                            <span class="badge">Knock!</span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="circle.php"> Circle 8 </a>
+                            <span class="badge">Knock!</span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="circle.php"> Circle 9 </a>
+                            <span class="badge">Knock!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>-->
+
+        </div>
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
@@ -62,14 +145,14 @@
                         </div>
                     </div>
                     <div class="row">
-					{if $post.content}
-                        <div class="col-xs-12 {if $post.json_agg}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
-                            <p>{$post.content}</p>
-                        </div>
-					{/if}
-					{if $post.json_agg}
-                        <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}" ><img src="{$post.json_agg[0]}" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
-					{/if}
+                        {if $post.content}
+                            <div class="col-xs-12 {if $post.json_agg}col-sm-6{else}col-sm-12{/if}" style="max-height:200px; overflow-y:scroll; margin-bottom:2%">
+                                <p>{$post.content}</p>
+                            </div>
+                        {/if}
+                        {if $post.json_agg}
+                            <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}" ><img src="{$post.json_agg[0]}" class="img-responsive" style="max-height:200px; margin-bottom:2%"></div>
+                        {/if}
                     </div>
                     <div class="row">
                         <div class="col-xs-2">

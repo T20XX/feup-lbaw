@@ -26,7 +26,10 @@ function getUserImage($id)
 function getUserCircles($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "idCircle", "Circle".name, "Image".path FROM (("Ingresso" JOIN "Circle" USING("idCircle"))JOIN "Image" USING("idCircle")) WHERE "Ingresso"."idUser" = ?');
+    $stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Image".path FROM (("Ingresso" JOIN 
+                              "Circle" USING("idCircle"))LEFT JOIN 
+                              "Image" USING("idCircle")) 
+                              WHERE "Ingresso"."idUser" = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
 }
