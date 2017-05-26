@@ -7,44 +7,47 @@ $(document).ready(function () {
             url: BASE_URL + "api/circle/comment_post.php",
             type: "GET",
             data: {
-                "idPost" : idPost.val(),
-                "content" : textArea.val()
+                "idPost": idPost.val(),
+                "content": textArea.val()
             },
-            success: function(data){
+            success: function (data) {
                 textArea.val('');
-               loadComments(idPost.val());
+                loadComments(idPost.val());
             }
         });
     });
 });
 
-function loadComments(idPost){
+$(document).ready(function() {
+    $(".load_comments").click(function () {
+        var idPost = (($(this).parent()).prev()).find("input");
+        console.log(idPost.val());
+        loadComments(idPost.val());
+    });
+});
+
+function loadComments(idPost) {
     $.ajax({
         url: BASE_URL + "api/circle/get_comments.php",
         type: "GET",
         data: {
-            "idPost" : idPost
+            "idPost": idPost
         },
-        success: function(data){
+        success: function (data) {
             console.log(data);
-           /* $.each(JSON.parse(data), function(i, message) {
-                if(message.sender == sender){
-                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +
-                        '<div class="panel panel-primary">' +
-                        '<div class="panel-heading">' +
-                        message.content +
-                        '</div></div></div>');
-                } else {
-                    $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 ">' +
-                        '<div class="panel panel-default ">' +
-                        '<div class="panel-heading">' +
-                        message.content +
-                        '</div></div></div>');
-                }
-                lastMessageId = message.idMessage;
-            });*/
+            $.each(JSON.parse(data), function (i, comment) {
+                $('#' + idPost + ' .load_comments').after(
+                    '<div class="col-xs-10">' + '<div class="media">' +
+                    '<div class="media-left">' +
+                    '<img src="' + comment.path + '" class="media-object" style="width:60px">' +
+                    '</div>' +
+                    '<div class="media-body">' +
+                    '<a href="{$BASE_URL}pages/user/profile.php?id=' + comment.idUser + '"><h4>' + comment.first_name +
+                    '</a><small><i>' + comment.date + '</i></small></h4>' +
+                    '<p>' + comment.content + '</p>' +
+                    '</div>' + '</div>'
+                );
+            });
         }
     });
 }
-
-

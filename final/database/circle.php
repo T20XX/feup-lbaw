@@ -42,7 +42,7 @@ function getCircleMembers($idCircle)
     return $stmt->fetchAll();
 }
 
-function createPost($idUser, $idCircle,  $content)
+function createPost($idUser, $idCircle, $content)
 {
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "Post" ("idCircle", poster, content, upvotes) VALUES(?,?,?,0)
@@ -59,14 +59,16 @@ function addImagetoPost($idPost, $path)
     return $stmt->fetch();
 }
 
-function removeUserFromCircle($idUser, $idCircle){
+function removeUserFromCircle($idUser, $idCircle)
+{
     global $conn;
     $stmt = $conn->prepare('DELETE FROM "Ingresso"
                             WHERE "idUser" = ? AND "idCircle" = ?');
     $stmt->execute(array($idUser, $idCircle));
 }
 
-function addCommentToPost($idPost, $idUser, $content){
+function addCommentToPost($idPost, $idUser, $content)
+{
     global $conn;
     $stmt = $conn->prepare('INSERT INTO "Comment" ("idUser", "idPost", content) VALUES (?,?,?)');
     $stmt->execute(array($idUser, $idPost, $content));
@@ -76,9 +78,15 @@ function addCommentToPost($idPost, $idUser, $content){
 function getCommentsOfPost($post)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT *
-                                FROM "Comment"
-                                WHERE "idPost" = ?');
+    $stmt = $conn->prepare('SELECT "Comment"."idComment", "Comment"."idUser", "Comment"."idPost",
+                                        "Comment".content,  "Comment".date, "User".first_name, "User".last_name,
+                                         "Image".path
+                                FROM (("Comment" JOIN
+                                      "User" ON ("User"."idPerson" = "Comment"."idUser")) JOIN
+                                      "Image" ON("Image"."idUser" = "Comment"."idUser"))
+                                WHERE "Comment"."idPost" = ?
+                                ORDER BY "Comment"."idPost" DESC 
+                                LIMIT 10');
     $stmt->execute(array($post));
     return $stmt->fetchAll();
 }

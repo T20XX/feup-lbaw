@@ -25,7 +25,7 @@
                 </div>
             </div>
             {foreach $posts as $post}
-                <div class="row post"
+                <div id= "{$post.idPost}" class="row post"
                      style="padding:2%; background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                     <div class="row">
                         <a href="{$BASE_URL}pages/circle/index.php?id={$post.idCircle}"><h2
@@ -76,14 +76,15 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                             <textarea placeholder="Comment here..." class="comment_area form-control" rows="1"></textarea>
-                                <button type="button" class="add_comment btn btn-default btn-block">Post your comment</button>
+                                <button type="button" class="add_comment btn btn-default btn-block" value="lol">Post your comment</button>
                                 <input type="hidden" class="idPost" value="{$post.idPost}">
+                            </div>
+                            <div class="load_comments col-xs-12 col-sm-12">
+                                <button type="button" class="load_comments btn btn-primary btn-block">Comments</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12">
-                        <button type="button" class="btn btn-primary btn-block">Comments</button>
-                    </div>
+
                 </div>
             {/foreach}
         </div>
