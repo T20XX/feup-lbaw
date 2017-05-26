@@ -17,6 +17,7 @@
     <script src="{$BASE_URL}javascript/main.js"></script>
     <script src="{$jsPath}"></script>
 	<script src="{$BASE_URL}javascript/common/header.js"></script>
+    <script src="{$BASE_URL}javascript/circle/post.js"></script>
 
     <style>
     </style>

@@ -19,6 +19,7 @@ else {
 $users = fetchAllUsers();
 }
 
+$smarty->assign('title', "Admin Users");
 $smarty->assign('users', $users);
 $smarty->assign('jsPath', $BASE_URL . "javascript/admin/users.js");
 $smarty->display('admin/users.tpl');

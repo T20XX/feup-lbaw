@@ -66,4 +66,9 @@ function removeUserFromCircle($idUser, $idCircle){
     $stmt->execute(array($idUser, $idCircle));
 }
 
+function addCommentToPost($idPost, $idUser, $content){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "Comment" ("idUser", "idPost", content) VALUES (?,?,?)');
+    $stmt->execute(array($idUser, $idPost, $content));
+}
 ?>

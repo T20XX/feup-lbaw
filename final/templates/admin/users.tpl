@@ -66,15 +66,15 @@
   </div>
 </div>
 
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
         <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
       </div>
-      <form method="post" action="{$BASE_URL}actions/user/ban_remove.php">
-        <input type="hidden" id="idUser">
+      <form method="post" action="{$BASE_URL}actions/admin/ban_remove.php">
+        <input type="hidden" name="idUser" id="idUser">
         <div class="modal-body">
           <div class="alert alert-danger">
             <p><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to ban this user?</p>
@@ -109,7 +109,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="ban_reason" tabindex="-1" role="dialog" aria-labelledby="Ban Reason" aria-hidden="true">
+<div class="modal fade" id="ban_reason" tabindex="-1" role="dialog" aria-labelledby="BanReason" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

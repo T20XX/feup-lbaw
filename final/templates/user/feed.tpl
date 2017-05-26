@@ -75,99 +75,18 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <textarea placeholder="Comment here..." class="form-control" rows="1"
-                                          id="comment"></textarea>
-                                <button type="button" class="btn btn-default btn-block">Post your comment</button>
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <img src="../res/user.png" class="media-object" style="width:60px">
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="profile.php"><h4>User2</a>
-                                        <small><i>19/02/2016 22:30</i></small>
-                                        </h4>
-                                        <p>Bom post</p>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="../res/user.png" class="media-object" style="width:60px">
-                                            </div>
-                                            <div class="media-body">
-                                                <a href="profile.php"><h4>User2</a>
-                                                <small><i>19/02/2016 22:30</i></small>
-                                                </h4>
-                                                <p>Mesmo</p>
-                                            </div>
-                                        </div>
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="../res/user.png" class="media-object" style="width:60px">
-                                            </div>
-                                            <div class="media-body">
-                                                <a href="profile.php"><h4>User2</a>
-                                                <small><i>19/02/2016 22:30</i></small>
-                                                </h4>
-                                                <p>Yep</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div id="collapse_reply1" class="panel-collapse collapse">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <textarea placeholder="Reply here..." class="form-control" rows="3"
-                                                          id="comment"></textarea>
-                                                <button type="button" class="btn btn-default btn-block">Reply</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="btn btn-info btn-block dropdown-toggle" type="button"
-                                        data-toggle="collapse" href="#collapse_reply1"
-                                        style="display: block; margin: 0 auto;">Reply
-                                </button>
-                            </div>
-                            <div class="col-xs-10">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <img src="../res/user.png" class="media-object" style="width:60px">
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="profile.php"><h4>User3</a>
-                                        <small><i>19/02/2016 22:46</i></small>
-                                        </h4>
-                                        <p>Top</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div id="collapse_reply2" class="panel-collapse collapse">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <textarea placeholder="Reply here..." class="form-control" rows="3"
-                                                          id="comment"></textarea>
-                                                <button type="button" class="btn btn-default btn-block">Reply</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="btn btn-info btn-block dropdown-toggle" type="button"
-                                        data-toggle="collapse" href="#collapse_reply2"
-                                        style="display: block; margin: 0 auto;">Reply
-                                </button>
+                            <textarea placeholder="Comment here..." class="comment_area form-control" rows="1"></textarea>
+                                <button type="button" class="add_comment btn btn-default btn-block">Post your comment</button>
+                                <input type="hidden" class="idPost" value="{$post.idPost}">
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-12 col-sm-12">
+                        <button type="button" class="btn btn-primary btn-block">Comments</button>
+                    </div>
                 </div>
             {/foreach}
-
         </div>
-
     </div>
 </div>
 {include file='common/footer.tpl'}

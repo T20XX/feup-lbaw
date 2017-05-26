@@ -15,6 +15,7 @@ if(isset($_SESSION['id'])){
 
 $circles = fetchAllCircles();
 
+$smarty->assign('title', "Admin Circles");
 $smarty->assign('circles', $circles);
 $smarty->assign('path', $path);
 $smarty->assign('jsPath', $BASE_URL . "");
