@@ -76,7 +76,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                             <textarea placeholder="Comment here..." class="comment_area form-control" rows="1"></textarea>
-                                <button type="button" class="add_comment btn btn-default btn-block" value="lol">Post your comment</button>
+                                <button type="button" class="add_comment btn btn-default btn-block">Post your comment</button>
                                 <input type="hidden" class="idPost" value="{$post.idPost}">
                             </div>
                             <div class="load_comments col-xs-12 col-sm-12">
