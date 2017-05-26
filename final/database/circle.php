@@ -71,4 +71,16 @@ function addCommentToPost($idPost, $idUser, $content){
     $stmt = $conn->prepare('INSERT INTO "Comment" ("idUser", "idPost", content) VALUES (?,?,?)');
     $stmt->execute(array($idUser, $idPost, $content));
 }
+
+
+function getCommentsOfPost($post)
+{
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+                                FROM "Comment"
+                                WHERE "idPost" = ?');
+    $stmt->execute(array($post));
+    return $stmt->fetchAll();
+}
+
 ?>
