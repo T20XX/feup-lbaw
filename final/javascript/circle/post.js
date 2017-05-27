@@ -48,7 +48,7 @@ function loadComments(idPost) {
                     '<img src="' + comment.path + '" class="media-object" style="width:60px">' +
                     '</div>' +
                     '<div class="media-body">' +
-                    '<a href="/pages/user/profile.php?id=' + comment.idUser + '"><h4>' + comment.first_name +
+                    '<a href="' +  BASE_URL + '/pages/user/profile.php?id=' + comment.idUser + '"><h4>' + comment.first_name +
                     '</a><small><i>' + comment.date + '</i></small></h4>' +
                     '<p class="load_replies">' + comment.content + '</p>' + '</div>' +
                     '</div>' +
@@ -118,7 +118,7 @@ function loadReplies(idComment) {
                     '<div class="media">' + '<div class="media-left">' +
                     '<img src="' + reply.path + '" class="media-object" style="width:60px">' +
                     '</div>' + '<div class="media-body">' +
-                    '<a href="/pages/user/profile.php?id=' + reply.idUser + '"><h4>' + reply.first_name +
+                    '<a href="' + BASE_URL + '/pages/user/profile.php?id=' + reply.idUser + '"><h4>' + reply.first_name +
                     '</a><small><i>' + reply.date + '</i></small></h4>' +
                     '<p>' + reply.content + '</p>' + '</div>' + '</div>'
                 );
