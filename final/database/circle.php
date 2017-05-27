@@ -85,8 +85,7 @@ function getCommentsOfPost($post)
                                       "User" ON ("User"."idPerson" = "Comment"."idUser")) JOIN
                                       "Image" ON("Image"."idUser" = "Comment"."idUser"))
                                 WHERE "Comment"."idPost" = ?
-                                ORDER BY "Comment"."idPost" DESC 
-                                LIMIT 10');
+                                ORDER BY "Comment"."idComment" ASC');
     $stmt->execute(array($post));
     return $stmt->fetchAll();
 }

@@ -10,12 +10,12 @@
             <div class="row well">
                 <div class="col-xs-4">
                     <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="collapse"
-                            href="#collapse1">Create circle
+                            href=".collapse_create">Create circle
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </div>
                 <div class="col-xs-8">
-                    <div id="collapse1" class="collapse">
+                    <div class="collapse collapse_create" >
                         <form id="create_circle_form" action="{$BASE_URL}actions/circle/create_circle.php"
                               method="post">
                             <input placeholder="Circle Name" name="circle_name" class="form-control" >
@@ -80,11 +80,10 @@
                                 <input type="hidden" class="idPost" value="{$post.idPost}">
                             </div>
                             <div class="load_comments col-xs-12 col-sm-12">
-                                <button type="button" class="load_comments btn btn-primary btn-block">Comments</button>
+                                <button type="button" class="get_comments btn btn-primary btn-block">Comments</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
             {/foreach}
         </div>
