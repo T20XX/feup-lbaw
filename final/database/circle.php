@@ -96,4 +96,17 @@ function addReply($idUser, $idComment,  $content){
     $stmt->execute(array($idUser, $idComment, $content));
 }
 
+function getRepliesOfComment($comment){
+    global $conn;
+    $stmt = $conn->prepare('SELECT "CommentResponse"."idCommentResponse", "CommentResponse"."idUser", "CommentResponse".content,  
+                                      "CommentResponse".date, "User".first_name, "User".last_name,"Image".path
+                                FROM (("CommentResponse" JOIN
+                                      "User" ON ("User"."idPerson" = "CommentResponse"."idUser")) JOIN
+                                      "Image" ON("Image"."idUser" = "CommentResponse"."idUser"))
+                                WHERE "CommentResponse"."idComment" = ?
+                                ORDER BY "CommentResponse"."idCommentResponse" ASC');
+    $stmt->execute(array($comment));
+    return $stmt->fetchAll();
+}
+
 ?>
