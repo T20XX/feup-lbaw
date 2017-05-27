@@ -90,4 +90,10 @@ function getCommentsOfPost($post)
     return $stmt->fetchAll();
 }
 
+function addReply($idUser, $idComment,  $content){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "CommentResponse" ("idUser", "idComment", content) VALUES(?,?,?)');
+    $stmt->execute(array($idUser, $idComment, $content));
+}
+
 ?>

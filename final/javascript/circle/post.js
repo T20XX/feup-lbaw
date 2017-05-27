@@ -61,7 +61,7 @@ function loadComments(idPost) {
                     '<input type="hidden" class="idPost" value="' + comment.idComment + '">' +
                     '</div>' + '</div>' + '</div>' + '</div>' + '</div>' +
                     '<div class="col-xs-2">' +
-                    '<button class="load_replies btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href=".collapse_reply'+ comment.idComment + '" style="display: block; margin: 0 auto;">' + 'Reply' + '</button>' +
+                    '<button class="get_replies btn btn-info btn-block dropdown-toggle" type="button" data-toggle="collapse" href=".collapse_reply'+ comment.idComment + '" style="display: block; margin: 0 auto;">' + 'Reply' + '</button>' +
                     '</div>'
                 );
             });
@@ -70,10 +70,26 @@ function loadComments(idPost) {
                 var idComment = $(this).next();
                 var textArea  = $(this).prev();
 
-                //TODO dar add resposta. addReply(idComment.val(), textArea.val());
+                //(($(this).parent()).next()).nextAll().remove();
+                console.log("DAR ADD");
+                console.log(idComment.val());
+                console.log(textArea.val());
+                $.ajax({
+                    url: BASE_URL + "api/circle/reply_comment.php",
+                    type: "GET",
+                    data: {
+                        "idComment": idComment.val(),
+                        "content": textArea.val()
+                    },
+                    success: function (data) {
+                        textArea.val('');
+                        console.log("Dei ADD");
+                        //loadReplies(idComment.val());
+                    }
+                });
             });
 
-            $(".load_replies").click(function () {
+            $(".get_replies").click(function () {
                 var idComment = (($(this).parent()).prev()).find("input");
 
                 //TODO Testar para 2º clique eliminar respostas
@@ -88,4 +104,8 @@ function loadComments(idPost) {
 
         }
     });
+}
+
+function loadReplies(idComment){
+
 }
