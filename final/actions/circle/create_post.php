@@ -7,9 +7,10 @@ $idCircle = $_POST['idCircle'];
 $content = $_POST['content'];
 
 $idPost = createPost($idUser, $idCircle, $content);
+
 if (!empty($_FILES['post_photo']['name'])) {
-    $image_path = $BASE_DIR . "resources/circles/" . $id;
-    $image_url = $BASE_URL . "resources/circles/" . $id;
+    $image_path = $BASE_DIR . "resources/circles/" . $idPost;
+    $image_url = $BASE_URL . "resources/circles/" . $idPost;
 
 
     if (move_uploaded_file($_FILES['post_photo']['tmp_name'], $image_path)) {

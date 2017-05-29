@@ -113,13 +113,12 @@ function getRepliesOfComment($comment){
 function getPostsFromCircle($idCircle)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Post"."idPost", "Post".upvotes, "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+    $stmt = $conn->prepare('SELECT "Post"."idPost", "Post".upvotes, "User"."idPerson", i1.path as userImage, "User".first_name, "User".last_name, "Post".date, "Post".content, i2.path as postImage
                                 FROM ((("Post" JOIN
                                     "User"  ON("User"."idPerson" = "Post".poster)) JOIN
-                                    "Image" i1 ON(i1."idUser" = "Post".poster)) LEFT JOIN
-                                    "Image" i2 ON(i2."idPost" = "Post"."idPost"))
+                                    "Image" as i1 ON(i1."idUser" = "Post".poster)) LEFT JOIN
+                                    "Image" as i2 ON(i2."idPost" = "Post"."idPost"))
                                 WHERE "Post"."idCircle" = ?
-                        GROUP BY "Post"."idPost", "User"."idPerson", i1.path
                         ORDER BY "Post"."idPost" DESC
                                 LIMIT 10');
 
@@ -150,6 +149,22 @@ function getPostById($id){
                                 FROM "Post" 
                                 WHERE "idPost" = ?');
     $stmt->execute(array($id));
+    return $stmt->fetchAll();
+}
+
+function addInvite($sender, $receiver, $idCircle){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "Invite" (sender, receiver, "idCircle")
+                              VALUES (? , ?, ?)');
+    $stmt->execute(array($sender, $receiver, $idCircle));
+}
+
+function getAllInvitesBeforeDate($date){
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+                                FROM "Invite" 
+                                WHERE expiration_date <= ?');
+    $stmt->execute(array($date));
     return $stmt->fetchAll();
 }
 

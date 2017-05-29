@@ -5,15 +5,34 @@ $(document).ready(function () {
             url: BASE_URL + "api/circle/upvote_post.php",
             type: "GET",
             data: {
-                "idPost" : 90
+                "idPost": 90
             },
-            success: function(data){
+            success: function (data) {
                 console.log("ehue");
                 console.log(data);
             }
         });
     });
+
+    $("div#center").scroll(function () {
+        console.log("xd");
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            console.log("lol");
+            $.ajax({
+                url: BASE_URL + "api/user/getPostsFeed.php",
+                type: "GET",
+                data: {
+                    "idPost": lastPostId,
+                    "userId": userId
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    });
 });
+
 
 function open_left_sidebar() {
     $('.left_sidebar').each(function () {
@@ -39,6 +58,6 @@ function close_right_sidebar() {
     });
 }
 
-function vote_button(){
+function vote_button() {
 
 }

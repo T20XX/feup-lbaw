@@ -30,4 +30,10 @@
         </div>
     </div>
 </div>
+
+
+<script>lastPostId = {$lastPostId}</script>
+<script>userId = {$userId} </script>
+<script src="{$BASE_URL}javascript/user/feed.js"></script>
+
 {include file='common/footer.tpl'}
