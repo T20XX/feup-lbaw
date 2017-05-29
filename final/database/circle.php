@@ -185,4 +185,23 @@ function doesCircleExists($idCircle){
     return $stmt->fetchAll();
 }
 
+function getCircleOfPost($idPost){
+    global $conn;
+    $stmt = $conn->prepare('SELECT "Post"."idCircle"
+                                       from "Post" where "Post"."idPost" = ?');
+    $stmt->execute(array($idPost));
+    return $stmt->fecthAll();
+}
+
+function getAllInvitesAndVoteInvites($idUser, $idCircle){
+    global $conn;
+    $stmt = $conn->prepare('SELECT "idInvite", receiver, upvotes, downvotes, vote_state
+                                FROM "Invite" LEFT JOIN
+                                "VoteInvite" USING ("idInvite")
+                                WHERE "Invite"."idCircle" = ? AND "VoteInvite"."idUser" = ?');
+    $stmt->execute(array($idCircle, $idUser));
+    return $stmt->fetchAll();
+}
+
+
 ?>

@@ -24,7 +24,7 @@
 
     <script src="{$BASE_URL}javascript/common/header.js"></script>
     <script src="{$BASE_URL}javascript/circle/post.js"></script>
-    <script src="{$BASE_URL}javascript/circle/search_user_to_invite.js"></script>
+    <script src="{$BASE_URL}javascript/circle/searchinvites.js"></script>
 
 
 

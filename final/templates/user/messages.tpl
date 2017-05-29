@@ -13,8 +13,8 @@
                     <div class="panel panel-default" >
                         <div class="panel-heading">
                             <strong>Recent messages</strong>
-                            <a href="javascript:void(0)" class="closebtn hidden-sm hidden-md hidden-lg" onclick="close_left_sidebar()"><span
-                                        class="glyphicon glyphicon-remove"></span></a>
+                            <a href="javascript:void(0)" class="left_close_btn hidden-sm hidden-md hidden-lg"
+                               onclick="close_left_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                         </div>
                         <ul class="list-group">
                             {foreach $recentMessagesUsers as $recentMessagesUser}

@@ -3,11 +3,7 @@ include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/user.php');
 include_once($BASE_DIR . 'database/circle.php');
 
-if (isset($_SESSION['id'])) {
-    if (isset($_SESSION['admin'])) {
-        header("Location: $BASE_URL" . 'pages/admin/');
-    }
-} else {
+if (!isset($_SESSION['id'])) {
     $_SESSION['error_messages'][] = 'You need to be logged in';
     header("Location: $BASE_URL" . 'pages/auth/');
 }
@@ -30,9 +26,11 @@ if ($_GET['id']) {
             }
             $circle = getCircleInfo($idCircle);
             $members = getCircleMembers($idCircle);
+            $invites = getAllInvitesAndVoteInvites($_SESSION['id'],$idCircle);
 
             $smarty->assign('title', $circle['name']);
             $smarty->assign('members', $members);
+            $smarty->assign('invites', $invites);
             $smarty->assign('posts', $posts);
             $smarty->assign('posts.json_agg', json_decode($posts . json_agg));
             $smarty->assign('circle', $circle);

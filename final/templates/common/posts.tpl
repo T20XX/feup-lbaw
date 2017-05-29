@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-xs-2"><img
                     src="{if $post.userimage}{$post.userimage}{else}{$BASE_URL}images/default_user{/if}"
-                    class="img-responsive" style="width:60px"></div>
+                    class="img-responsive" style="object-fit: cover;
+  width:100px;
+  height:100px;"></div>
         <div class="col-xs-8">
             <a href="{$BASE_URL}pages/user/profile.php?id={$post.idPerson}">
                 <h4>{$post.first_name} {$post.last_name}</a>
@@ -30,7 +32,9 @@
         {if $post.postimage}
             <div class="col-xs-12 {if $post.content}col-sm-6{else}col-sm-12{/if}"><img
                         src="{$post.postimage}" class="img-responsive"
-                        style="max-height:200px; margin-bottom:2%">
+                        style="object-fit: cover;
+  width:230px;
+  height:230px;">
             </div>
         {/if}
     </div>

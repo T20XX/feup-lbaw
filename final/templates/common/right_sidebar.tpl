@@ -11,7 +11,7 @@
              class="panel-group right_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="circles.php"><strong>Your circles</strong></a>
+                    <strong>Your circles</strong>
                     <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
                        onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>

@@ -89,7 +89,9 @@
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
-                        <img id="preview" src="{if $image}{$image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle">
+                        <img id="preview" src="{if $image}{$image}{else}{$BASE_URL}images/default_user{/if}" class="img-responsive img-circle" style="object-fit: cover;
+  width:230px;
+  height:230px;">
                     </div>
                     <div class="col-xs-12">
                         Upload new photo

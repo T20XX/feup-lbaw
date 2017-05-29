@@ -56,7 +56,7 @@
                         <div class="panel-heading">
                                 <strong>Notifications</strong>
                                 <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
-                                   onclick="close_right_sidebar()"><span class="glyphicon glyphicon-bell"></span></a>
+                                   onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                             </div>
                         <ul class="list-group">
                             {foreach $invites_aux as $invite}
@@ -99,7 +99,7 @@
                     <img src="{if $circle.path}{$circle.path}{else}{$BASE_URL}images/default_circle{/if}"
                          class="img-responsive img-circle" style="width:60px">
                     <h2 style="text-align:center; margin-top:0%"><a
-                                href="{$BASE_URL}.pages/circle/index.php?id={$idCircle}">{$circle.name}</a>
+                                href="{$BASE_URL}pages/circle/index.php?id={$idCircle}">{$circle.name}</a>
                     </h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
@@ -127,15 +127,6 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="#">
-                                    <div class="input-group">
-										<span class="input-group-btn">
-											<button class="btn btn-secondary btn-block"
-                                                    type="button"><a>Add to Circle</a></button>
-										</span>
-                                        <input id="schbarinvite" type="text" class="form-control" placeholder="Search for...">
-                                    </div>
-                                </a></li>
                             <li>
                                 <button class="btn btn-secondary btn-block" type="button"><a>Report Circle</a></button>
                             </li>
@@ -145,6 +136,19 @@
                                     <button class="btn btn-secondary btn-block" type="submit">Leave Circle</button>
                                 </form>
                             </li>
+                            <li><a href="#">
+                                    <div class="input-group">
+										<span class="input-group-btn">
+											<button id="addtocirc" class="btn btn-secondary btn-block"
+                                                    type="button"><a>Add to Circle</a></button>
+                                            <input id="hiddenidcirc" type="hidden" name="idCircle2" value="{$idCircle}">
+                                            <input id="schbarinvite" type="text" class="form-control" placeholder="Search for...">
+										</span>
+
+                                    </div>
+                                </a></li>
+
+
                         </ul>
                     </div>
                 </div>

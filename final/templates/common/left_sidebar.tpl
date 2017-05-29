@@ -33,7 +33,7 @@
             <ul class="list-group">
                 {foreach $invites_aux as $invite}
                     <li class="list-group-item">
-                        <a href="{$BASE_URL}pages/user/index.php?id={$invite.idPerson}"> {$invite.first_name} </a>
+                        <a href="{$BASE_URL}pages/user/index.php?id={$invite.idPerson}">{$invite.first_name} {$invite.last_name}</a>
                         <small><i>Invited you to:</i></small>
                         <img src="{if $invite.path}{$invite.path}{else}{$BASE_URL}images/default_circle{/if}"
                              class="img-responsive img-circle" style="width:60px">
