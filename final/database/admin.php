@@ -67,7 +67,7 @@ function fetchAllReportedPosts()
 function fetchAllPosts()
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT first_name, last_name, "idPost", "idPerson", upvotes, content, date FROM "Post" JOIN "User" ON "User"."idPerson" = "Post".poster');
+    $stmt = $conn->prepare('SELECT first_name, last_name, "idPost", "idPerson", "idCircle", upvotes, content, date FROM "Post" JOIN "User" ON "User"."idPerson" = "Post".poster');
     $stmt->execute();
     return $stmt->fetchAll();
 }

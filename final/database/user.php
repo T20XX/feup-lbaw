@@ -139,12 +139,12 @@ function addMessage($content, $sender, $receiver)
 function getPostsForFeed($idUser)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+    $stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Post"."idPost", "Post".upvotes, "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
                                 FROM ((((("Ingresso" JOIN
                                     "Circle" ON ("Circle"."idCircle" = "Ingresso"."idCircle")) JOIN
                                     "Post" ON ("Post"."idCircle"= "Ingresso"."idCircle")) JOIN
-                                    "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
-                                    "Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
+                                    "User"  ON("User"."idPerson" = "Post".poster)) JOIN
+                                    "Image" i1 ON(i1."idUser" = "Post".poster)) LEFT JOIN
                                     "Image" i2 ON(i2."idPost" = "Post"."idPost"))
                                 WHERE "Ingresso"."idUser" = ?
                         GROUP BY "Post"."idPost", "User"."idPerson", i1.path, "Circle"."idCircle"

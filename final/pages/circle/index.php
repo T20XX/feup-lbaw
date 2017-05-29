@@ -15,7 +15,7 @@ $id = $_SESSION['id'];
 
 if ($_GET['id']) {
 	$idCircle = $_GET['id'];
-	if(isUserCircle($id, $idCircle)){
+	if(isUserCircle($id, $idCircle) || isset($_SESSION['admin'])){
 	if($_GET['post']){
 		$posts = getPostById($_GET['post']);
 		}else{
