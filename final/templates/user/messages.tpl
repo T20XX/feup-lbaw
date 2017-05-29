@@ -50,7 +50,6 @@
                 <div class="col-xs-12">
                     <div class="input-group">
                         <textarea id="send_content" class="form-control custom-control" rows="3"></textarea>
-                        <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-picture"></span></span>
                         <span id="send_btn" class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-right"></span></span>
                     </div>
                 </div>

@@ -43,16 +43,16 @@
                                 <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php"
                                       method="post">
                                     <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-ok"></span>
-                                        <p><span style="color:green">{$invite.upvotes}</span></p></button>
+                                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>
+                                    </button>
                                 </form>
                             </div>
                             <div class="col-xs-6">
                                 <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php"
                                       method="post">
                                     <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-remove"></span>
-                                        <p><span style="color:red">{$invite.downvotes}</span></p></button>
+                                    <button type="submit" class="btn btn-danger" ><span class="glyphicon glyphicon-remove"></span>
+                                    </button>
                                 </form>
                             </div>
                         </div>

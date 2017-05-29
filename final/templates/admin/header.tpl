@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>{if ($title)}{$title}{else}Meet The Circle (Admin){/if}</title>
+    <link rel="icon" href="{$BASE_URL}images/logo.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"><link rel="stylesheet" type="text/css" href="../css/bootstrap.css">

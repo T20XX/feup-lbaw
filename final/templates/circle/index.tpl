@@ -47,24 +47,43 @@
 
                 <button onclick="open_right_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
                         id="right_sidebar_btn" type="submit">
-                    <span class="glyphicon glyphicon-record"></span>
+                    <span class="glyphicon glyphicon-bell"></span>
                 </button>
 
-
-                <nav id="circles"
+                <nav id="notifications"
                      class="panel-group right_sidebar hidden-xs visible-sm-block visible-md-block visible-lg-block">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="circles.php"><strong>Your circles</strong></a>
-                            <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
-                               onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
+                                <strong>Notifications</strong>
+                                <a href="javascript:void(0)" class="right_close_btn hidden-sm hidden-md hidden-lg"
+                                   onclick="close_right_sidebar()"><span class="glyphicon glyphicon-bell"></span></a>
+                            </div>
                         <ul class="list-group">
-                            {foreach $circles_aux as $circle}
+                            {foreach $invites_aux as $invite}
                                 <li class="list-group-item">
-                                    <img src="{if $circle.path}{$circle.path}{else}{$BASE_URL}images/default_circle{/if}"
+                                    <a href="{$BASE_URL}pages/user/index.php?id={$invite.idPerson}"> {$invite.first_name} </a>
+                                    <small><i>Invited you to:</i></small>
+                                    <img src="{if $invite.path}{$invite.path}{else}{$BASE_URL}images/default_circle{/if}"
                                          class="img-responsive img-circle" style="width:60px">
-                                    <a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}">{$circle.name}</a>
+                                    <a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}"> {$invite.name} </a>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php"
+                                                  method="post">
+                                                <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>
+                                                    <p><span style="color:green">{$invite.upvotes}</span></p></button>
+                                            </form>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php"
+                                                  method="post">
+                                                <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                                <button type="submit" class="btn btn-danger" ><span class="glyphicon glyphicon-remove"></span>
+                                                    <p><span style="color:red">{$invite.downvotes}</span></p></button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </li>
                             {/foreach}
                         </ul>
