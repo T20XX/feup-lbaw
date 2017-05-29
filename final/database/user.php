@@ -48,7 +48,7 @@ function isUserCircle($idUser, $idCircle)
 function getUserInvites($id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Invite"."idInvite", "Invite".sender, "Invite".upvotes,"Invite".downvotes,"Circle"."idCircle", "Circle".name,"User"."idPerson", "User".first_name, "User".last_name, "Image".path
+    $stmt = $conn->prepare('SELECT "Invite"."idInvite", "Invite".sender, "Circle"."idCircle", "Circle".name, "User".first_name, "User".last_name, "Image".path
                                 FROM ((("Invite" JOIN
                                     "Circle" USING("idCircle")) JOIN
                                     "User" ON("User"."idPerson" = "Invite".sender)) LEFT JOIN
@@ -134,27 +134,12 @@ function addMessage($content, $sender, $receiver)
 }
 
 
-function getPostsFromCircle($idCircle)
-{
-    global $conn;
-    $stmt = $conn->prepare('SELECT "Post"."idPost","Post".upvotes, "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
-                                FROM ((("Post" JOIN
-                                    "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
-                                    "Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
-                                    "Image" i2 ON(i2."idPost" = "Post"."idPost"))
-                                WHERE "Post"."idCircle" = ?
-                        GROUP BY "Post"."idPost", "User"."idPerson", i1.path
-                        ORDER BY "Post"."idPost" DESC
-                                LIMIT 10');
 
-    $stmt->execute(array($idCircle));
-    return $stmt->fetchAll();
-}
 
 function getPostsForFeed($idUser)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Post"."idPost","Post".upvotes, "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+    $stmt = $conn->prepare('SELECT "Circle"."idCircle", "Circle".name, "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
                                 FROM ((((("Ingresso" JOIN
                                     "Circle" ON ("Circle"."idCircle" = "Ingresso"."idCircle")) JOIN
                                     "Post" ON ("Post"."idCircle"= "Ingresso"."idCircle")) JOIN

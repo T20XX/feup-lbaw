@@ -6,12 +6,6 @@ $(document).ready(function () {
     //if(document.getElementById('schbar').value
     //document.onreadystatechange=function(){
     $('#schbar').bind('input',function(){
-        console.log("bye!!");
-        /*if(umatres != 3)
-         umatres++;
-         else{
-
-         }*/
         $.ajax({
             url: BASE_URL + "api/user/search_users_circles.php",
             type: "GET",
@@ -29,32 +23,60 @@ $(document).ready(function () {
 
 
                 var target_base_url = "http://gnomo.fe.up.pt" + BASE_URL;
-                console.log(target_base_url);
+
+
+
+                availableTags.push({
+                    value: " ",
+                    label: "Circles: "
+                });
+
 
                 jayson_circles.forEach(function(result){
                     availableTags.push({
                         value: "http://gnomo.fe.up.pt"+BASE_URL + "/pages/circle/index.php?id=" + result.idCircle,
-                        label: "Circle " + result.name
+                        label: result.name
                     });
                 })
 
                 availableTags.push({
                     value: "",
-                    label: "############"
+                    label: "      "
                 });
+
+                availableTags.push({
+                    value: "",
+                    label: "      "
+                });
+
+                availableTags.push({
+                    value: "",
+                    label: "      "
+                });
+
+                availableTags.push({
+                    value: "",
+                    label: "      "
+                });
+
+                availableTags.push({
+                    value: " ",
+                    label: "Users: "
+                });
+
                 jayson_users.forEach(function(result){
                     availableTags.push({
                         value: "profile.php?id?="+result.idP,
-                        label: "User " + result.first_name + " " + result.last_name
+                        label: result.first_name + " " + result.last_name
                     });
                 })
 
-                console.log(jayson_users.first_name);
 
 
                     $( "#schbar" ).autocomplete({
-                        source: availableTags,
-                        select: function( event, ui ) {
+                        source: function(request, response){
+                            response( availableTags );},
+                           select: function( event, ui ) {
                             window.location.href = ui.item.value;
                         }
                     });

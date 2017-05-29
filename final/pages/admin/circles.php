@@ -12,12 +12,17 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
+if($_GET['reported'] == 'true'){
+    $circles = fetchAllReportedCircles();
+}
+else {
+    $circles = fetchCircleInfo();
+}
 
-$circles = fetchCircleInfo();
+    $smarty->assign('title', "Admin Circles");
+    $smarty->assign('circles', $circles);
+    $smarty->assign('path', $path);
+    $smarty->assign('jsPath', $BASE_URL . "javascript/admin/circles.js");
+    $smarty->display('admin/circles.tpl');
 
-$smarty->assign('title', "Admin Circles");
-$smarty->assign('circles', $circles);
-$smarty->assign('path', $path);
-$smarty->assign('jsPath', $BASE_URL . "");
-$smarty->display('admin/circles.tpl');
 ?>

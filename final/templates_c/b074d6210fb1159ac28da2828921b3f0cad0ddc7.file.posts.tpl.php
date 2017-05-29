@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:02:32
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 04:29:10
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/common/posts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11527105795929a394e4da67-80676632%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b074d6210fb1159ac28da2828921b3f0cad0ddc7' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/common/posts.tpl',
-      1 => 1496016152,
+      1 => 1496028512,
       2 => 'file',
     ),
   ),
@@ -41,14 +41,14 @@ pages/user/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['post']->value['idPe
                 <h4><?php echo $_smarty_tpl->tpl_vars['post']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['post']->value['last_name'];?>
 </a>
-            <small><i><?php echo $_smarty_tpl->tpl_vars['post']->value['date'];?>
+            <i><?php echo $_smarty_tpl->tpl_vars['post']->value['date'];?>
 
             <?php if ($_smarty_tpl->tpl_vars['post']->value['idCircle']) {?>(
                 <a href=" <?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['post']->value['idCircle'];?>
 ">
                    <?php echo $_smarty_tpl->tpl_vars['post']->value['name'];?>
-</a>)</i></small>
+</a>)</i>
             <?php }?>
             </h4>
         </div>

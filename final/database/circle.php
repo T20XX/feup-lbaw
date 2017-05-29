@@ -109,4 +109,47 @@ function getRepliesOfComment($comment){
     return $stmt->fetchAll();
 }
 
+function getPostsFromCircle($idCircle)
+{
+    global $conn;
+    $stmt = $conn->prepare('SELECT "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+                                FROM ((("Post" JOIN
+                                    "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
+                                    "Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
+                                    "Image" i2 ON(i2."idPost" = "Post"."idPost"))
+                                WHERE "Post"."idCircle" = ?
+                        GROUP BY "Post"."idPost", "User"."idPerson", i1.path
+                        ORDER BY "Post"."idPost" DESC
+                                LIMIT 10');
+
+    $stmt->execute(array($idCircle));
+    return $stmt->fetchAll();
+}
+
+function getSearchPostFromCircle($idCircle, $searchable_content)
+{
+    global $conn;
+    $stmt = $conn->prepare('SELECT "Post"."idPost", "User"."idPerson", i1.path, "User".first_name, "User".last_name, "Post".date, "Post".content,  json_agg(i2.path)
+                                FROM ((("Post" JOIN
+                                    "User"  ON("User"."idPerson" = "Post".poster)) LEFT JOIN
+                                    "Image" i1 ON(i1."idUser" = "Post".poster)) FULL OUTER JOIN
+                                    "Image" i2 ON(i2."idPost" = "Post"."idPost"))
+                                WHERE "Post"."idCircle" = ? AND to_tsvector("Post".content) @@ to_tsquery(?)
+                        GROUP BY "Post"."idPost", "User"."idPerson", i1.path
+                        ORDER BY "Post"."idPost" DESC
+                                LIMIT 10');
+
+    $stmt->execute(array($idCircle, $searchable_content));
+    return $stmt->fetchAll();
+}
+
+function getPostById($id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+                                FROM "Post" 
+                                WHERE "idPost" = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetchAll();
+}
+
 ?>

@@ -8,10 +8,10 @@
         <div class="col-xs-8">
             <a href="{$BASE_URL}pages/user/profile.php?id={$post.idPerson}">
                 <h4>{$post.first_name} {$post.last_name}</a>
-            <small><i>{$post.date}
+            <i>{$post.date}
             {if $post.idCircle}(
                 <a href=" {$BASE_URL}pages/circle/index.php?id={$post.idCircle}">
-                   {$post.name}</a>)</i></small>
+                   {$post.name}</a>)</i>
             {/if}
             </h4>
         </div>

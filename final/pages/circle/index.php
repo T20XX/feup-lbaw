@@ -17,10 +17,16 @@ if ($_GET['id']) {
 	$idCircle = $_GET['id'];
 	if(isUserCircle($id, $idCircle)){
 	if($_GET['post']){
-
+		$posts = getPostById($_GET['post']);
 		}else{
 
-		$posts = getPostsFromCircle($idCircle);
+		if($_GET['query']){
+			$posts = getSearchPostFromCircle($idCircle, $_GET['query']);
+		}
+		else{
+			$posts = getPostsFromCircle($idCircle);
+        }
+    }
 		$circle = getCircleInfo($idCircle);
 		$members = getCircleMembers($idCircle);
 
@@ -31,7 +37,6 @@ if ($_GET['id']) {
 		$smarty->assign('circle', $circle);
         $smarty->assign('idCircle', $idCircle);
 		}
-	}
 }
 $smarty->assign('jsPath', $BASE_URL . "javascript/circle/index.js");
 $smarty->display('circle/index.tpl');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 17:05:59
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 04:51:51
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/circle/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2089164489591e4062a14eb0-34639002%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '307837afab29eb12cb09b372924f23e2b0017647' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/circle/index.tpl',
-      1 => 1495901154,
+      1 => 1496029906,
       2 => 'file',
     ),
   ),
@@ -158,7 +158,19 @@ images/default_circle<?php }?>"><?php echo $_smarty_tpl->tpl_vars['circle']->val
                     </h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
-                    <input type="text" class="form-control" placeholder="Search inside this circle...">
+                    <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/circle/index.php" method="GET">
+                        <div class="input-group">
+                            <input type="hidden" name="id" value = "<?php echo $_smarty_tpl->tpl_vars['idCircle']->value;?>
+">
+                            <input type="text" name="query" class="form-control" placeholder="Search Posts in this Circle..">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-xs-6 col-sm-3">
                     <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="collapse"

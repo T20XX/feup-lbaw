@@ -2,9 +2,9 @@
 
 function createUser($first_name, $last_name, $email, $password) { //TODO
     global $conn;
-    $stmt = $conn->prepare('INSERT INTO "Person" (email,password) VALUES (?, ?)');
+    $stmt = $conn->prepare('INSERT INTO "Person" (email,password) VALUES (?, ?) RETURNING "idPerson"');
     $stmt->execute(array($email, sha1($password)));
-    $idPerson = $stmt->fetch();
+    $idPerson = $stmt->fetch()['idPerson'];
     $stmt = $conn->prepare('INSERT INTO "User" ("idPerson", first_name, last_name) VALUES (?,?,?)');
     $stmt->execute(array($idPerson, $first_name, $last_name));
 

@@ -14,7 +14,9 @@ else if($_POST['idCircle'] != ''){
     header("Location: $BASE_URL" . "pages/admin/circles.php");
 }
 else if($_POST['idPost']){
-
+    $id = $_POST['idPost'];
+    deletePost($id);
+    header("Location: $BASE_URL" . "pages/admin/posts.php");
 }
 
 

@@ -102,7 +102,17 @@
                     </h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
-                    <input type="text" class="form-control" placeholder="Search inside this circle...">
+                    <form action="{$BASE_URL}pages/circle/index.php" method="GET">
+                        <div class="input-group">
+                            <input type="hidden" name="id" value = "{$idCircle}">
+                            <input type="text" name="query" class="form-control" placeholder="Search Posts in this Circle..">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-xs-6 col-sm-3">
                     <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="collapse"
