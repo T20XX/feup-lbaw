@@ -39,15 +39,12 @@
         {/if}
     </div>
     <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-1">
             <button type="button" class="upvote btn btn-success"><span
                         class="glyphicon glyphicon-arrow-up"></span>
                 <p><span style="color:green">{$post.upvotes}</span></p></button>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12">
-        <div class="panel panel-default">
-            <div class="panel-body">
+    <div class="col-xs-10">
                 <textarea placeholder="Comment here..." class="comment_area form-control" rows="1"></textarea>
                 <button type="button" class="add_comment btn btn-default btn-block">Post your comment</button>
                 <input type="hidden" class="idPost" value="{$post.idPost}">
@@ -55,6 +52,5 @@
             <div class="load_comments col-xs-12 col-sm-12">
                 <button type="button" class="get_comments btn btn-primary btn-block">Comments</button>
             </div>
-        </div>
     </div>
 </div>

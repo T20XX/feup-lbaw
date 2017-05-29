@@ -59,31 +59,31 @@
                                    onclick="close_right_sidebar()"><span class="glyphicon glyphicon-remove"></span></a>
                             </div>
                         <ul class="list-group">
-                            {foreach $invites_aux as $invite}
-                                <li class="list-group-item">
-                                    <a href="{$BASE_URL}pages/user/index.php?id={$invite.idPerson}"> {$invite.first_name} </a>
-                                    <small><i>Invited you to:</i></small>
-                                    <img src="{if $invite.path}{$invite.path}{else}{$BASE_URL}images/default_circle{/if}"
-                                         class="img-responsive img-circle" style="width:60px">
-                                    <a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}"> {$invite.name} </a>
+                            {foreach $invites as $invite}
+                                <li class="list-group-item {if ($invite.vote_state == 'U')}list-group-item-success{elseif ($invite.vote_state == 'D')}list-group-item-danger{/if}">
+                                    <a href="{$BASE_URL}pages/user/index.php?id={$invite.receiver}">{$invite.first_name} {$invite.last_name}</a><br>
+                                    {if ($invite.vote_state == 'U')}You already approved this user{elseif ($invite.vote_state == 'D')}You already disapproved this user{/if}
+                                    {if ($invite.vote_state == 'N' || !$invite.vote_state)}
+                                        Wants to join this circle
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php"
-                                                  method="post">
+                                            <form id="accept_invite" action="{$BASE_URL}actions/circle/vote_invite.php" method="post">
                                                 <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                                <input type="hidden" value="U" name="vote_state">
                                                 <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>
                                                     <p><span style="color:green">{$invite.upvotes}</span></p></button>
                                             </form>
                                         </div>
                                         <div class="col-xs-6">
-                                            <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php"
-                                                  method="post">
+                                            <form id="remove_invite" action="{$BASE_URL}actions/user/vote_invite.php" method="post">
                                                 <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                                <input type="hidden" value="D" name="vote_state">
                                                 <button type="submit" class="btn btn-danger" ><span class="glyphicon glyphicon-remove"></span>
                                                     <p><span style="color:red">{$invite.downvotes}</span></p></button>
                                             </form>
                                         </div>
                                     </div>
+                                    {/if}
                                 </li>
                             {/foreach}
                         </ul>

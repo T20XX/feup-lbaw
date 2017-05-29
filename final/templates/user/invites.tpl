@@ -13,7 +13,7 @@
                         <div class="panel panel-default"
                              style="background-color:#FAFAFA;border-style:solid; border-width:medium;border-radius:5px; border-color:#191970;">
                             <div class="panel-heading">
-                                <p><a href="{$BASE_URL}pages/user/profile.php?id={$invite.sender}">{$invite.first_name} {$invite.last_name}</a> invited you to: </p>
+                                <p><a href="{$BASE_URL}pages/user/profile.php?id={$invite.sender}">{$invite.first_name} {$invite.last_name}</a> invited you to join: </p>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -37,7 +37,7 @@
                                     <div class="col-xs-6">
                                       <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php" method="post">
                                       <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                                        <button type="submit" class="btn btn-error btn-block">Remove <span
+                                        <button type="submit" class="btn btn-danger btn-block">Remove <span
                                                     class="glyphicon glyphicon-ok"></span></button>
                                       </form>
                                     </div>

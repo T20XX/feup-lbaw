@@ -8,7 +8,6 @@
 
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$BASE_URL}css/common/sidebars.css">
     <link rel="stylesheet" href="{$BASE_URL}css/common/aux_header.css">
     <link rel="stylesheet" href="{$cssPath}">
     <link rel="stylesheet" href="{$BASE_URL}css/admin/footer.css">

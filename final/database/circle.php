@@ -195,11 +195,28 @@ function getCircleOfPost($idPost){
 
 function getAllInvitesAndVoteInvites($idUser, $idCircle){
     global $conn;
-    $stmt = $conn->prepare('SELECT "idInvite", receiver, upvotes, downvotes, vote_state
-                                FROM "Invite" LEFT JOIN
-                                "VoteInvite" USING ("idInvite")
-                                WHERE "Invite"."idCircle" = ? AND "VoteInvite"."idUser" = ?');
+    $stmt = $conn->prepare('SELECT "idInvite", receiver, first_name, last_name, upvotes, downvotes, vote_state
+                                FROM (("Invite" LEFT JOIN
+                                "VoteInvite" USING ("idInvite")) JOIN
+                                "User" ON ("Invite".receiver = "User"."idPerson"))
+                                WHERE "Invite"."idCircle" = ? AND "Invite".accepted = true AND ("VoteInvite"."idUser" = ? OR "VoteInvite"."idUser" IS NULL)');
     $stmt->execute(array($idCircle, $idUser));
+    return $stmt->fetchAll();
+}
+
+function getInviteVotesCircleAndReceiver($idInvite){
+    global $conn;
+    $stmt = $conn->prepare('SELECT receiver, upvotes, downvotes, "idCircle"
+                                FROM "Invite" 
+                                WHERE "Invite"."idInvite" = ?');
+    $stmt->execute(array($idInvite));
+    return $stmt->fetchAll();
+}
+
+function addVoteInvite($idInvite, $idUser, $vote_state){
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "VoteInvite" VALUES (?,?,?)');
+    $stmt->execute(array($idInvite, $idUser, $vote_state));
     return $stmt->fetchAll();
 }
 

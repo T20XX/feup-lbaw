@@ -134,8 +134,6 @@ function addMessage($content, $sender, $receiver)
 }
 
 
-
-
 function getPostsForFeed($idUser)
 {
     global $conn;
@@ -223,6 +221,27 @@ function getMorePostsFeed($idPost, $userId)
                                 LIMIT 10
     ');
     $stmt->execute(array($idPost, $userId));
+}
+
+function getReportPostByUser($idUser, $idPost)
+{
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM ("Report" JOIN "ReportPost" USING ("idReport")) WHERE (reporter=$idUser AND "idPost"=$idPost) ');
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function reportPost($idUser, $idPost)
+{
+    global $conn;
+    $stmt = $conn->prepare('INSERT INTO "Report" (reason, reporter)
+                              VALUES (?, ?) RETURNING "idReport"');
+    $stmt->execute(array("Inaproppriate Content", $idUser));
+    return $stmt->fetchAll();
+    $idReport = $stmt->fetch()['idReport'];
+    $stmt = $conn->prepare('INSERT INTO "ReportPost" ("idReport", "idPost")
+                              VALUES (?, ?)');
+    $stmt->execute(array($idReport, $idPost));
 }
 
 ?>
