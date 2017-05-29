@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     //var umatres = 1;
 
@@ -18,9 +20,44 @@ $(document).ready(function () {
             },
             success: function(data){
 
-                console.log(data);
-                console.log(JSON.parse(data));
-                console.log(data.content);
+                var availableTags = [];
+
+                var jayson = JSON.parse(data);
+                var jayson_circles = jayson.circles;
+                var jayson_users = jayson.users;
+
+
+
+                var target_base_url = "http://gnomo.fe.up.pt" + BASE_URL;
+                console.log(target_base_url);
+
+                jayson_circles.forEach(function(result){
+                    availableTags.push({
+                        value: "http://gnomo.fe.up.pt"+BASE_URL + "/pages/circle/index.php?id=" + result.idCircle,
+                        label: "Circle " + result.name
+                    });
+                })
+
+                availableTags.push({
+                    value: "",
+                    label: "############"
+                });
+                jayson_users.forEach(function(result){
+                    availableTags.push({
+                        value: "profile.php?id?="+result.idP,
+                        label: "User " + result.first_name + " " + result.last_name
+                    });
+                })
+
+                console.log(jayson_users.first_name);
+
+
+                    $( "#schbar" ).autocomplete({
+                        source: availableTags,
+                        select: function( event, ui ) {
+                            window.location.href = ui.item.value;
+                        }
+                    });
 //				document.getElementById('schbar').value = data;
                 /*if(message.sender == sender){
                  $('#messages .message-data:last').after('<div class="message-data col-xs-10 col-sm-7 col-xs-offset-2 col-sm-offset-5">' +

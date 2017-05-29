@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-27 17:12:11
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:02:32
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/common/posts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11527105795929a394e4da67-80676632%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b074d6210fb1159ac28da2828921b3f0cad0ddc7' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/common/posts.tpl',
-      1 => 1495901528,
+      1 => 1496016152,
       2 => 'file',
     ),
   ),
@@ -75,14 +75,9 @@ pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['post']->value['idCi
     <div class="row">
         <div class="col-xs-2">
             <button type="button" class="upvote btn btn-success"><span
-                        class="glyphicon glyphicon-arrow-up"></span></button>
-        </div>
-        <div class="col-xs-8">
-            <h3 class="text-center">Comments</h3>
-        </div>
-        <div class="col-xs-2">
-            <button type="button" class="btn btn-danger"><span
-                        class="glyphicon glyphicon-arrow-down"></span></button>
+                        class="glyphicon glyphicon-arrow-up"></span>
+                <p><span style="color:green"><?php echo $_smarty_tpl->tpl_vars['post']->value['upvotes'];?>
+</span></p></button>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12">

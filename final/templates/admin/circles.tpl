@@ -38,9 +38,9 @@
                     {foreach $circles as $circle}
                         <tr>
                             <td>{$circle.name}</td>
-                            <td>{$circle.nUsers}</td>
-                            <td>{$circle.nPosts}</td>
-                            <td><a href="{$BASE_URL}pages/circle/index.php?id={$circle.idPerson}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                            <td>{$circle.nusers}</td>
+                            <td>{$circle.nposts}</td>
+                            <td><a href="{$BASE_URL}pages/circle/index.php?id={$circle.idCircle}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                             <td><button class="delete btn btn-danger btn-xs" data-title="Delete" data-id="{$circle.idCircle}" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                     {/foreach}
@@ -69,7 +69,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
+                <h4 class="modal-title custom_align" id="Heading">Delete Circle</h4>
             </div>
             <form method="post" action="{$BASE_URL}actions/admin/ban_remove.php">
                 <input type="hidden" name="idCircle" id="idCircle">

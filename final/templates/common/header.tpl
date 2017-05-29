@@ -19,6 +19,12 @@
 	<script src="{$BASE_URL}javascript/common/header.js"></script>
     <script src="{$BASE_URL}javascript/circle/post.js"></script>
 
+    <!-- Suggest search -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
     <style>
     </style>
 </head>

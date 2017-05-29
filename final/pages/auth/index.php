@@ -8,5 +8,7 @@ if (isset($_SESSION['id'])){
     //$_SESSION['admin'] = -1;
     //$_SESSION['email'] = -1;
     $smarty->display('auth/homepage.tpl');
+
+
 }
 ?>

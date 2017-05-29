@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-26 00:41:30
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:28:58
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/common/left_sidebar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1999260947591957584e3c68-47665494%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e2ce91a51b14cda83df5f19c4fd94a859a6080dc' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/common/left_sidebar.tpl',
-      1 => 1495755615,
+      1 => 1496017739,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_591957584e90a6_93669604')) {function content_591957584e90a6_93669604($_smarty_tpl) {?><div id="left_sidebar" class="col-xs-2 col-sm-2">
     <div class="row">
-        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg" id="left_sidebar_btn" type="submit">
+        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
+                id="left_sidebar_btn" type="submit">
             <span class="glyphicon glyphicon-envelope"></span>
         </button>
 
@@ -52,7 +53,8 @@ $_smarty_tpl->tpl_vars['recentMessagesUser']->_loop = true;
                         <li class="list-group-item">
                             <img src="<?php if ($_smarty_tpl->tpl_vars['recentMessagesUser']->value['path']) {?><?php echo $_smarty_tpl->tpl_vars['recentMessagesUser']->value['path'];?>
 <?php } else { ?><?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/default_user<?php }?>"  class="img-responsive img-circle" style="width:60px">
+images/default_user<?php }?>"
+                                 class="img-responsive img-circle" style="width:60px">
                             <a href="messages.php?id=<?php echo $_smarty_tpl->tpl_vars['recentMessagesUser']->value['sender'];?>
 "><?php echo $_smarty_tpl->tpl_vars['recentMessagesUser']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['recentMessagesUser']->value['last_name'];?>
@@ -76,21 +78,42 @@ $_smarty_tpl->tpl_vars['invite']->_loop = true;
 ?>
                     <li class="list-group-item">
                         <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/index.php?id=<?php echo $_smarty_tpl->tpl_vars['invite']->value['idPerson'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['invite']->value['first_name'];?>
+ </a>
+                        <small><i>Invited you to:</i></small>
+                        <img src="<?php if ($_smarty_tpl->tpl_vars['invite']->value['path']) {?><?php echo $_smarty_tpl->tpl_vars['invite']->value['path'];?>
+<?php } else { ?><?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/default_circle<?php }?>"
+                             class="img-responsive img-circle" style="width:60px">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['invite']->value['idCircle'];?>
 "> <?php echo $_smarty_tpl->tpl_vars['invite']->value['name'];?>
  </a>
-                        <form id="accept_invite" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/user/accept_invite.php" method="post">
-                            <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['invite']->value['idInvite'];?>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <form id="accept_invite" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/user/accept_invite.php"
+                                      method="post">
+                                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['invite']->value['idInvite'];?>
 " name="idInvite">
-                            <button type="submit" class="badge"><span class="glyphicon glyphicon-ok"></span></button>
-                        </form>
-                        <form id="remove_invite" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/user/remove_invite.php" method="post">
-                            <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['invite']->value['idInvite'];?>
+                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-ok"></span>
+                                        <p><span style="color:green"><?php echo $_smarty_tpl->tpl_vars['invite']->value['upvotes'];?>
+</span></p></button>
+                                </form>
+                            </div>
+                            <div class="col-xs-6">
+                                <form id="remove_invite" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/user/remove_invite.php"
+                                      method="post">
+                                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['invite']->value['idInvite'];?>
 " name="idInvite">
-                            <button type="submit" class="badge"><span class="glyphicon glyphicon-remove"></span></button>
-                        </form>
+                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-remove"></span>
+                                        <p><span style="color:red"><?php echo $_smarty_tpl->tpl_vars['invite']->value['downvotes'];?>
+</span></p></button>
+                                </form>
+                            </div>
+                        </div>
                     </li>
                 <?php } ?>
             </ul>

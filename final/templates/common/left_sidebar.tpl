@@ -1,6 +1,7 @@
 <div id="left_sidebar" class="col-xs-2 col-sm-2">
     <div class="row">
-        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg" id="left_sidebar_btn" type="submit">
+        <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
+                id="left_sidebar_btn" type="submit">
             <span class="glyphicon glyphicon-envelope"></span>
         </button>
 
@@ -16,7 +17,8 @@
                 <ul class="list-group">
                     {foreach $recentMessagesUsers_aux as $recentMessagesUser}
                         <li class="list-group-item">
-                            <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
+                            <img src="{if $recentMessagesUser.path}{$recentMessagesUser.path}{else}{$BASE_URL}images/default_user{/if}"
+                                 class="img-responsive img-circle" style="width:60px">
                             <a href="messages.php?id={$recentMessagesUser.sender}">{$recentMessagesUser.first_name} {$recentMessagesUser.last_name}</a>
                         </li>
                     {/foreach}
@@ -31,15 +33,29 @@
             <ul class="list-group">
                 {foreach $invites_aux as $invite}
                     <li class="list-group-item">
+                        <a href="{$BASE_URL}pages/user/index.php?id={$invite.idPerson}"> {$invite.first_name} </a>
+                        <small><i>Invited you to:</i></small>
+                        <img src="{if $invite.path}{$invite.path}{else}{$BASE_URL}images/default_circle{/if}"
+                             class="img-responsive img-circle" style="width:60px">
                         <a href="{$BASE_URL}pages/circle/index.php?id={$invite.idCircle}"> {$invite.name} </a>
-                        <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php" method="post">
-                            <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                            <button type="submit" class="badge"><span class="glyphicon glyphicon-ok"></span></button>
-                        </form>
-                        <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php" method="post">
-                            <input type="hidden" value="{$invite.idInvite}" name="idInvite">
-                            <button type="submit" class="badge"><span class="glyphicon glyphicon-remove"></span></button>
-                        </form>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <form id="accept_invite" action="{$BASE_URL}actions/user/accept_invite.php"
+                                      method="post">
+                                    <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-ok"></span>
+                                        <p><span style="color:green">{$invite.upvotes}</span></p></button>
+                                </form>
+                            </div>
+                            <div class="col-xs-6">
+                                <form id="remove_invite" action="{$BASE_URL}actions/user/remove_invite.php"
+                                      method="post">
+                                    <input type="hidden" value="{$invite.idInvite}" name="idInvite">
+                                    <button type="submit" class="badge" style="background-color:#d9d9d9"><span class="glyphicon glyphicon-remove"></span>
+                                        <p><span style="color:red">{$invite.downvotes}</span></p></button>
+                                </form>
+                            </div>
+                        </div>
                     </li>
                 {/foreach}
             </ul>

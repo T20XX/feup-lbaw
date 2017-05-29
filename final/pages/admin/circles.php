@@ -1,6 +1,6 @@
 <?php
 include_once('../../config/init.php');
-include_once($BASE_DIR .'database/user.php');
+include_once($BASE_DIR .'database/admin.php');
 
 if(isset($_SESSION['id'])){
     if(isset($_SESSION['admin'])){
@@ -13,7 +13,7 @@ if(isset($_SESSION['id'])){
 }
 
 
-$circles = fetchAllCircles();
+$circles = fetchCircleInfo();
 
 $smarty->assign('title', "Admin Circles");
 $smarty->assign('circles', $circles);

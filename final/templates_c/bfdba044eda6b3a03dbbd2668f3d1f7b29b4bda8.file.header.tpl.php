@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-26 04:42:12
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-28 16:09:15
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:164873609159195758486dd2-95569159%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bfdba044eda6b3a03dbbd2668f3d1f7b29b4bda8' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/common/header.tpl',
-      1 => 1495770127,
+      1 => 1495980541,
       2 => 'file',
     ),
   ),
@@ -54,6 +54,12 @@ javascript/main.js"></script>
 javascript/common/header.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/circle/post.js"></script>
+
+    <!-- Suggest search -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
     <style>
     </style>

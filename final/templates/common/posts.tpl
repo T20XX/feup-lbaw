@@ -36,14 +36,8 @@
     <div class="row">
         <div class="col-xs-2">
             <button type="button" class="upvote btn btn-success"><span
-                        class="glyphicon glyphicon-arrow-up"></span></button>
-        </div>
-        <div class="col-xs-8">
-            <h3 class="text-center">Comments</h3>
-        </div>
-        <div class="col-xs-2">
-            <button type="button" class="btn btn-danger"><span
-                        class="glyphicon glyphicon-arrow-down"></span></button>
+                        class="glyphicon glyphicon-arrow-up"></span>
+                <p><span style="color:green">{$post.upvotes}</span></p></button>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12">

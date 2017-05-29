@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-26 05:23:15
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-29 01:24:08
          compiled from "/opt/lbaw/lbaw1632/public_html/final/templates/admin/circles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1998307540591e66e980c812-14758541%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88c52b65fe184700c3e79d85104473e5bc19a0cb' => 
     array (
       0 => '/opt/lbaw/lbaw1632/public_html/final/templates/admin/circles.tpl',
-      1 => 1495772576,
+      1 => 1496016700,
       2 => 'file',
     ),
   ),
@@ -73,12 +73,12 @@ $_smarty_tpl->tpl_vars['circle']->_loop = true;
                         <tr>
                             <td><?php echo $_smarty_tpl->tpl_vars['circle']->value['name'];?>
 </td>
-                            <td><?php echo $_smarty_tpl->tpl_vars['circle']->value['nUsers'];?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['circle']->value['nusers'];?>
 </td>
-                            <td><?php echo $_smarty_tpl->tpl_vars['circle']->value['nPosts'];?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['circle']->value['nposts'];?>
 </td>
                             <td><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['circle']->value['idPerson'];?>
+pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['circle']->value['idCircle'];?>
 " class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                             <td><button class="delete btn btn-danger btn-xs" data-title="Delete" data-id="<?php echo $_smarty_tpl->tpl_vars['circle']->value['idCircle'];?>
 " data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
@@ -109,7 +109,7 @@ pages/circle/index.php?id=<?php echo $_smarty_tpl->tpl_vars['circle']->value['id
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">Ban user</h4>
+                <h4 class="modal-title custom_align" id="Heading">Delete Circle</h4>
             </div>
             <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/admin/ban_remove.php">
