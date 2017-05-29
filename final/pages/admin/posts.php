@@ -12,8 +12,14 @@ if(isset($_SESSION['id'])){
     header("Location: $BASE_URL" . 'pages/auth/');
 }
 
-if($_GET['reported'] == 'true'){
+if($_GET['reported'] == 'true' && $_GET['query']){
+    $posts = fetchAllReportedPostsBySearch($_GET['query']);
+}
+else if($_GET['reported'] == 'true'){
     $posts = fetchAllReportedPosts();
+}
+else if($_GET['query']){
+    $posts = fetchAllPostsBySearch($_GET['query']);
 }
 else {
     $posts = fetchAllPosts();

@@ -6,38 +6,24 @@
 
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{$BASE_URL}css/auth/homepage.css">
+<link rel="stylesheet" href="{$BASE_URL}css/common/aux_header.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="{$BASE_URL}javascript/auth/homepage.js"></script>
+<script src="{$BASE_URL}javascript/main.js"></script>
 
 <head>
     <style>
-        #title{
-            font-size: 16px;
-            font-size: 4vw;
-            vertical-align: middle;
-            font-family: 'Pacifico', cursive;
-            color: #191970;
-            word-wrap: break-word;
-        }
 
-        .img-responsive {
-            margin: 0 auto;
-        }
-
-        .font-pacifico{
-            font-family: 'Pacifico', cursive;
-        }
-
-        .well{
-            background-color: #2E2D88;
-            color: white;
-        }
     </style>
 </head>
 
 <body style="background-color: #eaecf4;">
+<header>
+    {include file='common/aux_header.tpl'}
+</header>
 
 <div class="container">
 
@@ -79,7 +65,7 @@
 
         <div id="signup" class="col-sm-6 text-center">
             <button id="signup_btn" class="btn btn-warning btn-lg btn-block font-pacifico hidden-sm hidden-md hidden-lg">Create New Account</button><br>
-            <span id="create" class="hidden-xs font-pacifico"  style="color:#191970;">Create New Account</span>
+            <span id="create" class="hidden-xs font-pacifico" >Create New Account</span>
             <form id="signup_form" action="{$BASE_URL}actions/auth/register.php"  method="post">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">First name</span>

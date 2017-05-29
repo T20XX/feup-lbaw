@@ -168,4 +168,21 @@ function getAllInvitesBeforeDate($date){
     return $stmt->fetchAll();
 }
 
+function get5UsersInv($texto){
+    global $conn;
+    $stmt = $conn->prepare('SELECT "idPerson", first_name, last_name, path
+                                FROM "User" LEFT JOIN "Image" ON "Image"."idUser" = "User"."idPerson"
+                                WHERE to_tsvector("User".first_name || \' \' || "User".last_name) @@ to_tsquery(?) LIMIT 5');
+    $stmt->execute(array($texto));
+    return $stmt->fetchAll();
+
+}
+
+function doesCircleExists($idCircle){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * from "Circle" where "Circle"."idCircle" = ?');
+    $stmt->execute(array($idCircle));
+    return $stmt->fetchAll();
+}
+
 ?>

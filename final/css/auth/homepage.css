@@ -1,0 +1,66 @@
+#title{
+    vertical-align: middle;
+    font-family: 'Pacifico', cursive;
+    color: #191970;
+    word-wrap: break-word;
+}
+
+#signup{
+    font-size: 30px;
+    color: #191970;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+.font-pacifico{
+    font-family: 'Pacifico', cursive;
+}
+
+.well{
+    background-color: #2E2D88;
+    color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    #title{
+        font-size: 30px;
+    }
+
+    #signup_form {
+        display: none;
+    }
+    .right_sidebar {
+        height: 100%;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+    }
+}
+
+
+@media (min-width: 992px) {
+    #title{
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #title{
+        font-size: 70px;
+    }
+
+    #login_form {
+        display: block;
+    }
+
+    #signup_form {
+        display: block;
+    }
+
+}

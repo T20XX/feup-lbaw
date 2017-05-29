@@ -8,6 +8,8 @@ if(isset($_SESSION['id'])){
         header("Location: $BASE_URL" . 'pages/user/feed.php');
     }
 } else {
+    $_SESSION['error_messages'][] = 'You need to be logged in';
     header("Location: $BASE_URL" . 'pages/auth/');
 }
+
 ?>

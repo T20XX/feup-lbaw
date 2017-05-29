@@ -38,7 +38,6 @@ $smarty->assign('isSelfProfile', $isSelfProfile);
 $smarty->assign('info', $info);
 $smarty->assign('image', $image['path']);
 $smarty->assign('cssPath', $BASE_URL . "css/user/profile.css");
-$smarty->assign('jsPath', $BASE_URL . "javascript/user/profile.js");
 $smarty->assign('circles', $circles);
 $smarty->assign('profile_id', $id);
 $smarty->display('user/profile.tpl');

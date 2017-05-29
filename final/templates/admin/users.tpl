@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-push-6">
       <form action="{$BASE_URL}pages/admin/users.php" method="GET">
         <div class="input-group">
-          <input type="text" name="query" class="form-control" placeholder="Search">
+          <input id="schbaruser" type="text" name="query" class="form-control" placeholder="Search">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">
               <i class="glyphicon glyphicon-search"></i>
@@ -122,16 +122,6 @@
   </div>
 </div>
 
-{*<div class="container">
-  <div class="row jumbotron text-center">
-    {foreach $users as $user}
-    <li class="list-group-item list-group-item-success">
-      <img src="{if $path}{$path}{else}{$BASE_URL}images/default_user{/if}"  class="img-responsive img-circle" style="width:60px">
-      <a href="../user/profile.php?id={$user.idPerson}">{$user.first_name} {$user.last_name}</a>
-    </li>
-    {/foreach}
-  </div>
-</div>*}
 
 
 {include file='admin/footer.tpl'}

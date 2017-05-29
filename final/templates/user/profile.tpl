@@ -25,15 +25,6 @@
                         </a>
                     {/if}
                 </div>
-                <div class="col-xs-9">
-                    <h2>
-                        <small>TODO que info ou botao por aqui?</small>
-                    </h2>
-                </div>
-                <div class="col-xs-3">
-                    <button type="button" class="btn btn-default btn-block"><span
-                                class="glyphicon glyphicon-th-large"></span></button>
-                </div>
                 {if $info.show_hometown}
                     <div class="col-xs-12 col-sm-6">
                         <div class="panel panel-default text-center">

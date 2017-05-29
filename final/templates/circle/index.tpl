@@ -7,7 +7,7 @@
             <div class="row">
                 <button onclick="open_left_sidebar()" class="btn btn-default btn-block hidden-sm hidden-md hidden-lg"
                         id="left_sidebar_btn" type="submit">
-                    <span class="glyphicon glyphicon-envelope"></span>
+                    <span class="glyphicon glyphicon-user"></span>
                 </button>
 
 
@@ -91,33 +91,15 @@
                 </nav>
             </div>
 
-            <!--<div class="row hidden-xs">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><strong>Suggested</strong></div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="circle.php"> Circle 7 </a>
-                            <span class="badge">Knock!</span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="circle.php"> Circle 8 </a>
-                            <span class="badge">Knock!</span>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="circle.php"> Circle 9 </a>
-                            <span class="badge">Knock!</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>-->
-
         </div>
 
         <div id="center" class="col-xs-12 col-sm-8 col-sm-pull-2">
             <div class="row well">
                 <div class="col-xs-12">
+                    <img src="{if $circle.path}{$circle.path}{else}{$BASE_URL}images/default_circle{/if}"
+                         class="img-responsive img-circle" style="width:60px">
                     <h2 style="text-align:center; margin-top:0%"><a
-                                href="{if $circle.image}{$circle.image}{else}{$BASE_URL}images/default_circle{/if}">{$circle.name}</a>
+                                href="{$BASE_URL}.pages/circle/index.php?id={$idCircle}">{$circle.name}</a>
                     </h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 ">
@@ -151,7 +133,7 @@
 											<button class="btn btn-secondary btn-block"
                                                     type="button"><a>Add to Circle</a></button>
 										</span>
-                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <input id="schbarinvite" type="text" class="form-control" placeholder="Search for...">
                                     </div>
                                 </a></li>
                             <li>

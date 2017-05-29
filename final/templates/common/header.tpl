@@ -5,10 +5,10 @@
     <link rel="icon" href="{$BASE_URL}images/logo.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"><link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/common/aux_header.css">
     <link rel="stylesheet" href="{$BASE_URL}css/common/header.css">
     <link rel="stylesheet" href="{$cssPath}">
     <link rel="stylesheet" href="{$BASE_URL}css/common/footer.css">
@@ -17,13 +17,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="{$BASE_URL}javascript/main.js"></script>
     <script src="{$jsPath}"></script>
-	<script src="{$BASE_URL}javascript/common/header.js"></script>
-    <script src="{$BASE_URL}javascript/circle/post.js"></script>
-
     <!-- Suggest search -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="{$BASE_URL}javascript/common/header.js"></script>
+    <script src="{$BASE_URL}javascript/circle/post.js"></script>
+    <script src="{$BASE_URL}javascript/circle/search_user_to_invite.js"></script>
+
+
+
 
 
     <style>

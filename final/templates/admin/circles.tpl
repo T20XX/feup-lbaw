@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-sm-6 col-sm-push-6">
             <form action="{$BASE_URL}pages/admin/circles.php" method="GET">
                 <div class="input-group">
-                    <input type="text" name="query" class="form-control" placeholder="Search">
+                    <input id="schbarcircle" type="text" name="query" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
