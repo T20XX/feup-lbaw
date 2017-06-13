@@ -1,4 +1,4 @@
-#LBAW
+# LBAW
 Laboratório de Desenvolvimento de Aplicações Web (FEUP)
 
 MeetTheCircle social network
