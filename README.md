@@ -1,7 +1,7 @@
-"# MeetTheCircle" 
+#LBAW
+Laboratório de Desenvolvimento de Aplicações Web (FEUP)
 
-
-Cor do site : (Aquele azul arroxado) #2E2D88
+MeetTheCircle social network
 
 MeetTheCircle - Pasta com UI
 
